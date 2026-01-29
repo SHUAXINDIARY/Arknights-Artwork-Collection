@@ -51,6 +51,24 @@ The site aims to provide a clean, fast, and easy-to-browse archive and reference
 
 ---
 
+## Site & Technology | 建站与技术说明
+
+This website is built using the open-source project **Afilmory**, which provides a fast and convenient way to set up an illustration and media archive website.
+
+- Project: https://github.com/Afilmory/afilmory  
+- Used for rapid deployment and management of large-scale image collections
+
+The site leverages Afilmory to quickly build and maintain a scalable illustration archive with minimal setup cost.
+
+本网站基于开源项目 **Afilmory** 搭建，用于快速构建与部署插画与媒体资源归档站点。
+
+- 项目地址：https://github.com/Afilmory/afilmory  
+- 用于快速搭建与管理大规模图片资源库
+
+通过 Afilmory，实现了插画归档站点的快速部署与低成本维护。
+
+---
+
 ## Author & Maintenance | 作者与维护
 
 **Author Website / 作者站点：**  
@@ -74,7 +92,7 @@ All artworks belong to their respective artists and copyright holders.
 
 If you are a copyright owner and believe your content should be removed or credited differently, please contact the site owner.
 
-本网站为粉丝项目，与 **鹰角网络（Hypergryph）** 或 **悠星（Yostar）** 或 **原画师** 官方无任何隶属关系。  
+本网站为粉丝项目，与 **鹰角网络（Hypergryph）** 或 **悠星（Yostar）** 官方无任何隶属关系。  
 所有插画作品版权归原作者及版权方所有。
 
 如版权方认为本站内容需要删除或调整署名，请联系站点维护者，我们将及时处理。
