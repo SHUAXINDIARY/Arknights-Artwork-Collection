@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arknights Illustration Archive | 明日方舟插画档案馆</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .lang-switch {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 20px;
+      padding: 6px 4px;
+      display: flex;
+      gap: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      z-index: 100;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 14px;
+      cursor: pointer;
+      border-radius: 16px;
+      font-size: 14px;
+      color: #666;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    .lang-btn:hover:not(.active) {
+      background: #f0f0f0;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      color: #2c3e50;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #7f8c8d;
+      margin-bottom: 20px;
+    }
+
+    .website-link {
+      display: inline-block;
+      background: #3498db;
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+    }
+
+    .website-link:hover {
+      background: #2980b9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    }
+
+    .section {
+      background: #fff;
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      color: #2c3e50;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #ecf0f1;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-item {
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-3px);
+    }
+
+    .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-item h3 {
+      font-size: 1rem;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+
+    .purpose-list {
+      list-style: none;
+    }
+
+    .purpose-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid #ecf0f1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .purpose-list li:last-child {
+      border-bottom: none;
+    }
+
+    .purpose-list .icon {
+      font-size: 1.2rem;
+    }
+
+    .tech-info {
+      color: #555;
+    }
+
+    .tech-info a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .tech-info a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    .contact-info a {
+      color: #3498db;
+      text-decoration: none;
+    }
+
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
+
+    .disclaimer {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+      line-height: 1.8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: #95a5a6;
+      font-style: italic;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lang-switch {
+        top: 10px;
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="lang-switch">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="zh">中文</button>
+  </div>
+
+  <div class="container">
+    <header>
+      <h1>
+        <span class="en">Arknights Illustration Archive</span>
+        <span class="zh hidden">明日方舟插画档案馆</span>
+      </h1>
+      <p class="subtitle">
+        <span class="en">A fan-made illustration collection platform</span>
+        <span class="zh hidden">粉丝创建的插画收集与整理站点</span>
+      </p>
+      <a href="https://arknights.afilmory.art/" target="_blank" class="website-link">
+        <span class="en">Visit Website</span>
+        <span class="zh hidden">访问网站</span>
+      </a>
+    </header>
+
+    <section class="section">
+      <h2>
+        <span class="en">Overview</span>
+        <span class="zh hidden">项目简介</span>
+      </h2>
+      <p class="en">
+        <strong>Arknights Illustration Archive</strong> is a fan-made website dedicated to collecting and organizing illustration works related to <em>Arknights</em>. The site aims to provide a clean, fast, and easy-to-browse archive and reference platform for fans, creators, and collectors.
+      </p>
+      <p class="zh hidden">
+        <strong>Arknights Illustration Archive</strong> 是一个由粉丝创建的插画收集与整理站点，专注于收录与整理《明日方舟（Arknights）》相关的插画作品。本站旨在为玩家、创作者与收藏者提供一个干净、高效、易于浏览的插画归档与参考平台。
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">Key Features</span>
+        <span class="zh hidden">核心特性</span>
+      </h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="feature-icon">🎨</div>
+          <h3>
+            <span class="en">Centralized Collection</span>
+            <span class="zh hidden">集中式插画收录</span>
+          </h3>
+          <p>
+            <span class="en">Collects and curates Arknights-related illustrations from multiple sources in one place.</span>
+            <span class="zh hidden">将分散在不同来源的明日方舟相关插画集中整理，统一浏览。</span>
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🗂️</div>
+          <h3>
+            <span class="en">Structured Categorization</span>
+            <span class="zh hidden">结构化分类</span>
+          </h3>
+          <p>
+            <span class="en">Organized by characters, themes, and releases for efficient discovery.</span>
+            <span class="zh hidden">按干员、主题、发布内容等维度进行整理，方便快速查找。</span>
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">⚡</div>
+          <h3>
+            <span class="en">Fast & Lightweight</span>
+            <span class="zh hidden">快速轻量体验</span>
+          </h3>
+          <p>
+            <span class="en">Optimized for fast loading and smooth browsing, even for large image collections.</span>
+            <span class="zh hidden">针对大量图片场景进行优化，保证加载速度与流畅体验。</span>
+          </p>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🔍</div>
+          <h3>
+            <span class="en">Archive & Reference</span>
+            <span class="zh hidden">归档与参考价值</span>
+          </h3>
+          <p>
+            <span class="en">Serves as a long-term archive and visual reference for fans and creators.</span>
+            <span class="zh hidden">作为长期插画归档与视觉参考库，适用于粉丝与创作者使用。</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">Purpose</span>
+        <span class="zh hidden">项目目标</span>
+      </h2>
+      <ul class="purpose-list">
+        <li>
+          <span class="icon">📚</span>
+          <span class="en">Long-term illustration archiving</span>
+          <span class="zh hidden">长期插画归档与保存</span>
+        </li>
+        <li>
+          <span class="icon">🎯</span>
+          <span class="en">Convenient browsing and discovery</span>
+          <span class="zh hidden">提供高效的浏览与内容发现体验</span>
+        </li>
+        <li>
+          <span class="icon">🎨</span>
+          <span class="en">Visual reference for creators and designers</span>
+          <span class="zh hidden">为创作者与设计师提供视觉参考资料</span>
+        </li>
+        <li>
+          <span class="icon">🌱</span>
+          <span class="en">Community-driven fan resource</span>
+          <span class="zh hidden">打造由社区驱动的粉丝向资源站点</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">Technology</span>
+        <span class="zh hidden">技术说明</span>
+      </h2>
+      <div class="tech-info">
+        <p class="en">
+          This website is built using the open-source project <strong>Afilmory</strong>, which provides a fast and convenient way to set up an illustration and media archive website.
+        </p>
+        <p class="zh hidden">
+          本网站基于开源项目 <strong>Afilmory</strong> 搭建，用于快速构建与部署插画与媒体资源归档站点。
+        </p>
+        <p style="margin-top: 15px;">
+          <span class="en">Project: </span>
+          <span class="zh hidden">项目地址：</span>
+          <a href="https://github.com/Afilmory/afilmory" target="_blank">https://github.com/Afilmory/afilmory</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">Author & Contact</span>
+        <span class="zh hidden">作者与维护</span>
+      </h2>
+      <div class="contact-info">
+        <p>
+          <span class="en">Author Website: </span>
+          <span class="zh hidden">作者站点：</span>
+          <a href="https://home.shuaxinjs.cn/" target="_blank">https://home.shuaxinjs.cn/</a>
+        </p>
+        <p>
+          <span class="en">Contact: </span>
+          <span class="zh hidden">联系方式：</span>
+          <a href="mailto:shuaxin@qq.com">shuaxin@qq.com</a>
+        </p>
+        <p style="margin-top: 15px; color: #7f8c8d;">
+          <span class="en">This project is maintained by an independent developer and Arknights fan. Feedback, copyright notices, and cooperation inquiries are welcome.</span>
+          <span class="zh hidden">本项目由独立开发者与明日方舟爱好者维护。欢迎反馈建议、版权相关联系与合作沟通。</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en">Disclaimer</span>
+        <span class="zh hidden">免责声明</span>
+      </h2>
+      <div class="disclaimer">
+        <p class="en">
+          This website is a fan-made project and is <strong>not affiliated with Hypergryph or Yostar</strong>. All artworks belong to their respective artists and copyright holders. If you are a copyright owner and believe your content should be removed or credited differently, please contact the site owner.
+        </p>
+        <p class="zh hidden">
+          本网站为粉丝项目，与 <strong>鹰角网络（Hypergryph）</strong> 或 <strong>悠星（Yostar）</strong> 官方无任何隶属关系。所有插画作品版权归原作者及版权方所有。如版权方认为本站内容需要删除或调整署名，请联系站点维护者，我们将及时处理。
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <p class="en">Created by fans, for fans.</p>
+      <p class="zh hidden">由粉丝创建，为粉丝服务。</p>
+    </footer>
+  </div>
+
+  <script>
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const enElements = document.querySelectorAll('.en');
+    const zhElements = document.querySelectorAll('.zh');
+
+    function setLanguage(lang) {
+      langBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      if (lang === 'en') {
+        enElements.forEach(el => el.classList.remove('hidden'));
+        zhElements.forEach(el => el.classList.add('hidden'));
+        document.documentElement.lang = 'en';
+      } else {
+        enElements.forEach(el => el.classList.add('hidden'));
+        zhElements.forEach(el => el.classList.remove('hidden'));
+        document.documentElement.lang = 'zh-CN';
+      }
+
+      localStorage.setItem('preferred-lang', lang);
+    }
+
+    langBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        setLanguage(btn.dataset.lang);
+      });
+    });
+
+    // Load saved language preference
+    const savedLang = localStorage.getItem('preferred-lang');
+    if (savedLang) {
+      setLanguage(savedLang);
+    }
+  </script>
+</body>
+</html>
