@@ -147,6 +147,23 @@
       box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
     }
 
+    .header-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .following-link {
+      background: #1da1f2;
+      box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+    }
+
+    .following-link:hover {
+      background: #0d8ecf;
+      box-shadow: 0 6px 20px rgba(29, 161, 242, 0.4);
+    }
+
     .section {
       background: #fff;
       border-radius: 16px;
@@ -313,10 +330,16 @@
         <span class="en hidden">A fan-made illustration collection platform</span>
         <span class="zh">粉丝创建的插画收集与整理站点</span>
       </p>
-      <a href="https://arknights.afilmory.art/" target="_blank" class="website-link">
-        <span class="en hidden">Visit Website</span>
-        <span class="zh">访问网站</span>
-      </a>
+      <div class="header-links">
+        <a href="https://arknights.afilmory.art/" target="_blank" class="website-link">
+          <span class="en hidden">Visit Website</span>
+          <span class="zh">访问网站</span>
+        </a>
+        <a href="./following.html" class="website-link following-link">
+          <span class="en hidden">Following List</span>
+          <span class="zh">画师列表</span>
+        </a>
+      </div>
     </header>
 
     <section class="section">
