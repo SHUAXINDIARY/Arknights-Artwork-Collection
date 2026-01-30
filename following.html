@@ -168,6 +168,12 @@
       object-fit: cover;
       background: #e1e8ed;
       flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .avatar.loaded {
+      opacity: 1;
     }
 
     .avatar-placeholder {
@@ -542,7 +548,7 @@
       const hasAvatar = user.avatar && user.avatar.trim() !== '';
 
       const avatarHtml = hasAvatar
-        ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder\\'>${getInitial(user.nickname)}</div>'">`
+        ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onload="this.classList.add('loaded')" onerror="this.outerHTML='<div class=\\'avatar-placeholder\\'>${getInitial(user.nickname)}</div>'">`
         : `<div class="avatar-placeholder">${getInitial(user.nickname)}</div>`;
 
       return `
