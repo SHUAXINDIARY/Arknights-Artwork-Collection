@@ -547,7 +547,7 @@
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-        <span class="zh">导出 JSON</span><span class="en">Export JSON</span>
+        <span class="zh">导出 JS</span><span class="en">Export JS</span>
       </button>
     </div>
 
@@ -653,15 +653,15 @@
       }
     }
 
-    // 导出 JSON
+    // 导出 JS
     function exportJSON() {
       const filtered = filterData();
-      const dataStr = JSON.stringify(filtered, null, 2);
-      const blob = new Blob([dataStr], { type: 'application/json' });
+      const dataStr = 'const following = ' + JSON.stringify(filtered, null, 2);
+      const blob = new Blob([dataStr], { type: 'application/javascript' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `following_${new Date().toISOString().slice(0, 10)}.json`;
+      a.download = `following_${new Date().toISOString().slice(0, 10)}.js`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);

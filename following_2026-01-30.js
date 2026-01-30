@@ -348,12 +348,6 @@ const following = [
     "bio": "Building"
   },
   {
-    "nickname": "SHUEISHA MANGA-ART HERITAGE",
-    "avatar": "https://pbs.twimg.com/profile_images/1346664931928653827/slhySVBM_normal.jpg",
-    "profile": "https://x.com/MangaartJ",
-    "bio": "集英社マンガアートヘリテージ公式アカウント"
-  },
-  {
     "nickname": "Jeff Mihaly",
     "avatar": "https://pbs.twimg.com/profile_images/1757136325126541313/eHWVQXcA_normal.jpg",
     "profile": "https://x.com/jeffmihaly",
@@ -438,52 +432,16 @@ const following = [
     "bio": "Creators of OSS Origin Stories | Our mission—to document the complete history of every major open source language ever created. Subscribe on YouTube"
   },
   {
-    "nickname": "-Living-",
-    "avatar": "https://pbs.twimg.com/profile_images/1731583613609848832/xKxv23Tw_normal.jpg",
-    "profile": "https://x.com/Living201882687",
-    "bio": "ai"
-  },
-  {
     "nickname": "Olli Sorjonen",
     "avatar": "https://pbs.twimg.com/profile_images/2810675844/9e5b023cfe825ebce005d9a2d87ab82a_normal.jpeg",
     "profile": "https://x.com/Olmirad",
     "bio": "Hi! I'm a (tech) artist / Unity developer. I tweet mainly my gfx, gamedev and AI coding things! Want to contact me? DMs open."
   },
   {
-    "nickname": "Grok",
-    "avatar": "https://pbs.twimg.com/profile_images/1893219113717342208/Vgg2hEPa_normal.jpg",
-    "profile": "https://x.com/grok",
-    "bio": "http://"
-  },
-  {
-    "nickname": "まじろ(Maziro)",
-    "avatar": "https://pbs.twimg.com/profile_images/1929380426302513152/0TGpYLh6_normal.jpg",
-    "profile": "https://x.com/mazirori",
-    "bio": "AI"
-  },
-  {
-    "nickname": "Tw93",
-    "avatar": "https://pbs.twimg.com/profile_images/1960753219115868169/EOxKSK4w_normal.jpg",
-    "profile": "https://x.com/HiTw93",
-    "bio": "Father of Mole · Pake • MiaoYan • XRender"
-  },
-  {
-    "nickname": "Maxtune",
-    "avatar": "https://pbs.twimg.com/profile_images/1841380451900121088/vYe6BhP2_normal.jpg",
-    "profile": "https://x.com/MaxtuneLee",
-    "bio": "Frontend developer / UI/UX / WildBox developer. Nice to meet you"
-  },
-  {
     "nickname": "oyuki",
     "avatar": "https://pbs.twimg.com/profile_images/1730153739343060992/vbRRCGpN_normal.jpg",
     "profile": "https://x.com/oyuki_gms",
     "bio": "アークナイツとエンドフィールド、あとは好きなこといろいろ。 Arknights & Endfield, and other things I enjoy. なんでも報告：おゆーきいつも 日常："
-  },
-  {
-    "nickname": "Anne阿伦",
-    "avatar": "https://pbs.twimg.com/profile_images/1692417413818773504/Dl4kS3Tb_normal.jpg",
-    "profile": "https://x.com/anne_lyl",
-    "bio": "这里用中文记录"
   },
   {
     "nickname": "LV0.20-X/ ver.X",
@@ -520,18 +478,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1436397013508116480/FvBSRaMl_normal.jpg",
     "profile": "https://x.com/rummelonp",
     "bio": "猫・料理・ゲーム・メタル・映画などに興味があります アイコンは tatあt さんに書いて頂きました"
-  },
-  {
-    "nickname": "やまやま　やまやま",
-    "avatar": "https://pbs.twimg.com/profile_images/1289141426345799680/IPsY15Pv_normal.jpg",
-    "profile": "https://x.com/gLYjzoShlTvAN0g",
-    "bio": "玩具の画像を掲載したりします。"
-  },
-  {
-    "nickname": "Portra Papi",
-    "avatar": "https://pbs.twimg.com/profile_images/1597728585577480192/M1DQ2YpI_normal.jpg",
-    "profile": "https://x.com/jakob_lr",
-    "bio": "I spend all my money on film"
   },
   {
     "nickname": "すぺーすぼーい(SPACE BOY)",
@@ -606,12 +552,6 @@ const following = [
     "bio": "読み方は「テイ・オー」だよ。絵が趣味の引きこもりマン。 目指せ直線と平面の美学。 イラストの無断使用、無断転載禁止。ピクシブ→"
   },
   {
-    "nickname": "自転車工房JUN",
-    "avatar": "https://pbs.twimg.com/profile_images/2009412473301127168/NM_R2oy4_normal.jpg",
-    "profile": "https://x.com/jitenshakoubou",
-    "bio": "誰が組んでも同じではありません、何を買うかと同じぐらい“どこで買うか“も重要です。ただ組むだけじゃなく作業の裏側を解説しながら組み立てします。"
-  },
-  {
     "nickname": "伊小懿",
     "avatar": "https://pbs.twimg.com/profile_images/1974118377347059712/4rOpWVPx_normal.jpg",
     "profile": "https://x.com/Orlog_E",
@@ -678,12 +618,6 @@ const following = [
     "bio": "20↑"
   },
   {
-    "nickname": "UCI",
-    "avatar": "https://pbs.twimg.com/profile_images/1158457373423472641/ltjhInLQ_normal.jpg",
-    "profile": "https://x.com/UCI_cycling",
-    "bio": "Official UCI account"
-  },
-  {
     "nickname": "だにえる｜D.Daniel",
     "avatar": "https://pbs.twimg.com/profile_images/1759613112242917376/umwB7Kah_normal.jpg",
     "profile": "https://x.com/d_daniel_film",
@@ -714,12 +648,6 @@ const following = [
     "bio": "solis ◈ 25↑ ◈"
   },
   {
-    "nickname": "宮園薫",
-    "avatar": "https://pbs.twimg.com/profile_images/1412714072240320512/snwnjHT1_normal.jpg",
-    "profile": "https://x.com/Yuugumo_ichi",
-    "bio": "艦これ | Developer｜Based Singapore & Japan｜Series B startup | Let's Make Anime GREAT Again"
-  },
-  {
     "nickname": "Moon | funfact soon",
     "avatar": "https://pbs.twimg.com/profile_images/1825168516879712256/G0JZ8Gs__normal.jpg",
     "profile": "https://x.com/moon_trm",
@@ -736,12 +664,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1560804802078003200/olbZQuet_normal.jpg",
     "profile": "https://x.com/HaradaMiyuki_",
     "bio": "2026年度のお仕事ご依頼募集中です。 ご相談ご連絡先→harada1990miyuki☆"
-  },
-  {
-    "nickname": "d",
-    "avatar": "https://pbs.twimg.com/profile_images/1658270458276622338/4ZbkJqM4_normal.jpg",
-    "profile": "https://x.com/dishk15",
-    "bio": "Just a dog lover"
   },
   {
     "nickname": "ck",
@@ -816,34 +738,10 @@ const following = [
     "bio": "NO AI/I do what I love, not for anything else Concept artist, bio-design enthusiast コンセプトアーティストバイオデザイン愛好家"
   },
   {
-    "nickname": "Mathieu Van der Poel",
-    "avatar": "https://pbs.twimg.com/profile_images/1411240418407161856/kN9qALhZ_normal.jpg",
-    "profile": "https://x.com/mathieuvdpoel",
-    "bio": "MVDP"
-  },
-  {
-    "nickname": "鱈井ゆう",
-    "avatar": "https://pbs.twimg.com/profile_images/1567975503021350913/7kgXorbq_normal.jpg",
-    "profile": "https://x.com/TARAI_YOU",
-    "bio": "YouTubeやってます。お仕事のご相談等はDMにてお問い合わせください"
-  },
-  {
     "nickname": "糸夏",
     "avatar": "https://pbs.twimg.com/profile_images/2013932484141142016/6REzCY0G_normal.jpg",
     "profile": "https://x.com/itonatsu_Pino",
     "bio": "ダウナー系お姉さんになりたいアッパー系のガキ TRPG初心者"
-  },
-  {
-    "nickname": "Cycling Weekly",
-    "avatar": "https://pbs.twimg.com/profile_images/1158340008924856320/GV9EoX6a_normal.jpg",
-    "profile": "https://x.com/cyclingweekly",
-    "bio": "Official feed of Cycling Weekly magazine & website. Bringing you news, racing, interviews, fitness, reviews & buying advice since 1891 -"
-  },
-  {
-    "nickname": "citron",
-    "avatar": "https://pbs.twimg.com/profile_images/1686744469415104512/OFA-6nhA_normal.jpg",
-    "profile": "https://x.com/vanillaCitron",
-    "bio": "she/her /"
   },
   {
     "nickname": "十九",
@@ -856,12 +754,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1903277685016760320/z6hXujPk_normal.jpg",
     "profile": "https://x.com/NOCO9999",
     "bio": "イラストレーター / キャラクターデザイナー Profile："
-  },
-  {
-    "nickname": "小互",
-    "avatar": "https://pbs.twimg.com/profile_images/1765404718959095808/BX7VN1hS_normal.jpg",
-    "profile": "https://x.com/xiaohu",
-    "bio": "带你了解全球最前沿科技、AI动态... 学AI找小互，找小互，上"
   },
   {
     "nickname": "落舟Pile",
@@ -970,12 +862,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1339293242840379392/x1XkGx8H_normal.jpg",
     "profile": "https://x.com/FormatSpace",
     "bio": "ご飯食べ食べ"
-  },
-  {
-    "nickname": "べらぼうな風来坊",
-    "avatar": "https://pbs.twimg.com/profile_images/1584700268473507840/7hMJGoEa_normal.jpg",
-    "profile": "https://x.com/obakelope0530",
-    "bio": "特撮作品のファンアートを造るグラフィックデザイナーです。お仕事のご依頼は"
   },
   {
     "nickname": "Fran",
@@ -1098,12 +984,6 @@ const following = [
     "bio": "【中文特别上手】，其他语种会用翻译器 工作邮箱Work email:411368872@qq.com ↑工作邀约请附带简单信息，我会认真回复的 pixiv："
   },
   {
-    "nickname": "𛂡𛃵𛁋𛀶",
-    "avatar": "https://pbs.twimg.com/profile_images/2004156466337619969/O6thDzqD_normal.jpg",
-    "profile": "https://x.com/HariciiFortress",
-    "bio": "好きなおもちゃで遊ぶだけ"
-  },
-  {
     "nickname": "DonJonXXXS",
     "avatar": "https://pbs.twimg.com/profile_images/1863598719704428544/csqzV60J_normal.jpg",
     "profile": "https://x.com/DonXxxs",
@@ -1140,12 +1020,6 @@ const following = [
     "bio": "illustrator ｜"
   },
   {
-    "nickname": "Steven Howard",
-    "avatar": "https://pbs.twimg.com/profile_images/1682805312535887874/6G0KSWAL_normal.jpg",
-    "profile": "https://x.com/stevnhoward",
-    "bio": "RealityKit"
-  },
-  {
     "nickname": "31",
     "avatar": "https://pbs.twimg.com/profile_images/1871945823195631616/FzDyE_UR_normal.png",
     "profile": "https://x.com/001_31_",
@@ -1156,18 +1030,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1768377136006754304/hdGrm7MT_normal.jpg",
     "profile": "https://x.com/yuno_11_02",
     "bio": "illustrator ‖ 近期什麼都畫 很雜 | 中文/Eng"
-  },
-  {
-    "nickname": "minifiguresadventures",
-    "avatar": "https://pbs.twimg.com/profile_images/1385141443912781825/JLSwNGZm_normal.jpg",
-    "profile": "https://x.com/miszaszym1",
-    "bio": "Toy photographer from Poland"
-  },
-  {
-    "nickname": "Mengxin Liu",
-    "avatar": "https://pbs.twimg.com/profile_images/1571735154728783872/b5hATGP0_normal.jpg",
-    "profile": "https://x.com/liumengxinfly",
-    "bio": "Kube-OVN Creator"
   },
   {
     "nickname": "Castling",
@@ -1848,12 +1710,6 @@ const following = [
     "bio": "おもちゃの写真撮る人。ガンプラ始めました→サークル：チームトイアワ!!("
   },
   {
-    "nickname": "kevinzhow",
-    "avatar": "https://pbs.twimg.com/profile_images/1808138216585023490/xQ3u-b4x_normal.jpg",
-    "profile": "https://x.com/kevinzhow",
-    "bio": "Maker | Making Japanese Learning App | KanaOrigin | Oyomi｜Miraa"
-  },
-  {
     "nickname": "純頃(jungoro)",
     "avatar": "https://pbs.twimg.com/profile_images/1210189923023650817/RiAgFhHQ_normal.jpg",
     "profile": "https://x.com/20156_jun",
@@ -1912,12 +1768,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1653014453108248576/eLYcQ3iU_normal.jpg",
     "profile": "https://x.com/naototsushima",
     "bio": "スパークする漫画家 お仕事カモン！！ 掲載された画像全て私の許可なく無断転載することを禁じます Without my explicit permission, use of my draws/ pictures and sentences is strictly forbidden https://tokyo854."
-  },
-  {
-    "nickname": "丸山 浩 Hiroshi Maruyama",
-    "avatar": "https://pbs.twimg.com/profile_images/2006797860927352832/pdntW1hm_normal.jpg",
-    "profile": "https://x.com/hiro_mrym",
-    "bio": "フリーのデザイナー、イラストレーター、特殊造形 / ウルトラマンシリーズのヒーローや怪獣のデザインを多数担当。漫画「戦国怪獣 ライゴラ」と漫画「ゴジラ ギャラクシーオデッセイ」で怪獣デザインを担当中。"
   },
   {
     "nickname": "Lpip",
