@@ -58,6 +58,33 @@
       border-radius: 16px;
       color: #fff;
       box-shadow: 0 4px 20px rgba(29, 161, 242, 0.3);
+      position: relative;
+    }
+
+    .home-btn {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .home-btn:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateX(-2px);
+    }
+
+    .home-btn svg {
+      flex-shrink: 0;
     }
 
     h1 {
@@ -410,6 +437,33 @@
       color: #1da1f2;
     }
 
+    .lang-switch {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+
+    .lang-switch:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .en { display: none; }
+    .zh { display: inline; }
+    body.lang-en .en { display: inline; }
+    body.lang-en .zh { display: none; }
+
     @media (max-width: 600px) {
       .container {
         padding: 12px;
@@ -453,23 +507,35 @@
 <body>
   <div class="container">
     <header>
-      <h1>🐦 画师 Following</h1>
-      <p class="subtitle">包含但不限于</p>
+      <a href="./index.html" class="home-btn" title="返回首页">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9 22 9 12 15 12 15 22"></polyline>
+        </svg>
+        <span class="zh">首页</span>
+        <span class="en">Home</span>
+      </a>
+      <button class="lang-switch" id="lang-switch" title="切换语言">
+        <span class="zh">EN</span>
+        <span class="en">中</span>
+      </button>
+      <h1>🐦 <span class="zh">画师 Following</span><span class="en">Artists Following</span></h1>
+      <p class="subtitle"><span class="zh">包含但不限于</span><span class="en">Including but not limited to</span></p>
       <div class="stats">
         <div class="stat-item">
-          <strong id="total-count">0</strong> 关注
+          <strong id="total-count">0</strong> <span class="zh">关注</span><span class="en">Following</span>
         </div>
         <div class="stat-item">
-          <strong id="filtered-count">0</strong> 显示中
+          <strong id="filtered-count">0</strong> <span class="zh">显示中</span><span class="en">Showing</span>
         </div>
       </div>
     </header>
 
     <div class="search-bar">
-      <input type="text" class="search-input" id="search" placeholder="搜索昵称或简介...">
-      <button class="filter-btn active" data-filter="all">全部</button>
-      <button class="filter-btn" data-filter="has-bio">有简介</button>
-      <button class="filter-btn" data-filter="no-bio">无简介</button>
+      <input type="text" class="search-input" id="search" data-placeholder-zh="搜索昵称或简介..." data-placeholder-en="Search nickname or bio..." placeholder="搜索昵称或简介...">
+      <button class="filter-btn active" data-filter="all"><span class="zh">全部</span><span class="en">All</span></button>
+      <button class="filter-btn" data-filter="has-bio"><span class="zh">有简介</span><span class="en">With Bio</span></button>
+      <button class="filter-btn" data-filter="no-bio"><span class="zh">无简介</span><span class="en">No Bio</span></button>
     </div>
 
     <div class="action-bar">
@@ -481,7 +547,7 @@
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-        导出 JSON
+        <span class="zh">导出 JSON</span><span class="en">Export JSON</span>
       </button>
     </div>
 
@@ -490,17 +556,17 @@
     </div>
 
     <footer>
-      <p>由粉丝创建，为粉丝服务。</p>
+      <p><span class="zh">由粉丝创建，为粉丝服务。</span><span class="en">Created by fans, for fans.</span></p>
       <p class="repo-link">
         <a href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/tree/main" target="_blank">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="vertical-align: middle; margin-right: 6px;"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-          GitHub 仓库
+          <span class="zh">GitHub 仓库</span><span class="en">GitHub Repository</span>
         </a>
       </p>
     </footer>
   </div>
 
-  <button class="back-top" id="back-top" title="返回顶部">
+  <button class="back-top" id="back-top" data-title-zh="返回顶部" data-title-en="Back to top" title="返回顶部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
@@ -566,12 +632,12 @@
               <div class="handle">${username}</div>
             </div>
           </div>
-          ${user.bio ? `<p class="bio">${user.bio}</p>` : '<p class="bio" style="font-style: italic; opacity: 0.6;">暂无简介</p>'}
+          ${user.bio ? `<p class="bio">${user.bio}</p>` : '<p class="bio" style="font-style: italic; opacity: 0.6;"><span class="zh">暂无简介</span><span class="en">No bio</span></p>'}
           <a href="${user.profile}" target="_blank" class="profile-link">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
               <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
-            访问主页
+            <span class="zh">访问主页</span><span class="en">Visit Profile</span>
           </a>
         </div>
       `;
@@ -639,7 +705,7 @@
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <p>没有找到匹配的用户</p>
+            <p><span class="zh">没有找到匹配的用户</span><span class="en">No matching users found</span></p>
           </div>
         `;
         resultCountEl.innerHTML = '';
@@ -648,10 +714,13 @@
 
       let resultText = '';
       if (searchTerm || currentFilter !== 'all') {
-        resultText = `找到 ${filtered.length} 个结果`;
+        const isEn = document.body.classList.contains('lang-en');
+        resultText = isEn ? `Found ${filtered.length} results` : `找到 ${filtered.length} 个结果`;
       }
       if (deletedCount > 0) {
-        resultText += (resultText ? ' · ' : '') + `<span class="deleted-count">已删除 ${deletedCount} 个</span>`;
+        const isEn = document.body.classList.contains('lang-en');
+        const deletedText = isEn ? `Deleted ${deletedCount}` : `已删除 ${deletedCount} 个`;
+        resultText += (resultText ? ' · ' : '') + `<span class="deleted-count">${deletedText}</span>`;
       }
       resultCountEl.innerHTML = resultText;
 
@@ -693,6 +762,32 @@
 
     // 导出按钮
     exportBtn?.addEventListener('click', exportJSON);
+
+    // 语言切换
+    const langSwitch = document.getElementById('lang-switch');
+    let currentLang = localStorage.getItem('lang') || 'zh';
+    
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('lang', lang);
+      if (lang === 'en') {
+        document.body.classList.add('lang-en');
+        searchInput.placeholder = searchInput.dataset.placeholderEn;
+        backTopBtn.title = backTopBtn.dataset.titleEn;
+      } else {
+        document.body.classList.remove('lang-en');
+        searchInput.placeholder = searchInput.dataset.placeholderZh;
+        backTopBtn.title = backTopBtn.dataset.titleZh;
+      }
+      render(); // 重新渲染以更新动态文本
+    }
+    
+    langSwitch.addEventListener('click', () => {
+      setLang(currentLang === 'zh' ? 'en' : 'zh');
+    });
+    
+    // 初始化语言
+    setLang(currentLang);
 
     // 初始渲染
     render();
