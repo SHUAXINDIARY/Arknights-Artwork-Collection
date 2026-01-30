@@ -3,6 +3,8 @@
 
 **Website / 网站：** https://arknights.afilmory.art/
 
+**The Repo Site / 该库网站：** https://arknights-artwork-collection.pages.dev/
+
 ---
 
 ## Overview | 项目简介
