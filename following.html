@@ -621,6 +621,12 @@
                 <button class="filter-btn active" data-filter="all">
                     <span class="zh">全部</span><span class="en">All</span>
                 </button>
+                <button class="filter-btn" data-filter="twitter">
+                    <span class="zh">Twitter</span><span class="en">Twitter</span>
+                </button>
+                <button class="filter-btn" data-filter="weibo">
+                    <span class="zh">微博</span><span class="en">Weibo</span>
+                </button>
                 <button class="filter-btn" data-filter="has-bio">
                     <span class="zh">有简介</span
                     ><span class="en">With Bio</span>
@@ -904,7 +910,15 @@
                 }
 
                 // 应用过滤器
-                if (currentFilter === "has-bio") {
+                if (currentFilter === "twitter") {
+                    filtered = filtered.filter(
+                        (user) => user.type === "twitter"
+                    );
+                } else if (currentFilter === "weibo") {
+                    filtered = filtered.filter(
+                        (user) => user.type === "wiebo"
+                    );
+                } else if (currentFilter === "has-bio") {
                     filtered = filtered.filter(
                         (user) => user.bio && user.bio.trim() !== ""
                     );
