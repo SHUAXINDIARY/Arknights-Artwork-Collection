@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "_SYAGAMU",
+    "avatar": "https://pbs.twimg.com/profile_images/1804744964011876352/YMx98NP8_400x400.jpg",
+    "profile": "https://x.com/_SYAGAMU",
+    "bio": "シャガム・illustrator・Character designer"
+  },
+  {
     "nickname": "serina",
     "avatar": "https://pbs.twimg.com/profile_images/1890057368530276352/LahsPOH__normal.jpg",
     "profile": "https://x.com/serina5115",
