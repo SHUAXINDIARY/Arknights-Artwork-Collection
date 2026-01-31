@@ -3,7 +3,7 @@
 
 **Website / 网站：** https://arknights.afilmory.art/
 
-**The Repo Site / 该库网站：** arknightsartwork.shuaxinjs.cn
+**The Repo Site / 该库网站：** https://arknightsartwork.shuaxinjs.cn
 
 ---
 
