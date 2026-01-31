@@ -180,12 +180,6 @@ const following = [
     "bio": "hi I am fuyu and I draw anything | illustrator | hoyo&"
   },
   {
-    "nickname": "AIGCLINK",
-    "avatar": "https://pbs.twimg.com/profile_images/1729450995850027008/gllXr6bh_normal.jpg",
-    "profile": "https://x.com/aigclink",
-    "bio": "致力于让每个想拥抱AI的人都能找到适合自己的AI产品，助力企业定制AIGC应用"
-  },
-  {
     "nickname": "Toriki",
     "avatar": "https://pbs.twimg.com/profile_images/1430360310385287176/oA2SI7FC_normal.jpg",
     "profile": "https://x.com/Toriki63695671",
@@ -348,28 +342,10 @@ const following = [
     "bio": "Building"
   },
   {
-    "nickname": "Jeff Mihaly",
-    "avatar": "https://pbs.twimg.com/profile_images/1757136325126541313/eHWVQXcA_normal.jpg",
-    "profile": "https://x.com/jeffmihaly",
-    "bio": "Colorist, cinematographer, and composer crafting stories through photography and sound."
-  },
-  {
-    "nickname": "Yeuoly",
-    "avatar": "https://pbs.twimg.com/profile_images/1248115335313555457/6pXp8yKs_normal.jpg",
-    "profile": "https://x.com/Yeuoly1",
-    "bio": "@dify_ai"
-  },
-  {
     "nickname": "トト",
     "avatar": "https://pbs.twimg.com/profile_images/1519729618353553408/2BpjOpQH_normal.jpg",
     "profile": "https://x.com/Caaaaarrot_2525",
     "bio": "Illustrator"
-  },
-  {
-    "nickname": "鳴川 牛衛門",
-    "avatar": "https://pbs.twimg.com/profile_images/1830095690300866560/d7jzKOu7_normal.jpg",
-    "profile": "https://x.com/narukawausiemon",
-    "bio": "main"
   },
   {
     "nickname": "手島nari",
@@ -384,12 +360,6 @@ const following = [
     "bio": "Illustrator | EN/中文 |"
   },
   {
-    "nickname": "w百合欧皇子w",
-    "avatar": "https://pbs.twimg.com/profile_images/1688812421887229952/O0BxXlR5_normal.jpg",
-    "profile": "https://x.com/Lilium725",
-    "bio": "中国コスプレイヤー w百合欧皇子w オフィシャル。Weibo:"
-  },
-  {
     "nickname": "みぞれのオーボエ",
     "avatar": "https://pbs.twimg.com/profile_images/2015994024910569472/KfsYKjCw_normal.jpg",
     "profile": "https://x.com/32_aug",
@@ -402,18 +372,6 @@ const following = [
     "bio": "シュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウシュウアイコン➝"
   },
   {
-    "nickname": "哈儿",
-    "avatar": "https://pbs.twimg.com/profile_images/1705812968599064576/Nw2UyJ4j_normal.jpg",
-    "profile": "https://x.com/X_iaoHaaaaa",
-    "bio": "photographer"
-  },
-  {
-    "nickname": "Alex Kittoe",
-    "avatar": "https://pbs.twimg.com/profile_images/1557373396270272514/kaxgNmao_normal.jpg",
-    "profile": "https://x.com/AlexKittoe",
-    "bio": "Award losing photographer |"
-  },
-  {
     "nickname": "motoki endo",
     "avatar": "https://pbs.twimg.com/profile_images/1913453445295861760/WOeQNZ1R_normal.jpg",
     "profile": "https://x.com/motoki_8strings",
@@ -424,18 +382,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1522925942531796992/0ZHshby__normal.jpg",
     "profile": "https://x.com/Recineta0211",
     "bio": "Recineta/塔/阿清｜ 中文｜English｜Zelink only｜感谢喜欢"
-  },
-  {
-    "nickname": "Cult.Repo",
-    "avatar": "https://pbs.twimg.com/profile_images/1907347396180213760/6XtQPubP_normal.png",
-    "profile": "https://x.com/CultRepo",
-    "bio": "Creators of OSS Origin Stories | Our mission—to document the complete history of every major open source language ever created. Subscribe on YouTube"
-  },
-  {
-    "nickname": "Olli Sorjonen",
-    "avatar": "https://pbs.twimg.com/profile_images/2810675844/9e5b023cfe825ebce005d9a2d87ab82a_normal.jpeg",
-    "profile": "https://x.com/Olmirad",
-    "bio": "Hi! I'm a (tech) artist / Unity developer. I tweet mainly my gfx, gamedev and AI coding things! Want to contact me? DMs open."
   },
   {
     "nickname": "oyuki",
@@ -504,18 +450,6 @@ const following = [
     "bio": "趣味はロードバイク、登山です。超貧脚ですが、CANYONのAeroad,Ultimateの2台持ちです"
   },
   {
-    "nickname": "Hazymoon",
-    "avatar": "https://pbs.twimg.com/profile_images/1977772486973648896/J83khoPE_normal.jpg",
-    "profile": "https://x.com/Ice_Hazymoon",
-    "bio": "现居"
-  },
-  {
-    "nickname": "ブレイズ",
-    "avatar": "https://pbs.twimg.com/profile_images/1984891659461804032/uH3B5g5V_normal.jpg",
-    "profile": "https://x.com/tiramisu_clair",
-    "bio": "plastic model ★ photo ★ Gothic ★ Original story"
-  },
-  {
     "nickname": "LonKi",
     "avatar": "https://pbs.twimg.com/profile_images/1869522748206419968/ZwPC6jT3_normal.jpg",
     "profile": "https://x.com/BaMorD1",
@@ -568,12 +502,6 @@ const following = [
     "avatar": "https://pbs.twimg.com/profile_images/1981851216368766976/lUO5N2XL_normal.jpg",
     "profile": "https://x.com/Songchuanli",
     "bio": "足フェチ"
-  },
-  {
-    "nickname": "@m",
-    "avatar": "https://pbs.twimg.com/profile_images/2003452922936590343/6-BeNT-v_normal.jpg",
-    "profile": "https://x.com/__bluemoon____",
-    "bio": ""
   },
   {
     "nickname": "Sparks",
