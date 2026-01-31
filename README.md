@@ -77,7 +77,7 @@ The site leverages Afilmory to quickly build and maintain a scalable illustratio
 https://home.shuaxinjs.cn/
 
 **Contact / 联系方式：**  
-shuaxin@qq.com
+shuaxinjs@qq.com
 
 This project is maintained by an independent developer and Arknights fan.  
 Feedback, copyright notices, and cooperation inquiries are welcome.
