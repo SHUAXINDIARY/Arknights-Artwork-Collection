@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "hidulme",
+    "avatar": "https://pbs.twimg.com/profile_images/1604771301511827456/QvpdtB9Y_400x400.jpg",
+    "profile": "https://x.com/hidulme",
+    "bio": "Illustrator . hidulme☆http://gmail.com (☆→@)(AI学習禁止×) Coloso→ 「視線誘導の極意」講座 http://bit.ly/4nLI5vE"
+  },
+  {
     "nickname": "_SYAGAMU",
     "avatar": "https://pbs.twimg.com/profile_images/1804744964011876352/YMx98NP8_400x400.jpg",
     "profile": "https://x.com/_SYAGAMU",
