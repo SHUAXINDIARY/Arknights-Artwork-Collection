@@ -50,7 +50,7 @@
         <link
             rel="icon"
             type="image/svg+xml"
-            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐦</text></svg>"
+            href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'></text></svg>"
         />
 
         <style>
@@ -588,7 +588,7 @@
                     <span class="en">中</span>
                 </button>
                 <h1>
-                    🐦 <span class="zh">画师 Following</span
+                    <span class="zh">画师 Following</span
                     ><span class="en">Artists Following</span>
                 </h1>
                 <p class="subtitle">
@@ -622,7 +622,8 @@
                     <span class="zh">全部</span><span class="en">All</span>
                 </button>
                 <button class="filter-btn" data-filter="twitter">
-                    <span class="zh">Twitter</span><span class="en">Twitter</span>
+                    <span class="zh">Twitter</span
+                    ><span class="en">Twitter</span>
                 </button>
                 <button class="filter-btn" data-filter="weibo">
                     <span class="zh">微博</span><span class="en">Weibo</span>
@@ -808,12 +809,13 @@
             function createCard(user) {
                 const username = getUsername(user.profile);
                 const hasAvatar = user.avatar && user.avatar.trim() !== "";
+                const fallbackLetter = user.type === "wiebo" ? "W" : "T";
 
                 // 根据图片加载能力决定是否显示头像
                 const avatarHtml =
                     hasAvatar && canLoadImages
-                        ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>T</div>'">`
-                        : `<div class="avatar-placeholder avatar-fallback">T</div>`;
+                        ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`
+                        : `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
 
                 const deleteBtnHtml = isLocal
                     ? `
@@ -833,7 +835,8 @@
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>`;
 
-                const cardClass = user.type === "wiebo" ? "card weibo-card" : "card";
+                const cardClass =
+                    user.type === "wiebo" ? "card weibo-card" : "card";
 
                 return `
               <div class="${cardClass}" data-profile="${user.profile}">
@@ -915,9 +918,7 @@
                         (user) => user.type === "twitter"
                     );
                 } else if (currentFilter === "weibo") {
-                    filtered = filtered.filter(
-                        (user) => user.type === "wiebo"
-                    );
+                    filtered = filtered.filter((user) => user.type === "wiebo");
                 } else if (currentFilter === "has-bio") {
                     filtered = filtered.filter(
                         (user) => user.bio && user.bio.trim() !== ""
