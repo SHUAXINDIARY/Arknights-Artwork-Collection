@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "fromtohae",
+    "avatar": "https://pbs.twimg.com/profile_images/1561360826229202944/DVE-eD8o_400x400.jpg",
+    "profile": "https://x.com/fromtohae",
+    "bio": "해로｜✉️ : fromtohae@gmail.com (웹툰, 커미션X)｜오디아 아카데미에서 강의 중📚"
+  },
+  {
     "nickname": "XIYAA291325",
     "avatar": "https://pbs.twimg.com/profile_images/1922574653702459392/GTBiDK_i_400x400.jpg",
     "profile": "https://x.com/XIYAA291325",
