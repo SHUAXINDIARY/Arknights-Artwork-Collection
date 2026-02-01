@@ -1,5 +1,17 @@
 const following = [
   {
+    "nickname": "XIYAA291325",
+    "avatar": "https://pbs.twimg.com/profile_images/1922574653702459392/GTBiDK_i_400x400.jpg",
+    "profile": "https://x.com/XIYAA291325",
+    "bio": "=西雅 🌸来自🇨🇳的画师！中文/日本語 🌸🚫ai！！！"
+  },
+  {
+    "nickname": "krone_anon0408",
+    "avatar": "https://pbs.twimg.com/profile_images/1832798097648635904/H8O4ZoBT_400x400.jpg",
+    "profile": "https://x.com/krone_anon0408",
+    "bio": "ai generation and retouching無断転載禁止 サブ＋避難用垢→ @sab_krone like&repost comment thanks!!"
+  },
+  {
     "nickname": "hidulme",
     "avatar": "https://pbs.twimg.com/profile_images/1604771301511827456/QvpdtB9Y_400x400.jpg",
     "profile": "https://x.com/hidulme",
