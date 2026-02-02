@@ -1,5 +1,23 @@
 const following = [
   {
+    "nickname": "多忙式ザンキ",
+    "avatar": "https://pbs.twimg.com/profile_images/1732360529384181760/uGkdtG8D_x96.jpg",
+    "profile": "https://x.com/zzzankizero/media",
+    "bio": "成人済み/絵置き場/FF16/FF14 Gaia/Bahamut 稀にSS/グラブル風パ推し/ジャンル雑多（基本グラブルFF14テイルズチェンソーマンetc）創作あり 色んなオッケー雑食向け/無断転載&AI加工生成利用禁止\n\nhttp://\nzzzankizero.bsky.social"
+  },
+  {
+    "nickname": "ARS",
+    "avatar": "https://pbs.twimg.com/profile_images/1732360529384181760/uGkdtG8D_x96.jpg",
+    "profile": "https://x.com/arsaries05",
+    "bio": "I draw gacha games art •  AI •  arsaries05@gmail.com • Email for comms\nbluesky: \nhttp://\nbsky.app/profile/arsari\nes05.bsky.social\n…\nbanner: \n@KoLario_"
+  },
+  {
+    "nickname": "Rangut || COMMISSION OPEN",
+    "avatar": "https://pbs.twimg.com/profile_images/1732360529384181760/uGkdtG8D_x96.jpg",
+    "profile": "https://x.com/Ran_gut",
+    "bio": "me draw, mh and ffxiv\n\ncommission open\n\nhttp://\nrangut.carrd.co\n\nhttp://\npixiv.net/users/15381396\n\nhttp://\nartstation.com/rangut\n\nhttp://\ntwitch.tv/rangut918"
+  },
+  {
     "nickname": "sayunara",
     "avatar": "https://pbs.twimg.com/profile_images/1732360529384181760/uGkdtG8D_x96.jpg",
     "profile": "https://x.com/sayu_76",
