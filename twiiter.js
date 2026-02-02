@@ -1,5 +1,47 @@
 const following = [
   {
+    "nickname": "yasshy(やっしー)＠AIART",
+    "avatar": "https://pbs.twimg.com/profile_images/1976283008954138626/Blon2T3K.jpg",
+    "profile": "https://x.com/AiartYasshy",
+    "bio": "#Aiart ＋加筆修正です。【無断転載禁止】 各リンク→\nhttps://\nprofu.link/u/yasshy \nXサブ垢→ \n@Aiartyasshy_R\n フォロバ、返信は術師さんのみ。"
+  },
+  {
+    "nickname": "TakeaLook",
+    "avatar": "https://pbs.twimg.com/profile_images/1514015375327129602/YK1yd8jX.jpg",
+    "profile": "https://x.com/takealooook9",
+    "bio": "Contact: takealooook9@gmail.com"
+  },
+  {
+    "nickname": "Purapi",
+    "avatar": "https://pbs.twimg.com/profile_images/2007918541006077952/WgUmKYZM.jpg",
+    "profile": "https://x.com/purapix",
+    "bio": "趣味でイラストを描いています。 Hobbyist Illustrator.  SFW (Soft NSFW) | 肌色多め | 閲覧注意  CN / JP / EN / ES"
+  },
+  {
+    "nickname": "Daily Cautus",
+    "avatar": "https://pbs.twimg.com/profile_images/1931910409700900864/H0eIgptY.jpg",
+    "profile": "https://x.com/dailycautus",
+    "bio": "Fan account of Arknights and AKE Cautus ₍ᐢ ̥ ̞ ̥ᐢ₎ • All art posted are either official or fanart by the admins • DM/tag for submissions • Manually ran"
+  },
+  {
+    "nickname": "Oishi_Okaze",
+    "avatar": "https://pbs.twimg.com/profile_images/2011690663377846272/f3oHBhus.jpg",
+    "profile": "https://x.com/Okaze_Oishi",
+    "bio": "Updating with many pictures every day sometimes animations!\nP@treon | \nhttps://\nx.gd/z3k3g\nPixiv | \nhttps://\nx.gd/AzQeu"
+  },
+  {
+    "nickname": "ᴢɪᴠ",
+    "avatar": "https://pbs.twimg.com/profile_images/1697196383705731072/gjJuWCnM.jpg",
+    "profile": "https://x.com/Zi_V_0",
+    "bio": "20↑ じゔ 雑多 skeb(版権×)▶︎【\nhttps://\nskeb.jp/@Zi_V_0】　原稿中につき低速"
+  },
+  {
+    "nickname": "ᴢɪᴠ",
+    "avatar": "https://pbs.twimg.com/profile_images/1697196383705731072/gjJuWCnM.jpg",
+    "profile": "https://x.com/Zi_V_0",
+    "bio": "20↑ じゔ 雑多 skeb(版権×)▶︎【\nhttps://\nskeb.jp/@Zi_V_0】　原稿中につき低速"
+  },
+  {
     "nickname": "多忙式ザンキ",
     "avatar": "https://pbs.twimg.com/profile_images/1930993003851849728/HBuZdEPy.jpg",
     "profile": "https://x.com/zzzankizero/media",
