@@ -144,6 +144,15 @@
                 display: flex;
                 gap: 10px;
                 flex-wrap: wrap;
+                align-items: center;
+            }
+
+            .filter-group {
+                display: flex;
+                gap: 6px;
+                padding: 4px;
+                background: #f0f3f5;
+                border-radius: 28px;
             }
 
             .search-input {
@@ -543,8 +552,14 @@
                     flex-direction: column;
                 }
 
+                .filter-group {
+                    width: 100%;
+                    justify-content: center;
+                }
+
                 .filter-btn {
                     text-align: center;
+                    flex: 1;
                 }
 
                 .back-top {
@@ -615,23 +630,27 @@
                     data-placeholder-en="Search nickname or bio..."
                     placeholder="搜索昵称或简介..."
                 />
-                <button class="filter-btn active" data-filter="all">
-                    <span class="zh">全部</span><span class="en">All</span>
-                </button>
-                <button class="filter-btn" data-filter="twitter">
-                    <span class="zh">Twitter</span
-                    ><span class="en">Twitter</span>
-                </button>
-                <button class="filter-btn" data-filter="weibo">
-                    <span class="zh">微博</span><span class="en">Weibo</span>
-                </button>
-                <button class="filter-btn" data-filter="has-bio">
-                    <span class="zh">有简介</span
-                    ><span class="en">With Bio</span>
-                </button>
-                <button class="filter-btn" data-filter="no-bio">
-                    <span class="zh">无简介</span><span class="en">No Bio</span>
-                </button>
+                <div class="filter-group" data-group="platform">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="zh">全部</span><span class="en">All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="twitter">
+                        <span class="zh">Twitter</span
+                        ><span class="en">Twitter</span>
+                    </button>
+                    <button class="filter-btn" data-filter="weibo">
+                        <span class="zh">微博</span><span class="en">Weibo</span>
+                    </button>
+                </div>
+                <div class="filter-group" data-group="bio">
+                    <button class="filter-btn" data-filter="has-bio">
+                        <span class="zh">有简介</span
+                        ><span class="en">With Bio</span>
+                    </button>
+                    <button class="filter-btn" data-filter="no-bio">
+                        <span class="zh">无简介</span><span class="en">No Bio</span>
+                    </button>
+                </div>
             </div>
 
             <div class="action-bar">
@@ -729,7 +748,10 @@
             const backTopBtn = document.getElementById("back-top");
             const exportBtn = document.getElementById("export-btn");
 
-            let currentFilter = "all";
+            let filters = {
+                platform: "all",  // all, twitter, weibo
+                bio: null         // null, has-bio, no-bio
+            };
             let searchTerm = "";
             let currentData = [
                 ...following.map((item) => {
@@ -909,18 +931,21 @@
                     );
                 }
 
-                // 应用过滤器
-                if (currentFilter === "twitter") {
+                // 应用平台过滤器
+                if (filters.platform === "twitter") {
                     filtered = filtered.filter(
                         (user) => user.type === "twitter"
                     );
-                } else if (currentFilter === "weibo") {
+                } else if (filters.platform === "weibo") {
                     filtered = filtered.filter((user) => user.type === "wiebo");
-                } else if (currentFilter === "has-bio") {
+                }
+
+                // 应用简介过滤器
+                if (filters.bio === "has-bio") {
                     filtered = filtered.filter(
                         (user) => user.bio && user.bio.trim() !== ""
                     );
-                } else if (currentFilter === "no-bio") {
+                } else if (filters.bio === "no-bio") {
                     filtered = filtered.filter(
                         (user) => !user.bio || user.bio.trim() === ""
                     );
@@ -951,7 +976,7 @@
                 }
 
                 let resultText = "";
-                if (searchTerm || currentFilter !== "all") {
+                if (searchTerm || filters.platform !== "all" || filters.bio !== null) {
                     const isEn = document.body.classList.contains("lang-en");
                     resultText = isEn
                         ? `Found ${filtered.length} results`
@@ -984,9 +1009,26 @@
             // 过滤按钮
             filterBtns.forEach((btn) => {
                 btn.addEventListener("click", () => {
-                    filterBtns.forEach((b) => b.classList.remove("active"));
-                    btn.classList.add("active");
-                    currentFilter = btn.dataset.filter;
+                    const group = btn.closest(".filter-group");
+                    const groupType = group.dataset.group;
+                    const filterValue = btn.dataset.filter;
+
+                    if (groupType === "platform") {
+                        // 平台过滤：单选，必须选一个
+                        group.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+                        btn.classList.add("active");
+                        filters.platform = filterValue;
+                    } else if (groupType === "bio") {
+                        // 简介过滤：可切换（再次点击取消选中）
+                        if (btn.classList.contains("active")) {
+                            btn.classList.remove("active");
+                            filters.bio = null;
+                        } else {
+                            group.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+                            btn.classList.add("active");
+                            filters.bio = filterValue;
+                        }
+                    }
                     render();
                 });
             });
