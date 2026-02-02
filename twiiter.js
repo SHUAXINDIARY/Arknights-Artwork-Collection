@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "韓馬_ han Ma",
+    "avatar": "https://pbs.twimg.com/profile_images/1875053571626176512/U-r4UWFl.jpg",
+    "profile": "https://x.com/han_ma53",
+    "bio": "お絵かきマン。\ntwitter banner: \n@jysljwit\n\ntwitter profile: \n@littlewing5214"
+  },
+  {
     "nickname": "se",
     "avatar": "https://pbs.twimg.com/profile_images/1149333030818811904/OeCXx-sQ.jpg",
     "profile": "https://x.com/se_5eeeee",
