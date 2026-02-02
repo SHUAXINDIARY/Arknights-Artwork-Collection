@@ -1,4 +1,13 @@
 (async () => {
+  // 验证是否在微博用户主页
+  const urlPattern = /^https:\/\/weibo\.com\/u\/\d+\/?$/;
+  if (!urlPattern.test(location.href.split('?')[0])) {
+    return { 
+      success: false, 
+      error: '请在微博用户主页执行此操作（如 https://weibo.com/u/123456）' 
+    };
+  }
+
   const result = {
     nickname: '',
     avatar: '',
