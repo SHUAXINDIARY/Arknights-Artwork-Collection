@@ -36,12 +36,6 @@ const following = [
     "bio": "20↑ じゔ 雑多 skeb(版権×)▶︎【\nhttps://\nskeb.jp/@Zi_V_0】　原稿中につき低速"
   },
   {
-    "nickname": "ᴢɪᴠ",
-    "avatar": "https://pbs.twimg.com/profile_images/1697196383705731072/gjJuWCnM.jpg",
-    "profile": "https://x.com/Zi_V_0",
-    "bio": "20↑ じゔ 雑多 skeb(版権×)▶︎【\nhttps://\nskeb.jp/@Zi_V_0】　原稿中につき低速"
-  },
-  {
     "nickname": "多忙式ザンキ",
     "avatar": "https://pbs.twimg.com/profile_images/1930993003851849728/HBuZdEPy.jpg",
     "profile": "https://x.com/zzzankizero/media",
