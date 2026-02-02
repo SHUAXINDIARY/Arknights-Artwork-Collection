@@ -29,7 +29,16 @@
     console.log("📦 当前已抓取 " + result.length + " 条");
   }
 
+  let stopped = false;
+
   while (true) {
+    // 检查是否被手动停止
+    if (window.__STOP_CRAWL__) {
+      console.log("⏸️ 用户手动停止");
+      stopped = true;
+      break;
+    }
+
     collectOnce();
 
     window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
@@ -55,5 +64,5 @@
   
   const json = JSON.stringify(result, null, 2);
   
-  return { success: true, count: result.length, json };
+  return { success: true, count: result.length, json, stopped };
 })();

@@ -48,7 +48,16 @@
 
   console.log("[X抓取] 开始自动滚动抓取...");
 
+  let stopped = false;
+
   while (true) {
+    // 检查是否被手动停止
+    if (window.__STOP_CRAWL__) {
+      console.log("[X抓取] 用户手动停止");
+      stopped = true;
+      break;
+    }
+
     collectOnce();
 
     if (results.length === lastCount) {
@@ -73,5 +82,5 @@
   
   const json = JSON.stringify(results, null, 2);
   
-  return { success: true, count: results.length, json };
+  return { success: true, count: results.length, json, stopped };
 })();
