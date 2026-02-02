@@ -1,4 +1,4 @@
-// 推特
+// 推特列表
 (async () => {
     const results = [];
     const seen = new Set();
@@ -89,8 +89,43 @@
     return results;
 })();
 
-// 微博
+// 推特单个
+(() => {
+    const result = {
+        nickname: '',
+        avatar: '',
+        profile: location.origin + location.pathname,
+        bio: ''
+    };
 
+    /** 1. 昵称（显示名） */
+    const nameEl = document.querySelector('[data-testid="UserName"] span span');
+    if (nameEl) {
+        result.nickname = nameEl.innerText.trim();
+    }
+
+    /** 2. 头像 */
+    const avatarImg =
+        document.querySelector('[data-testid^="UserAvatar-Container"] img') ||
+        document.querySelector('img[src*="profile_images"]');
+
+    if (avatarImg) {
+        // 去掉 _normal，拿高清图
+        result.avatar = avatarImg.src.replace('_normal', '');
+    }
+
+    /** 3. 简介（bio） */
+    const bioEl = document.querySelector('[data-testid="UserDescription"]');
+    if (bioEl) {
+        result.bio = bioEl.innerText.trim();
+    }
+
+    console.log(result);
+    return result;
+})();
+
+
+// 微博
 (() => {
     const result = [];
     const seen = new Set();
@@ -166,4 +201,47 @@
             console.log(result);
         }
     }, INTERVAL);
+})();
+
+
+// 微博单个
+(() => {
+    const result = {
+        nickname: '',
+        avatar: '',
+        profile: location.href,
+        bio: ''
+    };
+
+    /** 1. 昵称 */
+    const nameEl = document.querySelector('._name_1yc79_291');
+    if (nameEl) {
+        result.nickname = nameEl.innerText.trim();
+    }
+
+    /** 2. 头像 */
+    const avatarImg = document.querySelector('.woo-avatar-img');
+    if (avatarImg) {
+        // 微博头像一般 src 就是最终图
+        result.avatar = avatarImg.src;
+    }
+
+    /** 3. 个人主页链接（标准化） */
+    const uidMatch = location.href.match(/\/u\/(\d+)/);
+    if (uidMatch) {
+        result.profile = `https://weibo.com/u/${uidMatch[1]}`;
+    }
+
+    /** 4. 简介（新版微博可能没有） */
+    // 尝试常见的简介区域（部分账号存在）
+    const bioEl =
+        document.querySelector('[class*="ProfileHeader_desc"]') ||
+        document.querySelector('[class*="desc"]');
+
+    if (bioEl) {
+        result.bio = bioEl.innerText.trim();
+    }
+
+    console.log(result);
+    return result;
 })();

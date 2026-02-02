@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "sayunara",
+    "avatar": "https://pbs.twimg.com/profile_images/1732360529384181760/uGkdtG8D_x96.jpg",
+    "profile": "https://x.com/sayu_76",
+    "bio": "最近忙しい。リクエスト：\nhttps://\nvgen.co/sayu_76 お仕事：sayunara.4510@outlook.com"
+  },
+  {
     "nickname": "fromtohae",
     "avatar": "https://pbs.twimg.com/profile_images/1561360826229202944/DVE-eD8o_400x400.jpg",
     "profile": "https://x.com/fromtohae",
