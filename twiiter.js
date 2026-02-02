@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "se",
+    "avatar": "https://pbs.twimg.com/profile_images/1149333030818811904/OeCXx-sQ.jpg",
+    "profile": "https://x.com/se_5eeeee",
+    "bio": "|中国人 |中/Eng"
+  },
+  {
     "nickname": "yasshy(やっしー)＠AIART",
     "avatar": "https://pbs.twimg.com/profile_images/1976283008954138626/Blon2T3K.jpg",
     "profile": "https://x.com/AiartYasshy",
