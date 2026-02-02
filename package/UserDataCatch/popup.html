@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data Catch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 280px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 16px;
+      text-align: center;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .section {
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn-twitter {
+      background: #1da1f2;
+      color: #fff;
+    }
+
+    .btn-twitter:hover {
+      background: #0d8ecf;
+    }
+
+    .btn-weibo {
+      background: #e6162d;
+      color: #fff;
+    }
+
+    .btn-weibo:hover {
+      background: #c71226;
+    }
+
+    .btn-icon {
+      font-size: 16px;
+    }
+
+    .status {
+      margin-top: 12px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      display: none;
+    }
+
+    .status.show {
+      display: block;
+    }
+
+    .status.success {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .status.error {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    .status.info {
+      background: #e3f2fd;
+      color: #1565c0;
+    }
+
+    .tip {
+      font-size: 11px;
+      color: #999;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    .result-section {
+      display: none;
+      margin-top: 16px;
+      border-top: 1px solid #e0e0e0;
+      padding-top: 12px;
+    }
+
+    .result-section.show {
+      display: block;
+    }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .result-title {
+      font-size: 12px;
+      color: #666;
+      font-weight: 500;
+    }
+
+    .btn-copy {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #4caf50;
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .btn-copy:hover {
+      background: #43a047;
+    }
+
+    .btn-copy:active {
+      transform: scale(0.98);
+    }
+
+    .btn-copy.copied {
+      background: #2e7d32;
+    }
+
+    .result-content {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 8px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .result-content pre {
+      font-size: 11px;
+      font-family: 'Monaco', 'Menlo', monospace;
+      white-space: pre-wrap;
+      word-break: break-all;
+      margin: 0;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 User Data Catch</h1>
+
+  <div class="section">
+    <div class="section-title">Twitter / X</div>
+    <div class="btn-group">
+      <button class="btn btn-twitter" id="twitter-list">
+        <span class="btn-icon">📋</span>
+        抓取关注列表
+      </button>
+      <button class="btn btn-twitter" id="twitter-single">
+        <span class="btn-icon">👤</span>
+        抓取当前用户
+      </button>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">微博</div>
+    <div class="btn-group">
+      <button class="btn btn-weibo" id="weibo-list">
+        <span class="btn-icon">📋</span>
+        抓取关注列表
+      </button>
+      <button class="btn btn-weibo" id="weibo-single">
+        <span class="btn-icon">👤</span>
+        抓取当前用户
+      </button>
+    </div>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <div class="result-section" id="result-section">
+    <div class="result-header">
+      <span class="result-title">抓取结果</span>
+      <button class="btn-copy" id="btn-copy">
+        📋 复制数据
+      </button>
+    </div>
+    <div class="result-content">
+      <pre id="result-json"></pre>
+    </div>
+  </div>
+
+  <p class="tip">点击复制按钮将数据复制到剪贴板</p>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "User Data Catch",
+  "version": "1.0.0",
+  "description": "抓取 Twitter/微博 用户数据",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*",
+    "https://weibo.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["scripts/*.js"],
+      "matches": ["https://x.com/*", "https://twitter.com/*", "https://weibo.com/*"]
+    }
+  ]
+}
