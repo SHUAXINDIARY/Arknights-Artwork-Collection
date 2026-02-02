@@ -104,14 +104,20 @@
         result.nickname = nameEl.innerText.trim();
     }
 
-    /** 2. 头像 */
-    const avatarImg =
-        document.querySelector('[data-testid^="UserAvatar-Container"] img') ||
-        document.querySelector('img[src*="profile_images"]');
+    /** 2. 头像（终极稳定方案）
+     * 规则：
+     * - img[alt="打开个人资料照片"]
+     * - src 包含 pbs.twimg.com/profile_images
+     */
+    const avatarImg = document.querySelector(
+        'img[alt="打开个人资料照片"][src*="pbs.twimg.com/profile_images"]'
+    );
 
     if (avatarImg) {
-        // 去掉 _normal，拿高清图
-        result.avatar = avatarImg.src.replace('_normal', '');
+        result.avatar = avatarImg.src.replace(
+            /_(normal|200x200|400x400)/,
+            ''
+        );
     }
 
     /** 3. 简介（bio） */
@@ -123,6 +129,7 @@
     console.log(result);
     return result;
 })();
+
 
 
 // 微博
