@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "ARS",
+    "avatar": "https://pbs.twimg.com/profile_images/2018339928279863296/Fz6UpEZc.jpg",
+    "profile": "https://x.com/arsaries05",
+    "bio": "no AI •  arsaries05@gmail.com • Email for comms\nbluesky: \nhttp://\nbsky.app/profile/arsari\nes05.bsky.social\n…\nbanner: \n@KoLario_"
+  },
+  {
     "nickname": "韓馬_ han Ma",
     "avatar": "https://pbs.twimg.com/profile_images/1875053571626176512/U-r4UWFl.jpg",
     "profile": "https://x.com/han_ma53",
