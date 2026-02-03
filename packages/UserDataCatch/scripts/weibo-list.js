@@ -1,4 +1,13 @@
 (async () => {
+  // 验证是否在微博关注列表页面
+  const urlPattern = /^https:\/\/weibo\.com\/u\/page\/follow\/\d+\/?$/;
+  if (!urlPattern.test(location.href.split('?')[0])) {
+    return { 
+      success: false, 
+      error: '请在微博关注列表页执行此操作（如 https://weibo.com/u/page/follow/123456）' 
+    };
+  }
+
   const result = [];
   const seen = new Set();
 
