@@ -1,0 +1,24 @@
+name: Update Last Commit Time
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  update-time:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update timestamp
+        run: bash .github/scripts/update-time.sh
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add following.html
+          git diff --staged --quiet || git commit -m "chore: update last commit time"
+          git push

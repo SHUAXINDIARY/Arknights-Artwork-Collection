@@ -618,6 +618,11 @@
                         <span class="zh">显示中</span
                         ><span class="en">Showing</span>
                     </div>
+                    <div class="stat-item" id="update-time-item" style="display: none;">
+                        <strong id="last-update-time">-</strong>
+                        <span class="zh">最近更新</span
+                        ><span class="en">Last Update</span>
+                    </div>
                 </div>
             </header>
 
@@ -735,6 +740,9 @@
             </svg>
         </button>
 
+        <script>
+            window.LAST_UPDATE_TIME = "";
+        </script>
         <script src="twiiter.js"></script>
         <script src="wiebo.js"></script>
 
@@ -1075,6 +1083,22 @@
             // 初始化语言
             setLang(currentLang);
 
+            // 显示最近更新时间
+            function displayUpdateTime() {
+                const updateTimeItem = document.getElementById("update-time-item");
+                const lastUpdateTimeEl = document.getElementById("last-update-time");
+                if (window.LAST_UPDATE_TIME && window.LAST_UPDATE_TIME.trim() !== "") {
+                    const date = new Date(window.LAST_UPDATE_TIME);
+                    const formatted = date.toLocaleDateString(currentLang === "en" ? "en-US" : "zh-CN", {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric"
+                    });
+                    lastUpdateTimeEl.textContent = formatted;
+                    updateTimeItem.style.display = "";
+                }
+            }
+
             // 初始化：先测试图片加载能力，再渲染
             (async function init() {
                 canLoadImages = await testImageLoading();
@@ -1082,6 +1106,7 @@
                     console.log("图片加载失败，使用兜底方案");
                 }
                 render();
+                displayUpdateTime();
             })();
         </script>
     </body>
