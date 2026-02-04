@@ -1,7 +1,7 @@
 # Arknights Illustration Archive  
 # 明日方舟插画档案馆
 
-**Website / 网站：** https://arknights.afilmory.art/
+**Website / 网站：** https://akgallery.shuaxinjs.cn
 
 **The Repo Site / 该库网站：** https://arknightsartwork.shuaxinjs.cn
 
