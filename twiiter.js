@@ -1,5 +1,29 @@
 const following = [
   {
+    "nickname": "原野香久山(Harano Kaguyama)",
+    "avatar": "https://pbs.twimg.com/profile_images/1442102050121080837/QuNfobq6.png",
+    "profile": "https://x.com/8rano",
+    "bio": "イラストを週に1枚くらいの頻度で投稿しています。\n\n創作以外のこと→(\n@USO800rano\n)\n\n東方project (Touhou project) /マウス絵\nたんぶら : \nhttp://\n8rano.tumblr.com\nBOOTH : \nhttps://\n800rano.booth.pm"
+  },
+  {
+    "nickname": "압둘리",
+    "avatar": "https://pbs.twimg.com/profile_images/1970081962825240576/fBbaiSOV.jpg",
+    "profile": "https://x.com/Abdooly111",
+    "bio": "mail : abdoolyddochi@gmail.com / 𝗔𝗯𝗱𝗼𝗼𝗹𝘆 / アブドゥーリー / No AI training or usage."
+  },
+  {
+    "nickname": "수줍 Sjoop / 콜로소 오픈",
+    "avatar": "",
+    "profile": "https://x.com/shycocoa",
+    "bio": "PROPIC academy | codusee@gmail.com | 26년도 외주 안받습니다."
+  },
+  {
+    "nickname": "九三奶糖",
+    "avatar": "https://pbs.twimg.com/profile_images/1262699820285755393/qdnJA1Pb.jpg",
+    "profile": "https://x.com/JiuS_Toffee",
+    "bio": "weibo：\nhttp://\nweibo.com/u/1770762571  \nE-mail：948963473@qq.com"
+  },
+  {
     "nickname": "ARS",
     "avatar": "https://pbs.twimg.com/profile_images/2018339928279863296/Fz6UpEZc.jpg",
     "profile": "https://x.com/arsaries05",
