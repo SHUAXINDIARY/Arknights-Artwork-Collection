@@ -1,5 +1,17 @@
 const following = [
   {
+    "nickname": "桑染茶",
+    "avatar": "https://pbs.twimg.com/profile_images/1930223338930221059/b1lxzS6p.jpg",
+    "profile": "https://x.com/Opricheri",
+    "bio": "絵と音楽と百合が好き | ジャンル雑多 | Pixiv: \nhttp://\npixiv.net/users/100110795"
+  },
+  {
+    "nickname": "dusk冥",
+    "avatar": "https://pbs.twimg.com/profile_images/1722104014618206208/SooFbd56.jpg",
+    "profile": "https://x.com/dusk51026470249",
+    "bio": "Thank you for your attention, I like drawing and I am trying to produce good works"
+  },
+  {
     "nickname": "原野香久山(Harano Kaguyama)",
     "avatar": "https://pbs.twimg.com/profile_images/1442102050121080837/QuNfobq6.png",
     "profile": "https://x.com/8rano",
