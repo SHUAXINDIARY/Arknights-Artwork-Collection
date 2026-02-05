@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arknights Illustration Archive | 明日方舟插画档案馆</title>
-  <link rel="icon" type="image/jpeg" href="./logo.jpeg">
-  <link rel="apple-touch-icon" href="./logo.jpeg">
+  <link rel="icon" type="image/jpeg" href="./assets/img/logo.jpeg">
+  <link rel="apple-touch-icon" href="./assets/img/logo.jpeg">
 
   <!-- SEO Meta Tags -->
   <meta name="description"
@@ -201,6 +201,38 @@
 
     .feature-item:hover {
       transform: translateY(-3px);
+    }
+
+    .project-card {
+      display: block;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 2px solid transparent;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      border-color: #3498db;
+      box-shadow: 0 4px 15px rgba(52, 152, 219, 0.2);
+    }
+
+    .project-card h3 {
+      font-size: 1rem;
+      color: #2c3e50;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+
+    .project-card .feature-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
     }
 
     .feature-icon {
@@ -429,7 +461,7 @@
 
   <div class="container">
     <header>
-      <img src="./logo.jpeg" alt="Arknights Illustration Archive Logo" class="site-logo">
+      <img src="./assets/img/logo.jpeg" alt="Arknights Illustration Archive Logo" class="site-logo">
       <h1>
         <span class="en hidden">Arknights Illustration Archive</span>
         <span class="zh">明日方舟插画档案馆</span>
@@ -606,6 +638,37 @@
             <img src="./assets/img/zmd.png" alt="ZMD" class="friend-img">
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>
+        <span class="en hidden">Related Projects</span>
+        <span class="zh">相关项目</span>
+      </h2>
+      <div class="feature-grid">
+        <a href="https://arknights.shuaxinjs.cn/" target="_blank" class="project-card">
+          <div class="feature-icon">🎮</div>
+          <h3>
+            <span class="en hidden">Arknights Career Generator</span>
+            <span class="zh">明日方舟生涯生成器</span>
+          </h3>
+          <p>
+            <span class="en hidden">Generate your Arknights career summary card.</span>
+            <span class="zh">生成你的明日方舟职业生涯卡片。</span>
+          </p>
+        </a>
+        <a href="https://arknightslive2d.shuaxinjs.cn/" target="_blank" class="project-card">
+          <div class="feature-icon">✨</div>
+          <h3>
+            <span class="en hidden">Arknights Live2D Viewer</span>
+            <span class="zh">明日方舟2D小人展示</span>
+          </h3>
+          <p>
+            <span class="en hidden">View and interact with Arknights Live2D character models.</span>
+            <span class="zh">在线查看和互动明日方舟角色 Live2D 模型。</span>
+          </p>
+        </a>
       </div>
     </section>
 
