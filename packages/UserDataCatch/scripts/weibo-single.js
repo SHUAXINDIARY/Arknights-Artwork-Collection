@@ -30,13 +30,13 @@
     result.profile = "https://weibo.com/u/" + uidMatch[1];
   }
 
-  const bioEl = document.querySelector('[class*="ProfileHeader_desc"]') || document.querySelector('[class*="desc"]');
+  const bioEl = document.querySelector('._con3_1yc79_224') || document.querySelector('[class*="_con3_"]') || document.querySelector('[class*="ProfileHeader_desc"]');
   if (bioEl) {
     result.bio = bioEl.innerText.trim();
   }
 
   // 请求远程关注列表数据，判断当前用户是否已被关注并展示到UI
-  const followingUrl = 'https://raw.githubusercontent.com/SHUAXINDIARY/Arknights-Artwork-Collection/refs/heads/main/wiebo.js';
+  const followingUrl = 'https://raw.githubusercontent.com/SHUAXINDIARY/Arknights-Artwork-Collection/refs/heads/main/weibo.js';
   try {
     const response = await fetch(followingUrl);
     const text = await response.text();
