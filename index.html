@@ -169,15 +169,6 @@
       flex-wrap: wrap;
     }
 
-    .following-link {
-      background: #1da1f2;
-      box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
-    }
-
-    .following-link:hover {
-      background: #0d8ecf;
-      box-shadow: 0 6px 20px rgba(29, 161, 242, 0.4);
-    }
 
     .section {
       background: #fff;
@@ -307,6 +298,106 @@
 
     .hidden {
       display: none;
+    }
+
+    .friend-section {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #ecf0f1;
+    }
+
+    .friend-section h3 {
+      font-size: 1rem;
+      color: #2c3e50;
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .friend-images {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .friend-img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    .friend-img:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+      cursor: pointer;
+    }
+
+    /* 图片全屏预览模态框 */
+    .img-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .img-modal.active {
+      display: flex;
+    }
+
+    .img-modal img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 8px;
+      animation: modalFadeIn 0.2s ease;
+    }
+
+    @keyframes modalFadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .img-modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.2);
+      border: none;
+      border-radius: 50%;
+      color: #fff;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .img-modal-close:hover {
+      background: rgba(255, 255, 255, 0.3);
     }
 
     @media (max-width: 600px) {
@@ -505,6 +596,16 @@
             copyright notices, and cooperation inquiries are welcome.</span>
           <span class="zh">本项目由独立开发者与明日方舟爱好者维护。欢迎反馈建议、版权相关联系与合作沟通。</span>
         </p>
+        <div class="friend-section">
+          <h3>
+            <span class="en hidden">Add as Friend</span>
+            <span class="zh">加个好友</span>
+          </h3>
+          <div class="friend-images">
+            <img src="./assets/img/arknights.png" alt="Arknights" class="friend-img">
+            <img src="./assets/img/zmd.png" alt="ZMD" class="friend-img">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -543,6 +644,12 @@
     </footer>
   </div>
 
+  <!-- 图片全屏预览模态框 -->
+  <div class="img-modal" id="img-modal">
+    <button class="img-modal-close" id="img-modal-close">&times;</button>
+    <img src="" alt="Preview" id="img-modal-preview">
+  </div>
+
   <script>
     const langBtns = document.querySelectorAll('.lang-btn');
     const enElements = document.querySelectorAll('.en');
@@ -577,6 +684,44 @@
     if (savedLang) {
       setLanguage(savedLang);
     }
+
+    // 图片全屏预览功能
+    const imgModal = document.getElementById('img-modal');
+    const imgModalPreview = document.getElementById('img-modal-preview');
+    const imgModalClose = document.getElementById('img-modal-close');
+    const friendImages = document.querySelectorAll('.friend-img');
+
+    function openImageModal(src) {
+      imgModalPreview.src = src;
+      imgModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeImageModal() {
+      imgModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    friendImages.forEach(img => {
+      img.addEventListener('click', () => {
+        openImageModal(img.src);
+      });
+    });
+
+    imgModalClose.addEventListener('click', closeImageModal);
+
+    imgModal.addEventListener('click', (e) => {
+      if (e.target === imgModal) {
+        closeImageModal();
+      }
+    });
+
+    // ESC 键关闭
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && imgModal.classList.contains('active')) {
+        closeImageModal();
+      }
+    });
   </script>
 </body>
 
