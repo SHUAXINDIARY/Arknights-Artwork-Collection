@@ -1,5 +1,59 @@
 const following = [
   {
+    "nickname": "D O T",
+    "avatar": "https://pbs.twimg.com/profile_images/2011748369006542850/Z30dFyKu.jpg",
+    "profile": "https://x.com/Dotdot_ee",
+    "bio": "NG : AI learning\nCM : \nhttps://\ncrepe.cm/@THEBESTRYTHM"
+  },
+  {
+    "nickname": "Tuda6",
+    "avatar": "https://pbs.twimg.com/profile_images/2018293899102724097/eWGCSV15.jpg",
+    "profile": "https://x.com/Tudasix",
+    "bio": "黒白一辺倒"
+  },
+  {
+    "nickname": "ゆうひどら",
+    "avatar": "https://pbs.twimg.com/profile_images/1336581137032888322/vGuQWKUj.jpg",
+    "profile": "https://x.com/Yu_Hydra0319",
+    "bio": "ひっそりとそんとき好きなの描いてる。新規お仕事停止中。\n自我(\n@Yu_Hydra_Impact\n)"
+  },
+  {
+    "nickname": "矢森のを",
+    "avatar": "https://pbs.twimg.com/profile_images/984381372683862016/1bplNtRU.jpg",
+    "profile": "https://x.com/yamori_no_o",
+    "bio": "絵を描くやもり。"
+  },
+  {
+    "nickname": "Noland",
+    "avatar": "https://pbs.twimg.com/profile_images/1626945374308163584/66RaRwzr.jpg",
+    "profile": "https://x.com/noland0707",
+    "bio": "=禾策｜20↑\nIllustrator｜中文/日本語/English\nE-mail:hecehece73@163.com/AI"
+  },
+  {
+    "nickname": "樟",
+    "avatar": "https://pbs.twimg.com/profile_images/1566477749685932033/fmATSJcI.jpg",
+    "profile": "https://x.com/4444_zhang",
+    "bio": "20+/中文/English/画自己喜欢的，堆图用，有时发发宠物"
+  },
+  {
+    "nickname": "m",
+    "avatar": "https://pbs.twimg.com/profile_images/2016923287549530112/RYZz8Rq5.jpg",
+    "profile": "https://x.com/mikoccccchan",
+    "bio": "ﾝｨｰたのしい▸\nhttps://\nlit.link/mmtN4s Skeb(OConly)▸\nhttps://\nskeb.jp/@mikoccccchan"
+  },
+  {
+    "nickname": "Komachan",
+    "avatar": "https://pbs.twimg.com/profile_images/1915176513059905536/K2nOevUi.jpg",
+    "profile": "https://x.com/KomachanAI",
+    "bio": "Pixiv: \nhttps://\npixiv.net/users/31874437\nAll of my works are AI-generated\n我喜翻二次元~"
+  },
+  {
+    "nickname": "Anfox",
+    "avatar": "https://pbs.twimg.com/profile_images/1737313888990052352/7aJsLSrq.jpg",
+    "profile": "https://x.com/an_anfox",
+    "bio": "Illustrator\npixivid：92795618  weibo：Anfox_\nProhibit unauthorized reproduction, printing, AI and secondary processing"
+  },
+  {
     "nickname": "桑染茶",
     "avatar": "https://pbs.twimg.com/profile_images/1930223338930221059/b1lxzS6p.jpg",
     "profile": "https://x.com/Opricheri",
