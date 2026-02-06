@@ -1,5 +1,17 @@
 const following = [
   {
+    "nickname": "ᔕATURN",
+    "avatar": "https://pbs.twimg.com/profile_images/2007153974764548097/IEg372hq.jpg",
+    "profile": "https://x.com/saturn_illus",
+    "bio": "EN/CN/JP/FR OK\n Not talented, but hardworking.  \n cmdrsaturn@gmail.com\n\nhttp://\nlinktr.ee/saturn_illus"
+  },
+  {
+    "nickname": "44C",
+    "avatar": "https://pbs.twimg.com/profile_images/1702267325951729664/YWyfRq3c.jpg",
+    "profile": "https://x.com/44c_isaac",
+    "bio": "Hello :D \npixiv: \nhttp://\npixiv.net/users/19063155 \nweibo:\nhttp://\nweibo.com/isaacyeh \ngmail:isaac0820566@gmail.com ,日本語,Eng"
+  },
+  {
     "nickname": "Aron",
     "avatar": "https://pbs.twimg.com/profile_images/1986362871970709504/6pnnM8fz.jpg",
     "profile": "https://x.com/ieatcars",
