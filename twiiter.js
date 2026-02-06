@@ -1,5 +1,29 @@
 const following = [
   {
+    "nickname": "Aron",
+    "avatar": "https://pbs.twimg.com/profile_images/1986362871970709504/6pnnM8fz.jpg",
+    "profile": "https://x.com/ieatcars",
+    "bio": "TM/PM/AK fan | Bestie: \n@NyxN_Nova"
+  },
+  {
+    "nickname": "Catatonic",
+    "avatar": "https://pbs.twimg.com/profile_images/1915362852300603392/IYPBrtY3.jpg",
+    "profile": "https://x.com/Catatonic_II",
+    "bio": "Do NOT use my work for AI related learning/etc"
+  },
+  {
+    "nickname": "Miaosu",
+    "avatar": "https://pbs.twimg.com/profile_images/1441851852446863360/GyikoXZp.jpg",
+    "profile": "https://x.com/Miaosu9",
+    "bio": "I draw the feelings.\n\nhttps://\npixiv.net/en/users/14796\n162\n…"
+  },
+  {
+    "nickname": "Sora096",
+    "avatar": "https://pbs.twimg.com/profile_images/1442131496886697991/W3FocEIg.jpg",
+    "profile": "https://x.com/sora00925",
+    "bio": "中国人，平时画些小男孩，喜欢画全指手套、紧身衣裤和帅气的运动装备~不会日语英语请见谅，账号用来发图看图，多发一些OC图。不接受委托佣金，不看私信请见谅~头图来自\n@batsusuke_x"
+  },
+  {
     "nickname": "D O T",
     "avatar": "https://pbs.twimg.com/profile_images/2011748369006542850/Z30dFyKu.jpg",
     "profile": "https://x.com/Dotdot_ee",
