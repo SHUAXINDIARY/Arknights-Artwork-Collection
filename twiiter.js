@@ -1,5 +1,35 @@
 const following = [
   {
+    "nickname": "アルミ箔_ALuminumFoil",
+    "avatar": "https://pbs.twimg.com/profile_images/1845537050751062016/iQWOuhbJ.jpg",
+    "profile": "https://x.com/al_uminum_foil",
+    "bio": "Arknights / Commissions/ Other Drawings｜English/中文/日本語｜wb: 存在感锡箔_｜lof: ek276｜Contact: yuyibing0209@gmail.com｜米画师: 存在感锡箔｜"
+  },
+  {
+    "nickname": "치세(",
+    "avatar": "https://pbs.twimg.com/profile_images/1997060658723278849/3lETMI0E.png",
+    "profile": "https://x.com/npie8242",
+    "bio": "@Chise_2119\n / \nhttps://\nposty.pe/l23bha"
+  },
+  {
+    "nickname": "马篌焼酒",
+    "avatar": "https://pbs.twimg.com/profile_images/1831959135358951424/pD-gXwjS.jpg",
+    "profile": "https://x.com/MaHOSHOJiu123",
+    "bio": ""
+  },
+  {
+    "nickname": "サイファー♜⃤ねこすい民",
+    "avatar": "https://pbs.twimg.com/profile_images/1877380380745199616/ci15a7HR.jpg",
+    "profile": "https://x.com/magallan8492",
+    "bio": "アークナイツのある日常\n一般ドクターです。マゼラン推し\n\nアークナイツメインの日常アカウントになります\nたまにアークナイツ以外も呟いたりする気ままに遊んでいるだけのアカウントになります\nアイコンはヘカトンさん（\n@hekaton6960\n）より\n\n＼まぜっ／\nねこすい民もやっております\n#猫咲あんじ"
+  },
+  {
+    "nickname": "てっく",
+    "avatar": "https://pbs.twimg.com/profile_images/1692591611258232836/31ZBfdW4.jpg",
+    "profile": "https://x.com/tecsan927",
+    "bio": "絵描いたりゲームしたり\nskeb \nhttps://\nskeb.jp/@Itecsan927"
+  },
+  {
     "nickname": "ᔕATURN",
     "avatar": "https://pbs.twimg.com/profile_images/2007153974764548097/IEg372hq.jpg",
     "profile": "https://x.com/saturn_illus",
