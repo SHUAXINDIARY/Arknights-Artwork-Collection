@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "叶山fair",
+    "avatar": "https://pbs.twimg.com/profile_images/1848681510951653379/fmoY0TKv.jpg",
+    "profile": "https://x.com/hayamafair",
+    "bio": "社团\n@axes_0423\n | Character design| vtuber commission only work with Iron Vertex|ai 合作:hayamafair@gmail.com | Please provide detailed requirements"
+  },
+  {
     "nickname": "アルミ箔_ALuminumFoil",
     "avatar": "https://pbs.twimg.com/profile_images/1845537050751062016/iQWOuhbJ.jpg",
     "profile": "https://x.com/al_uminum_foil",
