@@ -1,5 +1,17 @@
 const following = [
   {
+    "nickname": "띠띠넛",
+    "avatar": "https://pbs.twimg.com/profile_images/1418187048708546563/-K-dgjGo.jpg",
+    "profile": "https://x.com/ddiddinut",
+    "bio": "ddiddinut@gmail.com\n \nhttps://\nbsky.app/profile/ddiddi\nnut.bsky.social\n…"
+  },
+  {
+    "nickname": "冰宫Asylum",
+    "avatar": "https://pbs.twimg.com/profile_images/1947023863834906624/KHTw9DnX.jpg",
+    "profile": "https://x.com/BGAsylum",
+    "bio": "回归基本功"
+  },
+  {
     "nickname": "叶山fair",
     "avatar": "https://pbs.twimg.com/profile_images/1848681510951653379/fmoY0TKv.jpg",
     "profile": "https://x.com/hayamafair",
