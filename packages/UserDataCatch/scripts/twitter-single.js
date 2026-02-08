@@ -31,7 +31,7 @@
   }
 
   // 请求远程关注列表数据，判断当前用户是否已被关注并展示到UI
-  const followingUrl = 'https://raw.githubusercontent.com/SHUAXINDIARY/Arknights-Artwork-Collection/refs/heads/main/twiiter.js';
+  const followingUrl = 'https://raw.githubusercontent.com/SHUAXINDIARY/Arknights-Artwork-Collection/refs/heads/main/twitter.js';
   try {
     const response = await fetch(followingUrl);
     const text = await response.text();
