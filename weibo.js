@@ -1,5 +1,11 @@
 const weibo = [
     {
+        "nickname": "IRple2",
+        "avatar": "https://tvax2.sinaimg.cn/crop.0.0.1024.1024.180/dc7cca29ly8gih98ouvu9j20sg0sg77p.jpg?KID=imgbed,tva&Expires=1770526567&ssig=dcqfj5cuCi",
+        "profile": "https://weibo.com/u/3699165737",
+        "bio": "不常在，一周上线一次。有事情请联系:irple@qq.com"
+    },
+    {
         "nickname": "鹦鹉非法吃掉了小黑",
         "avatar": "https://tvax1.sinaimg.cn/crop.0.0.695.695.180/008sHUJ7ly8huo8la7w8jj30jb0jb755.jpg?KID=imgbed,tva&Expires=1770480226&ssig=xWQXSBE8N0",
         "profile": "https://weibo.com/u/7753266229",
