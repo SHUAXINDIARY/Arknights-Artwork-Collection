@@ -1,5 +1,17 @@
 const following = [
   {
+    "nickname": "강소",
+    "avatar": "https://pbs.twimg.com/profile_images/1984897145959501824/uBsaOWld.jpg",
+    "profile": "https://x.com/munosuke0852",
+    "bio": "Character concept artist/IllustratorAI \nEmail ▶︎ munosuke0852@gmail.com\nDO NOT REPOST MY ART"
+  },
+  {
+    "nickname": "MILKteaWegan/ODIA",
+    "avatar": "https://pbs.twimg.com/profile_images/1618172715684466688/xG_FRd6g.jpg",
+    "profile": "https://x.com/MilkteaWegan",
+    "bio": "일러레&오디아아케데미강사 입니다!\nMILKtea_Wegan@お仕事募集中외주문의\nmilkteawegan@gmail.com\n(日本語 /ENG/한국어/中文)Language\n\nhttps://\nlinktr.ee/MilkteaWegan\n\nAI学習禁止"
+  },
+  {
     "nickname": "띠띠넛",
     "avatar": "https://pbs.twimg.com/profile_images/1418187048708546563/-K-dgjGo.jpg",
     "profile": "https://x.com/ddiddinut",
