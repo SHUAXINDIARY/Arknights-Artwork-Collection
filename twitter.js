@@ -1,5 +1,47 @@
 const following = [
   {
+    "nickname": "ひすい",
+    "avatar": "https://pbs.twimg.com/profile_images/1966818385855234048/VBEfkAVh.jpg",
+    "profile": "https://x.com/ikinukeore",
+    "bio": "アークナイツ、ステラソラをメインに描いてます。 今まで描いた絵はハイライトにまとまっています。 Pixiv:\nhttp://\npixiv.net/users/31027379 Bluesky:\nhttp://\nbsky.app/profile/ikinuk\neore.bsky.social\n…"
+  },
+  {
+    "nickname": "MS0",
+    "avatar": "https://pbs.twimg.com/profile_images/1618066903788060673/tQCiKef5.jpg",
+    "profile": "https://x.com/0_0himawa",
+    "bio": "ALL"
+  },
+  {
+    "nickname": "天月-あまつき-",
+    "avatar": "https://pbs.twimg.com/profile_images/1609859661922197504/3LpeQ8iW.jpg",
+    "profile": "https://x.com/_amatsuki_",
+    "bio": "どこまでも届くように歌います。 / 声優「ホーリーピーク 」/ Streamer「CrazyRaccoon」/お仕事依頼はHPへ Youtube ( \nhttp://\nbit.ly/1FLfr2s ) info(\n@amatsuki_info\n) サブ垢(\n@_amachandayo_\n)イラストは #天月イラスト部 へ！"
+  },
+  {
+    "nickname": "春野",
+    "avatar": "https://pbs.twimg.com/profile_images/1920453326568607744/kV1PXZKe.jpg",
+    "profile": "https://x.com/xupxq_",
+    "bio": "Singer, Producer 2026〜"
+  },
+  {
+    "nickname": "十二獣Zodiac",
+    "avatar": "https://pbs.twimg.com/profile_images/2006850530828492800/MJEdVYw_.jpg",
+    "profile": "https://x.com/zobnuy",
+    "bio": "ENG/GER/中文 freelance and Mangaka\n\nhttps://\nvgen.co/zodiac\nMy Manga RE: united: \nhttps://\nnamicomi.com/en/title/fQNjp\nmyE/re-united\n…\nAI is so bad lmao"
+  },
+  {
+    "nickname": "十二獣Zodiac",
+    "avatar": "https://pbs.twimg.com/profile_images/2006850530828492800/MJEdVYw_.jpg",
+    "profile": "https://x.com/zobnuy",
+    "bio": "ENG/GER/中文 freelance and Mangaka\n\nhttps://\nvgen.co/zodiac\nMy Manga RE: united: \nhttps://\nnamicomi.com/en/title/fQNjp\nmyE/re-united\n…\nAI is so bad lmao"
+  },
+  {
+    "nickname": "개떡",
+    "avatar": "https://pbs.twimg.com/profile_images/1538972810944446464/Y2VKiMOC.jpg",
+    "profile": "https://x.com/Gae_tteok00",
+    "bio": "GAETTEOK | KOR | ENG \n ᴄᴏᴍᴍɪꜱꜱɪᴏɴꜱ\n ᴅᴏɴ'ᴛ ᴜꜱᴇ/ʀᴇᴘᴏꜱᴛ ᴍʏ ᴀʀᴛᴡᴏʀᴋ\n ᴀɪ"
+  },
+  {
     "nickname": "真姫子makiko",
     "avatar": "https://pbs.twimg.com/profile_images/2006661619091386368/zJZy8yhK.jpg",
     "profile": "https://x.com/thanatosm12",
