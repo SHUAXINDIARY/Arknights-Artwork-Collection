@@ -1,5 +1,17 @@
 const following = [
   {
+    "nickname": "真姫子makiko",
+    "avatar": "https://pbs.twimg.com/profile_images/2006661619091386368/zJZy8yhK.jpg",
+    "profile": "https://x.com/thanatosm12",
+    "bio": "20↑ ID/EN/日本語勉強中 \nI draw what i like \n\nPls credit me if you want to repost or using my art. NO AI TRAINING"
+  },
+  {
+    "nickname": "邪悪小鸭",
+    "avatar": "https://pbs.twimg.com/profile_images/1716367225417060352/pnnF9fVg.jpg",
+    "profile": "https://x.com/MrilSWeet",
+    "bio": "日本语が下手"
+  },
+  {
     "nickname": "강소",
     "avatar": "https://pbs.twimg.com/profile_images/1984897145959501824/uBsaOWld.jpg",
     "profile": "https://x.com/munosuke0852",
