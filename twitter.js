@@ -1,5 +1,23 @@
 const following = [
   {
+    "nickname": "RUKØ",
+    "avatar": "https://pbs.twimg.com/profile_images/1817958205210734592/9HSvQmqi.jpg",
+    "profile": "https://x.com/ruko_mata",
+    "bio": "Hello! Here is Ruko\nDraw & Play games\nCommissions are open: \nhttps://\nvgen.co/rukomata\n AI"
+  },
+  {
+    "nickname": "REVO",
+    "avatar": "https://pbs.twimg.com/profile_images/2020941697304363012/mBJhwZHt.jpg",
+    "profile": "https://x.com/RevoSky1991",
+    "bio": "artist\nno AI"
+  },
+  {
+    "nickname": "NAdir",
+    "avatar": "https://pbs.twimg.com/profile_images/1643318323839664133/Rxg9D-ja.jpg",
+    "profile": "https://x.com/NAdir_xcii",
+    "bio": "雑多｜二轉二改｜連絡先▶︎kk96inu@gmail.com"
+  },
+  {
     "nickname": "ひすい",
     "avatar": "https://pbs.twimg.com/profile_images/1966818385855234048/VBEfkAVh.jpg",
     "profile": "https://x.com/ikinukeore",
