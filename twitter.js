@@ -1,5 +1,11 @@
 const following = [
   {
+    "nickname": "Garasu",
+    "avatar": "https://pbs.twimg.com/profile_images/1986227604316430336/ohg46oEH.jpg",
+    "profile": "https://x.com/suiz233",
+    "bio": "○𓆡TT○上班无法摸鱼人\n\n喜欢美少女和音乐"
+  },
+  {
     "nickname": "七条",
     "avatar": "https://pbs.twimg.com/profile_images/1735682049087062016/tpQX8Lov.jpg",
     "profile": "https://x.com/kami_kuro8",
