@@ -1,5 +1,41 @@
 const following = [
   {
+    "nickname": "七条",
+    "avatar": "https://pbs.twimg.com/profile_images/1735682049087062016/tpQX8Lov.jpg",
+    "profile": "https://x.com/kami_kuro8",
+    "bio": "P@treon  \nhttps://\nx.gd/qM3de\nSDXL,HoYoverse,KURO GAMES"
+  },
+  {
+    "nickname": "村カルキ/画集発売中",
+    "avatar": "https://pbs.twimg.com/profile_images/1651634790142214144/ABfdfn_G.jpg",
+    "profile": "https://x.com/murakaruki",
+    "bio": "ninelive.所属（\nhttps://\nninelive.co.jp）\n創作/骨×白髪闇堕ち美少年用タグ  #境界ER\n境界ER用垢（\n@kyoukaiER\n）\n商業画集『我』/著書技法書/学マスMV/プロセカ\nご依頼についてはこちら\nhttp://\npotofu.me/murakaruki\nさらに表示から詳しい実績"
+  },
+  {
+    "nickname": "素晴",
+    "avatar": "https://pbs.twimg.com/profile_images/1803155142990069760/W3SX7UX4.jpg",
+    "profile": "https://x.com/motoharuuuu_",
+    "bio": "♜⃤ 垢/通知off"
+  },
+  {
+    "nickname": "nawtis✤",
+    "avatar": "https://pbs.twimg.com/profile_images/1850968942451572737/1dhwVsm_.jpg",
+    "profile": "https://x.com/navvvtis",
+    "bio": "Illustrator | Graphic Designer ✤ Mostly OC/A9/A9E fanart ✤ Work contact (EN/日本語): navvvtis@gmail.com AI NO repost without permission"
+  },
+  {
+    "nickname": "胰",
+    "avatar": "https://pbs.twimg.com/profile_images/2017241181735067648/TjGd3wQ7.jpg",
+    "profile": "https://x.com/monota02",
+    "bio": "杂食屯放摸鱼，委托和废话AI\nmonotaaaaa@gmail.com"
+  },
+  {
+    "nickname": "",
+    "avatar": "https://pbs.twimg.com/profile_images/1905233713652490240/UflcmyD1.jpg",
+    "profile": "https://x.com/colddddddd2",
+    "bio": "20，，左右固定，，中国语/English/日本語ok"
+  },
+  {
     "nickname": "RUKØ",
     "avatar": "https://pbs.twimg.com/profile_images/1817958205210734592/9HSvQmqi.jpg",
     "profile": "https://x.com/ruko_mata",
