@@ -1,0 +1,51 @@
+name: Sync Users Data
+
+on:
+  schedule:
+    # 每天早上6点执行（UTC时间，北京时间为14点；若需北京时间6点，则为UTC 22:00前一天）
+    # 这里设置为 UTC 22:00，即北京时间次日 06:00
+    - cron: '0 22 * * *'
+  workflow_dispatch: # 支持手动触发
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch users data
+        run: |
+          curl -s "https://akdb.nixideshuaxin.workers.dev/users" \
+            -H "Content-Type: application/json" \
+            -o response.json
+          
+          # 检查响应是否成功
+          if jq -e '.success == true' response.json > /dev/null 2>&1; then
+            echo "✅ API 请求成功"
+            # 提取 users 数组并格式化写入 data.json
+            jq '.data.users' response.json > data.json
+            echo "📊 获取到 $(jq 'length' data.json) 条用户数据"
+          else
+            echo "❌ API 请求失败"
+            cat response.json
+            exit 1
+          fi
+          
+          rm response.json
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # 检查是否有变更
+          if git diff --quiet data.json 2>/dev/null; then
+            echo "📝 数据无变化，跳过提交"
+          else
+            git add data.json
+            git commit -m "chore: sync users data $(date +'%Y-%m-%d %H:%M:%S')"
+            git push
+            echo "✅ 数据已更新并推送"
+          fi
