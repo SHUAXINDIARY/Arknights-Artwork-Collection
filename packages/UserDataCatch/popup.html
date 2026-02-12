@@ -169,6 +169,118 @@
       background: #2e7d32;
     }
 
+    .btn-upload {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      background: #ff9800;
+      color: #fff;
+      transition: all 0.2s;
+    }
+
+    .btn-upload:hover {
+      background: #f57c00;
+    }
+
+    .btn-upload:active {
+      transform: scale(0.98);
+    }
+
+    .btn-upload.uploading {
+      background: #666;
+      cursor: not-allowed;
+    }
+
+    .btn-upload.uploaded {
+      background: #2e7d32;
+    }
+
+    /* 模态框样式 */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      width: 90%;
+      max-width: 260px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .modal-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .modal-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 13px;
+      margin-bottom: 16px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .modal-input:focus {
+      border-color: #1da1f2;
+    }
+
+    .modal-buttons {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .modal-btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .modal-btn-cancel {
+      background: #f5f5f5;
+      color: #666;
+    }
+
+    .modal-btn-cancel:hover {
+      background: #e0e0e0;
+    }
+
+    .modal-btn-confirm {
+      background: #1da1f2;
+      color: #fff;
+    }
+
+    .modal-btn-confirm:hover {
+      background: #0d8ecf;
+    }
+
     .result-content {
       background: #fff;
       border: 1px solid #e0e0e0;
@@ -184,6 +296,102 @@
       white-space: pre-wrap;
       word-break: break-all;
       margin: 0;
+      color: #333;
+    }
+
+    /* 错误详情区域 */
+    .error-section {
+      display: none;
+      margin-top: 12px;
+      border-top: 1px solid #ffcdd2;
+      padding-top: 12px;
+    }
+
+    .error-section.show {
+      display: block;
+    }
+
+    .error-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .error-title {
+      font-size: 12px;
+      color: #c62828;
+      font-weight: 500;
+    }
+
+    .btn-clear-errors {
+      padding: 4px 8px;
+      border: none;
+      border-radius: 4px;
+      font-size: 11px;
+      cursor: pointer;
+      background: #ffebee;
+      color: #c62828;
+      transition: all 0.2s;
+    }
+
+    .btn-clear-errors:hover {
+      background: #ffcdd2;
+    }
+
+    .error-list {
+      background: #fff;
+      border: 1px solid #ffcdd2;
+      border-radius: 6px;
+      padding: 8px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .error-item {
+      font-size: 11px;
+      color: #c62828;
+      padding: 4px 0;
+      border-bottom: 1px solid #ffebee;
+      word-break: break-all;
+    }
+
+    .error-item:last-child {
+      border-bottom: none;
+    }
+
+    .error-item-name {
+      font-weight: 500;
+      color: #333;
+    }
+
+    .error-item-reason {
+      color: #c62828;
+      margin-left: 4px;
+    }
+
+    /* 设置区域 */
+    .settings-section {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+    }
+
+    .btn-clear-apikey {
+      padding: 6px 12px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 11px;
+      cursor: pointer;
+      background: #fff;
+      color: #666;
+      transition: all 0.2s;
+    }
+
+    .btn-clear-apikey:hover {
+      background: #f5f5f5;
+      border-color: #ccc;
       color: #333;
     }
   </style>
@@ -224,16 +432,48 @@
   <div class="result-section" id="result-section">
     <div class="result-header">
       <span class="result-title">抓取结果</span>
-      <button class="btn-copy" id="btn-copy">
-        📋 复制数据
-      </button>
+      <div style="display: flex; gap: 6px;">
+        <button class="btn-upload" id="btn-upload">
+          🚀 添加到数据库
+        </button>
+        <button class="btn-copy" id="btn-copy">
+          📋 复制数据
+        </button>
+      </div>
     </div>
     <div class="result-content">
       <pre id="result-json"></pre>
     </div>
   </div>
 
+  <!-- 错误详情区域 -->
+  <div class="error-section" id="error-section">
+    <div class="error-header">
+      <span class="error-title">❌ 失败详情</span>
+      <button class="btn-clear-errors" id="btn-clear-errors">清除</button>
+    </div>
+    <div class="error-list" id="error-list"></div>
+  </div>
+
+  <!-- API Key 输入模态框 -->
+  <div class="modal-overlay" id="apikey-modal">
+    <div class="modal">
+      <div class="modal-title">🔑 请输入 API Key</div>
+      <input type="text" class="modal-input" id="apikey-input" placeholder="输入 API Key">
+      <div class="modal-buttons">
+        <button class="modal-btn modal-btn-cancel" id="modal-cancel">取消</button>
+        <button class="modal-btn modal-btn-confirm" id="modal-confirm">确认</button>
+      </div>
+    </div>
+  </div>
+
   <p class="tip">点击复制按钮将数据复制到剪贴板</p>
+
+  <div class="settings-section">
+    <button class="btn-clear-apikey" id="btn-clear-apikey">
+      🗑️ 清除 API Key
+    </button>
+  </div>
 
   <script src="popup.js"></script>
 </body>

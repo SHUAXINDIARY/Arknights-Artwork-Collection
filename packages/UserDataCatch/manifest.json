@@ -3,15 +3,12 @@
   "name": "User Data Catch",
   "version": "1.0.0",
   "description": "抓取 Twitter/微博 用户数据",
-  "permissions": [
-    "activeTab",
-    "scripting",
-    "clipboardWrite"
-  ],
+  "permissions": ["activeTab", "scripting", "clipboardWrite", "storage"],
   "host_permissions": [
     "https://x.com/*",
     "https://twitter.com/*",
-    "https://weibo.com/*"
+    "https://weibo.com/*",
+    "https://akdb.nixideshuaxin.workers.dev/*"
   ],
   "action": {
     "default_popup": "popup.html"
@@ -19,7 +16,11 @@
   "web_accessible_resources": [
     {
       "resources": ["scripts/*.js"],
-      "matches": ["https://x.com/*", "https://twitter.com/*", "https://weibo.com/*"]
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*",
+        "https://weibo.com/*"
+      ]
     }
   ]
 }
