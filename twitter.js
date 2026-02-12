@@ -1,5 +1,23 @@
 const following = [
   {
+    "nickname": "YumeAi",
+    "avatar": "https://pbs.twimg.com/profile_images/1693592844844564480/h1UENf_q.jpg",
+    "profile": "https://x.com/mengai67706070",
+    "bio": "chinese，\n英文差，一般用的翻译器。\n日语学习中！\n希望你会喜欢我的作品！"
+  },
+  {
+    "nickname": "ɢᴜɪᴄʜɪ",
+    "avatar": "https://pbs.twimg.com/profile_images/1714366319590850560/ZeP-MUrw.jpg",
+    "profile": "https://x.com/___GUICHI",
+    "bio": "1guichion@gmail.com"
+  },
+  {
+    "nickname": "Hey是Sei",
+    "avatar": "https://pbs.twimg.com/profile_images/1941698574040829956/xNiz28xp.jpg",
+    "profile": "https://x.com/heishisei",
+    "bio": "Hei || 我是荧妹和博士的老婆 ✧･ﾟ: *✧･ﾟ:* || I am very normal about my interests\n\n(Banner: \n@4kstarri\n)"
+  },
+  {
     "nickname": "Garasu",
     "avatar": "https://pbs.twimg.com/profile_images/1986227604316430336/ohg46oEH.jpg",
     "profile": "https://x.com/suiz233",
