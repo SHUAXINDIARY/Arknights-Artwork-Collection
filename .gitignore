@@ -3,3 +3,7 @@
 .env
 
 node_modules/
+
+api.md
+
+upload-users.js
