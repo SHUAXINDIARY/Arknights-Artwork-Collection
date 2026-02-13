@@ -32,7 +32,7 @@
       const avatar = link.querySelector("img")?.getAttribute("src") || link.querySelector("img")?.getAttribute("data-src") || "";
       const bio = link.querySelector('div[class*="_clb_"]')?.innerText?.trim() || "";
 
-      result.push({ nickname, avatar, profile, bio });
+      result.push({ nickname, avatar, profile, bio, type: 'weibo' });
     });
 
     console.log("📦 当前已抓取 " + result.length + " 条");

@@ -12,7 +12,8 @@
     nickname: '',
     avatar: '',
     profile: location.href,
-    bio: ''
+    bio: '',
+    type: 'weibo'
   };
 
   const nameEl = document.querySelector('._name_1yc79_291');

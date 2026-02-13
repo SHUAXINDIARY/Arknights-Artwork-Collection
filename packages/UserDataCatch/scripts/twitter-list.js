@@ -2,9 +2,9 @@
   // 验证是否在 x.com 用户关注列表页
   const urlPattern = /^https:\/\/(x\.com|twitter\.com)\/[^\/]+\/following\/?$/;
   if (!urlPattern.test(location.href.split('?')[0])) {
-    return { 
-      success: false, 
-      error: '请在 X/Twitter 关注列表页执行此操作（如 https://x.com/username/following）' 
+    return {
+      success: false,
+      error: '请在 X/Twitter 关注列表页执行此操作（如 https://x.com/username/following）'
     };
   }
 
@@ -39,7 +39,7 @@
         const bioSpan = cell.querySelector('div[dir="auto"] span');
         if (bioSpan) bio = bioSpan.innerText.trim();
 
-        results.push({ nickname, avatar, profile, bio });
+        results.push({ nickname, avatar, profile, bio, type: 'x' });
       } catch (e) {
         console.warn("[X抓取] parse failed", e);
       }
@@ -79,8 +79,8 @@
   }
 
   console.log("[X抓取] 完成，总数:", results.length);
-  
+
   const json = JSON.stringify(results, null, 2);
-  
+
   return { success: true, count: results.length, json, stopped };
 })();

@@ -2,9 +2,9 @@
   // 验证是否在 x.com 用户主页
   const urlPattern = /^https:\/\/(x\.com|twitter\.com)\/[^\/]+\/?$/;
   if (!urlPattern.test(location.href.split('?')[0])) {
-    return { 
-      success: false, 
-      error: '请在 X/Twitter 用户主页执行此操作（如 https://x.com/username）' 
+    return {
+      success: false,
+      error: '请在 X/Twitter 用户主页执行此操作（如 https://x.com/username）'
     };
   }
 
@@ -12,7 +12,8 @@
     nickname: '',
     avatar: '',
     profile: location.origin + location.pathname,
-    bio: ''
+    bio: '',
+    type: 'x'
   };
 
   const nameEl = document.querySelector('[data-testid="UserName"] span span');
@@ -42,15 +43,15 @@
       // 通过 nickname 和 avatar 匹配判断是否已关注
       // 清洗 avatar 地址，移除尺寸后缀以便比较
       const cleanAvatar = (url) => url ? url.replace(/_(normal|200x200|400x400)/, '') : '';
-      const isFollowing = following.some(user => 
-        user.nickname === result.nickname && 
+      const isFollowing = following.some(user =>
+        user.nickname === result.nickname &&
         cleanAvatar(user.avatar) === cleanAvatar(result.avatar)
       );
-      
+
       // 在页面上展示关注状态
       const existingBadge = document.getElementById('arknights-following-badge');
       if (existingBadge) existingBadge.remove();
-      
+
       const badge = document.createElement('div');
       badge.id = 'arknights-following-badge';
       badge.style.cssText = `
@@ -65,15 +66,15 @@
         box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         transition: opacity 0.3s;
         cursor: pointer;
-        ${isFollowing 
-          ? 'background: linear-gradient(135deg, #10b981, #059669); color: white;' 
+        ${isFollowing
+          ? 'background: linear-gradient(135deg, #10b981, #059669); color: white;'
           : 'background: linear-gradient(135deg, #f59e0b, #d97706); color: white;'}
       `;
       badge.textContent = isFollowing ? '✓ 已在收藏列表中' : '✗ 未在收藏列表中';
       badge.title = '点击关闭';
       badge.onclick = () => badge.remove();
       document.body.appendChild(badge);
-      
+
       // 5秒后自动淡出
       setTimeout(() => {
         badge.style.opacity = '0';
@@ -85,7 +86,7 @@
   }
 
   const json = JSON.stringify(result, null, 2);
-  
+
   console.log(json);
   return { success: true, data: result, json };
 })();
