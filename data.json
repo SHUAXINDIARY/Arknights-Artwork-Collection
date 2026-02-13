@@ -4039,5 +4039,23 @@
     "bio": "For freedom",
     "type": "weibo",
     "created_at": "2026-02-12 10:26:43"
+  },
+  {
+    "id": 450,
+    "nickname": "SowB",
+    "avatar": "https://pbs.twimg.com/profile_images/1729482574798696448/o3iUhIED.jpg",
+    "profile": "https://x.com/SowB__",
+    "bio": "Work: aboutsowb@gmail.com\nClass: \nhttps://\ncafe.naver.com/artcovent/7323",
+    "type": "x",
+    "created_at": "2026-02-13 03:30:13"
+  },
+  {
+    "id": 451,
+    "nickname": "宇木敦哉",
+    "avatar": "https://pbs.twimg.com/profile_images/1259702871093723137/Bb1eEIJY.jpg",
+    "profile": "https://x.com/ukiatsuya",
+    "bio": "Cencoroll Director\nお問い合わせはリンク先のメールフォームからお願いいたします。",
+    "type": "x",
+    "created_at": "2026-02-13 03:30:30"
   }
 ]
