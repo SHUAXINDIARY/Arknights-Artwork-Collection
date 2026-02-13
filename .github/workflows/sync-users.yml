@@ -7,10 +7,14 @@ on:
     - cron: '0 22 * * *'
   workflow_dispatch: # 支持手动触发
 
+# 授予 GITHUB_TOKEN 写入权限
+permissions:
+  contents: write
+
 jobs:
   sync:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
