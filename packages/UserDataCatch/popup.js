@@ -61,10 +61,30 @@ async function copyToClipboard() {
   }
 }
 
+// 检查用户是否已存在于数据库
+async function checkUserExists(nickname) {
+  if (!nickname) return { exists: false };
+  
+  try {
+    const checkUrl = `${API_BASE_URL}/users?nickname=${encodeURIComponent(nickname)}&type=x`;
+    const response = await fetch(checkUrl);
+    const data = await response.json();
+    
+    if (data.success && data.data && data.data.users && data.data.users.length > 0) {
+      return { exists: true, user: data.data.users[0] };
+    }
+    return { exists: false };
+  } catch (err) {
+    console.error('检查用户是否存在失败:', err);
+    return { exists: false, error: err.message };
+  }
+}
+
 // 执行脚本文件
 async function executeScriptFile(scriptFile, buttonId) {
   const button = document.getElementById(buttonId);
   const originalText = button.innerHTML;
+  const isSingleUser = buttonId.includes('single');
   
   try {
     button.disabled = true;
@@ -82,6 +102,21 @@ async function executeScriptFile(scriptFile, buttonId) {
     const result = results[0]?.result;
     
     if (result?.success && result?.json) {
+      // 如果是单个用户抓取，检查是否已存在
+      if (isSingleUser && result.data) {
+        const nickname = result.data.nickname;
+        if (nickname) {
+          showStatus('正在检查用户是否已存在...', 'info');
+          const checkResult = await checkUserExists(nickname);
+          
+          if (checkResult.exists) {
+            showStatus(`⚠️ 用户 "${nickname}" 已在收藏列表中`, 'info');
+            showResult(result.json);
+            return;
+          }
+        }
+      }
+      
       const msg = result.count !== undefined 
         ? `✅ 抓取完成！共 ${result.count} 条数据`
         : '✅ 抓取完成！';
