@@ -1,895 +1,804 @@
 <!doctype html>
 <html lang="zh-CN">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>画师关注列表 | Arknights Artwork Collection</title>
 
-        <!-- SEO Meta Tags -->
-        <meta
-            name="description"
-            content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。浏览、搜索并发现更多优质画师。"
-        />
-        <meta
-            name="keywords"
-            content="明日方舟, Arknights, 画师, 插画师, Twitter, 关注列表, 同人, 二次创作, 原画"
-        />
-        <meta name="author" content="SHUAXINDIARY" />
-        <meta name="robots" content="index, follow" />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>画师关注列表 | Arknights Artwork Collection</title>
 
-        <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website" />
-        <meta
-            property="og:title"
-            content="画师关注列表 | Arknights Artwork Collection"
-        />
-        <meta
-            property="og:description"
-            content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。"
-        />
-        <meta property="og:site_name" content="Arknights Artwork Collection" />
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。浏览、搜索并发现更多优质画师。" />
+    <meta name="keywords" content="明日方舟, Arknights, 画师, 插画师, Twitter, 关注列表, 同人, 二次创作, 原画" />
+    <meta name="author" content="SHUAXINDIARY" />
+    <meta name="robots" content="index, follow" />
 
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-            name="twitter:title"
-            content="画师关注列表 | Arknights Artwork Collection"
-        />
-        <meta
-            name="twitter:description"
-            content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。"
-        />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="画师关注列表 | Arknights Artwork Collection" />
+    <meta property="og:description" content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。" />
+    <meta property="og:site_name" content="Arknights Artwork Collection" />
 
-        <!-- Canonical URL -->
-        <link
-            rel="canonical"
-            href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection"
-        />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="画师关注列表 | Arknights Artwork Collection" />
+    <meta name="twitter:description" content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。" />
 
-        <!-- Favicon -->
-        <link rel="icon" type="image/jpeg" href="./logo.jpeg" />
-        <link rel="apple-touch-icon" href="./logo.jpeg" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection" />
 
-        <style>
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="./logo.jpeg" />
+    <link rel="apple-touch-icon" href="./logo.jpeg" />
 
-            body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                    "Helvetica Neue", Arial, sans-serif;
-                line-height: 1.6;
-                color: #0f1419;
-                background: #f7f9fa;
-                min-height: 100vh;
-            }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family:
+                -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #0f1419;
+            background: #f7f9fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #1da1f2 0%, #0d8ecf 100%);
+            border-radius: 16px;
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(29, 161, 242, 0.3);
+            position: relative;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .home-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateX(-2px);
+        }
+
+        .home-btn svg {
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .stat-item strong {
+            font-size: 1.2rem;
+        }
+
+        .search-bar {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 6px;
+            padding: 4px;
+            background: #f0f3f5;
+            border-radius: 28px;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+            padding: 12px 16px;
+            border: 2px solid #e1e8ed;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: #1da1f2;
+        }
+
+        .filter-btn {
+            padding: 12px 20px;
+            border: 2px solid #e1e8ed;
+            border-radius: 25px;
+            background: #fff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: #1da1f2;
+            color: #1da1f2;
+        }
+
+        .filter-btn.active {
+            background: #1da1f2;
+            border-color: #1da1f2;
+            color: #fff;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 16px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: all 0.2s ease;
+            border: 1px solid #e1e8ed;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border-color: #1da1f2;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #e1e8ed;
+            flex-shrink: 0;
+        }
+
+        .avatar-placeholder {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .avatar-fallback {
+            background: #1da1f2;
+        }
+
+        .user-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .nickname {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0f1419;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: block;
+            text-decoration: none;
+        }
+
+        .nickname:hover {
+            color: #1da1f2;
+        }
+
+        .handle {
+            font-size: 0.85rem;
+            color: #536471;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: #536471;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+        }
+
+        .profile-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 12px;
+            padding: 8px 16px;
+            background: #f7f9fa;
+            border-radius: 20px;
+            color: #1da1f2;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .profile-link:hover {
+            background: #e8f5fe;
+        }
+
+        .profile-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* 微博卡片样式 */
+        .card.weibo-card:hover {
+            border-color: #ff8200;
+        }
+
+        .card.weibo-card .nickname:hover {
+            color: #ff8200;
+        }
+
+        .card.weibo-card .profile-link {
+            color: #ff8200;
+        }
+
+        .card.weibo-card .profile-link:hover {
+            background: #fff5eb;
+        }
+
+        .card.weibo-card .profile-link svg {
+            fill: #ff8200;
+        }
+
+        .card.weibo-card .avatar-fallback {
+            background: #ff8200;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #536471;
+        }
+
+        .no-results svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 16px;
+            opacity: 0.5;
+        }
+
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #1da1f2;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+
+        .back-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
+        }
+
+        .result-count {
+            margin-bottom: 16px;
+            color: #536471;
+            font-size: 0.9rem;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #536471;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: none;
+            background: #ffebee;
+            color: #f44336;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+
+        .card {
+            position: relative;
+        }
+
+        .card:hover .delete-btn.visible {
+            opacity: 1;
+        }
+
+        .delete-btn:hover {
+            background: #f44336;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .delete-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .export-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+        }
+
+        .export-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+
+        .export-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .action-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .deleted-count {
+            color: #f44336;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #95a5a6;
+            font-style: italic;
+            margin-top: 40px;
+        }
+
+        .repo-link {
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        .repo-link a {
+            color: #7f8c8d;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+
+        .repo-link a:hover {
+            color: #1da1f2;
+        }
+
+        .lang-switch {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .lang-switch:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .en {
+            display: none;
+        }
+
+        .zh {
+            display: inline;
+        }
+
+        body.lang-en .en {
+            display: inline;
+        }
+
+        body.lang-en .zh {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
             .container {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 20px;
-            }
-
-            header {
-                text-align: center;
-                margin-bottom: 30px;
-                padding: 30px 20px;
-                background: linear-gradient(135deg, #1da1f2 0%, #0d8ecf 100%);
-                border-radius: 16px;
-                color: #fff;
-                box-shadow: 0 4px 20px rgba(29, 161, 242, 0.3);
-                position: relative;
-            }
-
-            .home-btn {
-                position: absolute;
-                top: 16px;
-                left: 16px;
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                padding: 8px 16px;
-                background: rgba(255, 255, 255, 0.2);
-                border-radius: 20px;
-                color: #fff;
-                text-decoration: none;
-                font-size: 0.85rem;
-                font-weight: 500;
-                transition: all 0.2s;
-            }
-
-            .home-btn:hover {
-                background: rgba(255, 255, 255, 0.3);
-                transform: translateX(-2px);
-            }
-
-            .home-btn svg {
-                flex-shrink: 0;
+                padding: 12px;
             }
 
             h1 {
-                font-size: 2rem;
-                margin-bottom: 10px;
-                font-weight: 700;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-                opacity: 0.9;
+                font-size: 1.5rem;
             }
 
             .stats {
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                margin-top: 20px;
-                flex-wrap: wrap;
+                gap: 15px;
             }
 
             .stat-item {
-                background: rgba(255, 255, 255, 0.2);
-                padding: 10px 20px;
-                border-radius: 20px;
-                font-size: 0.9rem;
-            }
-
-            .stat-item strong {
-                font-size: 1.2rem;
-            }
-
-            .search-bar {
-                margin-bottom: 20px;
-                display: flex;
-                gap: 10px;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-
-            .filter-group {
-                display: flex;
-                gap: 6px;
-                padding: 4px;
-                background: #f0f3f5;
-                border-radius: 28px;
-            }
-
-            .search-input {
-                flex: 1;
-                min-width: 200px;
-                padding: 12px 16px;
-                border: 2px solid #e1e8ed;
-                border-radius: 25px;
-                font-size: 1rem;
-                outline: none;
-                transition: border-color 0.2s;
-            }
-
-            .search-input:focus {
-                border-color: #1da1f2;
-            }
-
-            .filter-btn {
-                padding: 12px 20px;
-                border: 2px solid #e1e8ed;
-                border-radius: 25px;
-                background: #fff;
-                cursor: pointer;
-                font-size: 0.9rem;
-                transition: all 0.2s;
-            }
-
-            .filter-btn:hover {
-                border-color: #1da1f2;
-                color: #1da1f2;
-            }
-
-            .filter-btn.active {
-                background: #1da1f2;
-                border-color: #1da1f2;
-                color: #fff;
+                padding: 8px 16px;
+                font-size: 0.85rem;
             }
 
             .grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                gap: 16px;
+                grid-template-columns: 1fr;
             }
 
-            .card {
-                background: #fff;
-                border-radius: 16px;
-                padding: 16px;
-                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-                transition: all 0.2s ease;
-                border: 1px solid #e1e8ed;
+            .search-bar {
+                flex-direction: column;
             }
 
-            .card:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-                border-color: #1da1f2;
-            }
-
-            .card-header {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                margin-bottom: 12px;
-            }
-
-            .avatar {
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                object-fit: cover;
-                background: #e1e8ed;
-                flex-shrink: 0;
-            }
-
-            .avatar-placeholder {
-                width: 48px;
-                height: 48px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                display: flex;
-                align-items: center;
+            .filter-group {
+                width: 100%;
                 justify-content: center;
-                color: #fff;
-                font-weight: 600;
-                font-size: 1.2rem;
-                flex-shrink: 0;
             }
 
-            .avatar-fallback {
-                background: #1da1f2;
-            }
-
-            .user-info {
-                flex: 1;
-                min-width: 0;
-            }
-
-            .nickname {
-                font-weight: 700;
-                font-size: 1rem;
-                color: #0f1419;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                display: block;
-                text-decoration: none;
-            }
-
-            .nickname:hover {
-                color: #1da1f2;
-            }
-
-            .handle {
-                font-size: 0.85rem;
-                color: #536471;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .bio {
-                font-size: 0.9rem;
-                color: #536471;
-                line-height: 1.5;
-                display: -webkit-box;
-                -webkit-line-clamp: 3;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                word-break: break-word;
-            }
-
-            .profile-link {
-                display: inline-flex;
-                align-items: center;
-                gap: 6px;
-                margin-top: 12px;
-                padding: 8px 16px;
-                background: #f7f9fa;
-                border-radius: 20px;
-                color: #1da1f2;
-                text-decoration: none;
-                font-size: 0.85rem;
-                font-weight: 500;
-                transition: background 0.2s;
-            }
-
-            .profile-link:hover {
-                background: #e8f5fe;
-            }
-
-            .profile-link svg {
-                width: 16px;
-                height: 16px;
-            }
-
-            /* 微博卡片样式 */
-            .card.weibo-card:hover {
-                border-color: #ff8200;
-            }
-
-            .card.weibo-card .nickname:hover {
-                color: #ff8200;
-            }
-
-            .card.weibo-card .profile-link {
-                color: #ff8200;
-            }
-
-            .card.weibo-card .profile-link:hover {
-                background: #fff5eb;
-            }
-
-            .card.weibo-card .profile-link svg {
-                fill: #ff8200;
-            }
-
-            .card.weibo-card .avatar-fallback {
-                background: #ff8200;
-            }
-
-            .no-results {
+            .filter-btn {
                 text-align: center;
-                padding: 60px 20px;
-                color: #536471;
-            }
-
-            .no-results svg {
-                width: 64px;
-                height: 64px;
-                margin-bottom: 16px;
-                opacity: 0.5;
+                flex: 1;
             }
 
             .back-top {
-                position: fixed;
-                bottom: 30px;
-                right: 30px;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background: #1da1f2;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-                box-shadow: 0 4px 15px rgba(29, 161, 242, 0.4);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                opacity: 0;
-                visibility: hidden;
-                transition: all 0.3s;
+                bottom: 20px;
+                right: 20px;
+                width: 44px;
+                height: 44px;
             }
+        }
+    </style>
+</head>
 
-            .back-top.visible {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            .back-top:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 6px 20px rgba(29, 161, 242, 0.5);
-            }
-
-            .result-count {
-                margin-bottom: 16px;
-                color: #536471;
-                font-size: 0.9rem;
-            }
-
-            .loading {
-                text-align: center;
-                padding: 40px;
-                color: #536471;
-            }
-
-            .delete-btn {
-                position: absolute;
-                top: 12px;
-                right: 12px;
-                width: 28px;
-                height: 28px;
-                border-radius: 50%;
-                border: none;
-                background: #ffebee;
-                color: #f44336;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                opacity: 0;
-                transition: all 0.2s;
-            }
-
-            .card {
-                position: relative;
-            }
-
-            .card:hover .delete-btn.visible {
-                opacity: 1;
-            }
-
-            .delete-btn:hover {
-                background: #f44336;
-                color: #fff;
-                transform: scale(1.1);
-            }
-
-            .delete-btn svg {
-                width: 16px;
-                height: 16px;
-            }
-
-            .export-btn {
-                padding: 12px 24px;
-                border: none;
-                border-radius: 25px;
-                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-                color: #fff;
-                cursor: pointer;
-                font-size: 0.9rem;
-                font-weight: 500;
-                display: inline-flex;
-                align-items: center;
-                gap: 8px;
-                transition: all 0.2s;
-                box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
-            }
-
-            .export-btn:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-            }
-
-            .export-btn svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            .action-bar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 16px;
-                flex-wrap: wrap;
-                gap: 12px;
-            }
-
-            .deleted-count {
-                color: #f44336;
-                font-size: 0.9rem;
-            }
-
-            footer {
-                text-align: center;
-                padding: 30px 0;
-                color: #95a5a6;
-                font-style: italic;
-                margin-top: 40px;
-            }
-
-            .repo-link {
-                margin-top: 15px;
-                font-style: normal;
-            }
-
-            .repo-link a {
-                color: #7f8c8d;
-                text-decoration: none;
-                display: inline-flex;
-                align-items: center;
-                transition: color 0.2s ease;
-            }
-
-            .repo-link a:hover {
-                color: #1da1f2;
-            }
-
-            .lang-switch {
-                position: absolute;
-                top: 16px;
-                right: 16px;
-                display: inline-flex;
-                align-items: center;
-                gap: 4px;
-                padding: 6px 12px;
-                background: rgba(255, 255, 255, 0.2);
-                border-radius: 20px;
-                border: none;
-                color: #fff;
-                cursor: pointer;
-                font-size: 0.8rem;
-                font-weight: 500;
-                transition: all 0.2s;
-            }
-
-            .lang-switch:hover {
-                background: rgba(255, 255, 255, 0.3);
-            }
-
-            .en {
-                display: none;
-            }
-            .zh {
-                display: inline;
-            }
-            body.lang-en .en {
-                display: inline;
-            }
-            body.lang-en .zh {
-                display: none;
-            }
-
-            @media (max-width: 600px) {
-                .container {
-                    padding: 12px;
-                }
-
-                h1 {
-                    font-size: 1.5rem;
-                }
-
-                .stats {
-                    gap: 15px;
-                }
-
-                .stat-item {
-                    padding: 8px 16px;
-                    font-size: 0.85rem;
-                }
-
-                .grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .search-bar {
-                    flex-direction: column;
-                }
-
-                .filter-group {
-                    width: 100%;
-                    justify-content: center;
-                }
-
-                .filter-btn {
-                    text-align: center;
-                    flex: 1;
-                }
-
-                .back-top {
-                    bottom: 20px;
-                    right: 20px;
-                    width: 44px;
-                    height: 44px;
-                }
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="container">
-            <header>
-                <a href="./index.html" class="home-btn" title="返回首页">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path
-                            d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                        ></path>
-                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                    </svg>
-                    <span class="zh">首页</span>
-                    <span class="en">Home</span>
-                </a>
-                <button class="lang-switch" id="lang-switch" title="切换语言">
-                    <span class="zh">EN</span>
-                    <span class="en">中</span>
-                </button>
-                <h1>
-                    <span class="zh">画师 Following</span
-                    ><span class="en">Artists Following</span>
-                </h1>
-                <p class="subtitle">
-                    <span class="zh">包含但不限于</span
-                    ><span class="en">Including but not limited to</span>
-                </p>
-                <div class="stats">
-                    <div class="stat-item">
-                        <strong id="total-count">0</strong>
-                        <span class="zh">关注</span
-                        ><span class="en">Following</span>
-                    </div>
-                    <div class="stat-item">
-                        <strong id="filtered-count">0</strong>
-                        <span class="zh">显示中</span
-                        ><span class="en">Showing</span>
-                    </div>
-                    <div
-                        class="stat-item"
-                        id="update-time-item"
-                        style="display: none"
-                    >
-                        <strong id="last-update-time">-</strong>
-                        <span class="zh">最近更新</span
-                        ><span class="en">Last Update</span>
-                    </div>
+<body>
+    <div class="container">
+        <header>
+            <a href="./index.html" class="home-btn" title="返回首页">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span class="zh">首页</span>
+                <span class="en">Home</span>
+            </a>
+            <button class="lang-switch" id="lang-switch" title="切换语言">
+                <span class="zh">EN</span>
+                <span class="en">中</span>
+            </button>
+            <h1>
+                <span class="zh">画师 Following</span><span class="en">Artists Following</span>
+            </h1>
+            <p class="subtitle">
+                <span class="zh">包含但不限于</span><span class="en">Including but not limited to</span>
+            </p>
+            <div class="stats">
+                <div class="stat-item">
+                    <strong id="total-count">0</strong>
+                    <span class="zh">关注</span><span class="en">Following</span>
                 </div>
-            </header>
-
-            <div class="search-bar">
-                <input
-                    type="text"
-                    class="search-input"
-                    id="search"
-                    data-placeholder-zh="搜索昵称或简介..."
-                    data-placeholder-en="Search nickname or bio..."
-                    placeholder="搜索昵称或简介..."
-                />
-                <div class="filter-group" data-group="platform">
-                    <button class="filter-btn active" data-filter="all">
-                        <span class="zh">全部</span><span class="en">All</span>
-                    </button>
-                    <button class="filter-btn" data-filter="twitter">
-                        <span class="zh">Twitter</span
-                        ><span class="en">Twitter</span>
-                    </button>
-                    <button class="filter-btn" data-filter="weibo">
-                        <span class="zh">微博</span
-                        ><span class="en">Weibo</span>
-                    </button>
+                <div class="stat-item">
+                    <strong id="filtered-count">0</strong>
+                    <span class="zh">显示中</span><span class="en">Showing</span>
                 </div>
-                <div class="filter-group" data-group="bio">
-                    <button class="filter-btn" data-filter="has-bio">
-                        <span class="zh">有简介</span
-                        ><span class="en">With Bio</span>
-                    </button>
-                    <button class="filter-btn" data-filter="no-bio">
-                        <span class="zh">无简介</span
-                        ><span class="en">No Bio</span>
-                    </button>
+                <div class="stat-item" id="update-time-item" style="display: none">
+                    <strong id="last-update-time">-</strong>
+                    <span class="zh">最近更新</span><span class="en">Last Update</span>
                 </div>
             </div>
+        </header>
 
-            <div class="action-bar">
-                <div class="result-count" id="result-count"></div>
-                <button
-                    class="export-btn"
-                    id="export-btn"
-                    style="display: none"
-                >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    >
-                        <path
-                            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
-                        ></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
-                    </svg>
-                    <span class="zh">导出 JS</span
-                    ><span class="en">Export JS</span>
+        <div class="search-bar">
+            <input type="text" class="search-input" id="search" data-placeholder-zh="搜索昵称或简介..."
+                data-placeholder-en="Search nickname or bio..." placeholder="搜索昵称或简介..." />
+            <div class="filter-group" data-group="platform">
+                <button class="filter-btn active" data-filter="all">
+                    <span class="zh">全部</span><span class="en">All</span>
+                </button>
+                <button class="filter-btn" data-filter="twitter">
+                    <span class="zh">Twitter</span><span class="en">Twitter</span>
+                </button>
+                <button class="filter-btn" data-filter="weibo">
+                    <span class="zh">微博</span><span class="en">Weibo</span>
                 </button>
             </div>
-
-            <div class="grid" id="grid">
-                <div class="loading">加载中...</div>
+            <div class="filter-group" data-group="bio">
+                <button class="filter-btn" data-filter="has-bio">
+                    <span class="zh">有简介</span><span class="en">With Bio</span>
+                </button>
+                <button class="filter-btn" data-filter="no-bio">
+                    <span class="zh">无简介</span><span class="en">No Bio</span>
+                </button>
             </div>
-
-            <footer>
-                <p>
-                    <span class="zh">由粉丝创建，为粉丝服务。</span
-                    ><span class="en">Created by fans, for fans.</span>
-                </p>
-                <p class="repo-link">
-                    <a
-                        href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/tree/main"
-                        target="_blank"
-                    >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                            style="vertical-align: middle; margin-right: 6px"
-                        >
-                            <path
-                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                            />
-                        </svg>
-                        <span class="zh">GitHub 仓库</span
-                        ><span class="en">GitHub Repository</span>
-                    </a>
-                </p>
-            </footer>
         </div>
 
-        <button
-            class="back-top"
-            id="back-top"
-            data-title-zh="返回顶部"
-            data-title-en="Back to top"
-            title="返回顶部"
-        >
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            >
-                <polyline points="18 15 12 9 6 15"></polyline>
-            </svg>
-        </button>
+        <div class="action-bar">
+            <div class="result-count" id="result-count"></div>
+            <button class="export-btn" id="export-btn" style="display: none">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span class="zh">导出 JS</span><span class="en">Export JS</span>
+            </button>
+        </div>
 
-        <script>
-            window.LAST_UPDATE_TIME = "2026-02-13T11:38:41+08:00";
-        </script>
-        <script>
-            const grid = document.getElementById("grid");
-            const searchInput = document.getElementById("search");
-            const filterBtns = document.querySelectorAll(".filter-btn");
-            const totalCountEl = document.getElementById("total-count");
-            const filteredCountEl = document.getElementById("filtered-count");
-            const resultCountEl = document.getElementById("result-count");
-            const backTopBtn = document.getElementById("back-top");
-            const exportBtn = document.getElementById("export-btn");
+        <div class="grid" id="grid">
+            <div class="loading">加载中...</div>
+        </div>
 
-            let filters = {
-                platform: "all", // all, x, weibo
-                bio: null, // null, has-bio, no-bio
-            };
-            let searchTerm = "";
-            let currentData = []; // 当前数据副本，从 data.json 加载
-            let deletedCount = 0;
-            let canLoadImages = true; // 是否可以加载图片
+        <footer>
+            <p>
+                <span class="zh">由粉丝创建，为粉丝服务。</span><span class="en">Created by fans, for fans.</span>
+            </p>
+            <p class="repo-link">
+                <a href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/tree/main" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                        fill="currentColor" style="vertical-align: middle; margin-right: 6px">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <span class="zh">GitHub 仓库</span><span class="en">GitHub Repository</span>
+                </a>
+            </p>
+        </footer>
+    </div>
 
-            // 判断是否为本地运行环境
-            const isLocal =
-                location.hostname === "localhost" ||
-                location.hostname === "127.0.0.1" ||
-                location.protocol === "file:";
-            if (isLocal && exportBtn) {
-                exportBtn.style.display = "inline-flex";
-            }
+    <button class="back-top" id="back-top" data-title-zh="返回顶部" data-title-en="Back to top" title="返回顶部">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
 
-            // 加载数据
-            async function loadData() {
-                try {
-                    const response = await fetch('./data.json');
-                    if (!response.ok) {
-                        throw new Error('Failed to load data.json');
-                    }
-                    const data = await response.json();
-                    currentData = data;
-                    console.log(`✅ 加载了 ${data.length} 条数据`);
-                } catch (error) {
-                    console.error('❌ 数据加载失败:', error);
-                    currentData = [];
+    <script>
+        window.LAST_UPDATE_TIME = "2026-02-13T11:38:41+08:00";
+    </script>
+    <script>
+        const grid = document.getElementById("grid");
+        const searchInput = document.getElementById("search");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const totalCountEl = document.getElementById("total-count");
+        const filteredCountEl = document.getElementById("filtered-count");
+        const resultCountEl = document.getElementById("result-count");
+        const backTopBtn = document.getElementById("back-top");
+        const exportBtn = document.getElementById("export-btn");
+
+        let filters = {
+            platform: "all", // all, x, weibo
+            bio: null, // null, has-bio, no-bio
+        };
+        let searchTerm = "";
+        let currentData = []; // 当前数据副本，从 data.json 加载
+        let deletedCount = 0;
+        let canLoadImages = true; // 是否可以加载图片
+
+        // 判断是否为本地运行环境
+        const isLocal =
+            location.hostname === "localhost" ||
+            location.hostname === "127.0.0.1" ||
+            location.protocol === "file:";
+        if (isLocal && exportBtn) {
+            exportBtn.style.display = "inline-flex";
+        }
+
+        // 加载数据
+        async function loadData() {
+            try {
+                const response = await fetch('./data.json');
+                if (!response.ok) {
+                    throw new Error('Failed to load data.json');
                 }
+                const data = await response.json();
+                currentData = data?.reverse?.();
+                console.log(`✅ 加载了 ${data.length} 条数据`);
+            } catch (error) {
+                console.error('❌ 数据加载失败:', error);
+                currentData = [];
             }
+        }
 
-            // 测试图片加载能力
-            async function testImageLoading() {
-                return new Promise((resolve) => {
-                    // 找一个有头像的用户进行测试
-                    const testUser = currentData.find(
-                        (user) => user.avatar && user.avatar.trim() !== "",
-                    );
-                    if (!testUser) {
-                        resolve(false);
-                        return;
-                    }
+        // 测试图片加载能力
+        async function testImageLoading() {
+            return new Promise((resolve) => {
+                // 找一个有头像的用户进行测试
+                const testUser = currentData.find(
+                    (user) => user.avatar && user.avatar.trim() !== "",
+                );
+                if (!testUser) {
+                    resolve(false);
+                    return;
+                }
 
-                    const img = new Image();
-                    const timeout = setTimeout(() => {
-                        img.onload = null;
-                        img.onerror = null;
-                        resolve(false);
-                    }, 3000); // 3秒超时
+                const img = new Image();
+                const timeout = setTimeout(() => {
+                    img.onload = null;
+                    img.onerror = null;
+                    resolve(false);
+                }, 3000); // 3秒超时
 
-                    img.onload = () => {
-                        clearTimeout(timeout);
-                        resolve(true);
-                    };
+                img.onload = () => {
+                    clearTimeout(timeout);
+                    resolve(true);
+                };
 
-                    img.onerror = () => {
-                        clearTimeout(timeout);
-                        resolve(false);
-                    };
+                img.onerror = () => {
+                    clearTimeout(timeout);
+                    resolve(false);
+                };
 
-                    img.src = testUser.avatar;
-                });
-            }
+                img.src = testUser.avatar;
+            });
+        }
 
-            // 获取用户名
-            function getUsername(profile) {
-                const match = profile.match(/x\.com\/([^\/]+)/);
-                return match ? "@" + match[1] : "";
-            }
+        // 获取用户名
+        function getUsername(profile) {
+            const match = profile.match(/x\.com\/([^\/]+)/);
+            return match ? "@" + match[1] : "";
+        }
 
-            // 获取头像首字母
-            function getInitial(nickname) {
-                if (!nickname) return "?";
-                return nickname.charAt(0).toUpperCase();
-            }
+        // 获取头像首字母
+        function getInitial(nickname) {
+            if (!nickname) return "?";
+            return nickname.charAt(0).toUpperCase();
+        }
 
-            // 创建卡片
-            function createCard(user) {
-                const username = getUsername(user.profile);
-                const hasAvatar = user.avatar && user.avatar.trim() !== "";
-                const fallbackLetter = user.type === "weibo" ? "W" : "X";
+        // 创建卡片
+        function createCard(user) {
+            const username = getUsername(user.profile);
+            const hasAvatar = user.avatar && user.avatar.trim() !== "";
+            const fallbackLetter = user.type === "weibo" ? "W" : "X";
 
-                // 根据图片加载能力决定是否显示头像
-                const avatarHtml =
-                    hasAvatar && canLoadImages
-                        ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`
-                        : `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+            // 根据图片加载能力决定是否显示头像
+            const avatarHtml =
+                hasAvatar && canLoadImages
+                    ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`
+                    : `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
 
-                const deleteBtnHtml = isLocal
-                    ? `
+            const deleteBtnHtml = isLocal
+                ? `
                 <button class="delete-btn visible" onclick="deleteUser('${user.profile}')" title="删除">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>`
-                    : "";
+                : "";
 
-                // 根据类型选择不同的图标
-                const iconSvg =
-                    user.type === "weibo"
-                        ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 30 30"><path d="m12.44 22.251c-4.898.482-9.131-1.732-9.449-4.951s3.398-6.216 8.301-6.701 9.13 1.724 9.448 4.949-3.398 6.219-8.298 6.699zm-1.291-3.818c-.334.525-.912.869-1.571.869-.245 0-.48-.048-.694-.134l.012.004c-.452-.21-.759-.661-.759-1.183 0-.294.097-.565.262-.783l-.002.003c.336-.517.911-.854 1.565-.854.231 0 .452.042.656.119l-.013-.004c.469.204.792.663.792 1.198 0 .287-.093.552-.25.767l.003-.004zm1.564-2.004c-.126.212-.354.351-.614.351-.084 0-.165-.015-.24-.041l.005.002c-.18-.072-.304-.245-.304-.447 0-.103.032-.198.087-.276l-.001.002c.121-.204.34-.338.59-.338.085 0 .167.016.242.044l-.005-.002c.183.075.31.251.31.458 0 .105-.033.203-.089.283l.001-.002zm.217-3.349c-.39-.102-.839-.161-1.301-.161-2.007 0-3.755 1.106-4.668 2.742l-.014.027c-.251.482-.399 1.052-.399 1.657 0 1.683 1.142 3.1 2.694 3.516l.025.006c.474.154 1.019.243 1.584.243 2.061 0 3.847-1.177 4.722-2.896l.014-.03c.208-.445.329-.966.329-1.515 0-1.782-1.275-3.266-2.963-3.59l-.023-.004zm9.315-1.507c-.426-.123-.702-.222-.499-.757.233-.428.371-.937.371-1.478s-.137-1.05-.379-1.494l.008.016c-.962-1.37-3.59-1.297-6.607-.037 0 0-.943.408-.703-.334.463-1.499.388-2.739-.333-3.46-1.65-1.657-5.999.046-9.718 3.784-2.774 2.796-4.386 5.756-4.386 8.311 0 4.903 6.281 7.883 12.422 7.883 8.05 0 13.41-4.68 13.41-8.4 0-2.244-1.905-3.515-3.59-4.045v.012zm2.35-6.272c-.702-.781-1.716-1.27-2.844-1.27-.284 0-.561.031-.828.09l.025-.005c-.443.094-.77.481-.77.945 0 .533.432.965.965.965.069 0 .136-.007.201-.021l-.006.001c.119-.027.255-.042.395-.042 1.027 0 1.86.833 1.86 1.86 0 .204-.033.399-.093.583l.004-.013c-.03.089-.047.192-.047.299 0 .43.281.795.669.921l.007.002c.083.025.178.039.277.039.434 0 .804-.276.943-.663l.002-.007c.118-.352.186-.757.186-1.179 0-.986-.373-1.884-.985-2.563l.003.003.037.055zm2.978-2.703c-1.439-1.597-3.515-2.596-5.824-2.596-.578 0-1.142.063-1.684.182l.052-.01c-.497.124-.86.567-.86 1.094 0 .622.504 1.126 1.126 1.126.07 0 .138-.006.204-.018l-.007.001c.352-.079.757-.125 1.172-.125 3.068 0 5.556 2.487 5.556 5.556 0 .612-.099 1.201-.282 1.752l.011-.039c-.036.105-.056.226-.056.352 0 .624.506 1.13 1.13 1.13.498 0 .921-.322 1.071-.77l.002-.008c.24-.72.378-1.548.378-2.41 0-2.03-.769-3.881-2.032-5.277l.006.007.037.055z"/></svg>`
-                        : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            // 根据类型选择不同的图标
+            const iconSvg =
+                user.type === "weibo"
+                    ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 30 30"><path d="m12.44 22.251c-4.898.482-9.131-1.732-9.449-4.951s3.398-6.216 8.301-6.701 9.13 1.724 9.448 4.949-3.398 6.219-8.298 6.699zm-1.291-3.818c-.334.525-.912.869-1.571.869-.245 0-.48-.048-.694-.134l.012.004c-.452-.21-.759-.661-.759-1.183 0-.294.097-.565.262-.783l-.002.003c.336-.517.911-.854 1.565-.854.231 0 .452.042.656.119l-.013-.004c.469.204.792.663.792 1.198 0 .287-.093.552-.25.767l.003-.004zm1.564-2.004c-.126.212-.354.351-.614.351-.084 0-.165-.015-.24-.041l.005.002c-.18-.072-.304-.245-.304-.447 0-.103.032-.198.087-.276l-.001.002c.121-.204.34-.338.59-.338.085 0 .167.016.242.044l-.005-.002c.183.075.31.251.31.458 0 .105-.033.203-.089.283l.001-.002zm.217-3.349c-.39-.102-.839-.161-1.301-.161-2.007 0-3.755 1.106-4.668 2.742l-.014.027c-.251.482-.399 1.052-.399 1.657 0 1.683 1.142 3.1 2.694 3.516l.025.006c.474.154 1.019.243 1.584.243 2.061 0 3.847-1.177 4.722-2.896l.014-.03c.208-.445.329-.966.329-1.515 0-1.782-1.275-3.266-2.963-3.59l-.023-.004zm9.315-1.507c-.426-.123-.702-.222-.499-.757.233-.428.371-.937.371-1.478s-.137-1.05-.379-1.494l.008.016c-.962-1.37-3.59-1.297-6.607-.037 0 0-.943.408-.703-.334.463-1.499.388-2.739-.333-3.46-1.65-1.657-5.999.046-9.718 3.784-2.774 2.796-4.386 5.756-4.386 8.311 0 4.903 6.281 7.883 12.422 7.883 8.05 0 13.41-4.68 13.41-8.4 0-2.244-1.905-3.515-3.59-4.045v.012zm2.35-6.272c-.702-.781-1.716-1.27-2.844-1.27-.284 0-.561.031-.828.09l.025-.005c-.443.094-.77.481-.77.945 0 .533.432.965.965.965.069 0 .136-.007.201-.021l-.006.001c.119-.027.255-.042.395-.042 1.027 0 1.86.833 1.86 1.86 0 .204-.033.399-.093.583l.004-.013c-.03.089-.047.192-.047.299 0 .43.281.795.669.921l.007.002c.083.025.178.039.277.039.434 0 .804-.276.943-.663l.002-.007c.118-.352.186-.757.186-1.179 0-.986-.373-1.884-.985-2.563l.003.003.037.055zm2.978-2.703c-1.439-1.597-3.515-2.596-5.824-2.596-.578 0-1.142.063-1.684.182l.052-.01c-.497.124-.86.567-.86 1.094 0 .622.504 1.126 1.126 1.126.07 0 .138-.006.204-.018l-.007.001c.352-.079.757-.125 1.172-.125 3.068 0 5.556 2.487 5.556 5.556 0 .612-.099 1.201-.282 1.752l.011-.039c-.036.105-.056.226-.056.352 0 .624.506 1.13 1.13 1.13.498 0 .921-.322 1.071-.77l.002-.008c.24-.72.378-1.548.378-2.41 0-2.03-.769-3.881-2.032-5.277l.006.007.037.055z"/></svg>`
+                    : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>`;
 
-                const cardClass =
-                    user.type === "weibo" ? "card weibo-card" : "card";
+            const cardClass =
+                user.type === "weibo" ? "card weibo-card" : "card";
 
-                return `
+            return `
               <div class="${cardClass}" data-profile="${user.profile}">
                 ${deleteBtnHtml}
                 <div class="card-header">
                   ${avatarHtml}
                   <div class="user-info">
-                    <a href="${
-                        user.profile
-                    }" target="_blank" class="nickname" title="${
-                        user.nickname
-                    }">${user.nickname || "未知用户"}</a>
+                    <a href="${user.profile
+                }" target="_blank" class="nickname" title="${user.nickname
+                }">${user.nickname || "未知用户"}</a>
                     <div class="handle">${username}</div>
                   </div>
                 </div>
-                ${
-                    user.bio
-                        ? `<p class="bio">${user.bio}</p>`
-                        : '<p class="bio" style="font-style: italic; opacity: 0.6;"><span class="zh">暂无简介</span><span class="en">No bio</span></p>'
+                ${user.bio
+                    ? `<p class="bio">${user.bio}</p>`
+                    : '<p class="bio" style="font-style: italic; opacity: 0.6;"><span class="zh">暂无简介</span><span class="en">No bio</span></p>'
                 }
                 <a href="${user.profile}" target="_blank" class="profile-link">
                   ${iconSvg}
@@ -897,87 +806,87 @@
                 </a>
               </div>
             `;
-            }
+        }
 
-            // 删除用户
-            function deleteUser(profile) {
-                const index = currentData.findIndex(
-                    (user) => user.profile === profile,
+        // 删除用户
+        function deleteUser(profile) {
+            const index = currentData.findIndex(
+                (user) => user.profile === profile,
+            );
+            if (index !== -1) {
+                currentData.splice(index, 1);
+                deletedCount++;
+                render();
+            }
+        }
+
+        // 导出 JS
+        function exportJSON() {
+            const filtered = filterData();
+            const dataStr =
+                "const following = " + JSON.stringify(filtered, null, 2);
+            const blob = new Blob([dataStr], {
+                type: "application/javascript",
+            });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `following_${new Date()
+                .toISOString()
+                .slice(0, 10)}.js`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // 过滤数据
+        function filterData() {
+            let filtered = [...currentData];
+
+            // 应用搜索
+            if (searchTerm) {
+                const term = searchTerm.toLowerCase();
+                filtered = filtered.filter(
+                    (user) =>
+                        (user.nickname &&
+                            user.nickname.toLowerCase().includes(term)) ||
+                        (user.bio && user.bio.toLowerCase().includes(term)),
                 );
-                if (index !== -1) {
-                    currentData.splice(index, 1);
-                    deletedCount++;
-                    render();
-                }
             }
 
-            // 导出 JS
-            function exportJSON() {
-                const filtered = filterData();
-                const dataStr =
-                    "const following = " + JSON.stringify(filtered, null, 2);
-                const blob = new Blob([dataStr], {
-                    type: "application/javascript",
-                });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement("a");
-                a.href = url;
-                a.download = `following_${new Date()
-                    .toISOString()
-                    .slice(0, 10)}.js`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
+            // 应用平台过滤器
+            if (filters.platform === "twitter") {
+                filtered = filtered.filter(
+                    (user) => user.type === "x",
+                );
+            } else if (filters.platform === "weibo") {
+                filtered = filtered.filter((user) => user.type === "weibo");
             }
 
-            // 过滤数据
-            function filterData() {
-                let filtered = [...currentData];
-
-                // 应用搜索
-                if (searchTerm) {
-                    const term = searchTerm.toLowerCase();
-                    filtered = filtered.filter(
-                        (user) =>
-                            (user.nickname &&
-                                user.nickname.toLowerCase().includes(term)) ||
-                            (user.bio && user.bio.toLowerCase().includes(term)),
-                    );
-                }
-
-                // 应用平台过滤器
-                if (filters.platform === "twitter") {
-                    filtered = filtered.filter(
-                        (user) => user.type === "x",
-                    );
-                } else if (filters.platform === "weibo") {
-                    filtered = filtered.filter((user) => user.type === "weibo");
-                }
-
-                // 应用简介过滤器
-                if (filters.bio === "has-bio") {
-                    filtered = filtered.filter(
-                        (user) => user.bio && user.bio.trim() !== "",
-                    );
-                } else if (filters.bio === "no-bio") {
-                    filtered = filtered.filter(
-                        (user) => !user.bio || user.bio.trim() === "",
-                    );
-                }
-
-                return filtered;
+            // 应用简介过滤器
+            if (filters.bio === "has-bio") {
+                filtered = filtered.filter(
+                    (user) => user.bio && user.bio.trim() !== "",
+                );
+            } else if (filters.bio === "no-bio") {
+                filtered = filtered.filter(
+                    (user) => !user.bio || user.bio.trim() === "",
+                );
             }
 
-            // 渲染列表
-            function render() {
-                const filtered = filterData();
+            return filtered;
+        }
 
-                totalCountEl.textContent = currentData.length;
-                filteredCountEl.textContent = filtered.length;
+        // 渲染列表
+        function render() {
+            const filtered = filterData();
 
-                if (filtered.length === 0) {
-                    grid.innerHTML = `
+            totalCountEl.textContent = currentData.length;
+            filteredCountEl.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
                 <div class="no-results" style="grid-column: 1 / -1;">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <circle cx="11" cy="11" r="8"></circle>
@@ -986,152 +895,153 @@
                   <p><span class="zh">没有找到匹配的用户</span><span class="en">No matching users found</span></p>
                 </div>
               `;
-                    resultCountEl.innerHTML = "";
-                    return;
-                }
-
-                let resultText = "";
-                if (
-                    searchTerm ||
-                    filters.platform !== "all" ||
-                    filters.bio !== null
-                ) {
-                    const isEn = document.body.classList.contains("lang-en");
-                    resultText = isEn
-                        ? `Found ${filtered.length} results`
-                        : `找到 ${filtered.length} 个结果`;
-                }
-                if (deletedCount > 0) {
-                    const isEn = document.body.classList.contains("lang-en");
-                    const deletedText = isEn
-                        ? `Deleted ${deletedCount}`
-                        : `已删除 ${deletedCount} 个`;
-                    resultText +=
-                        (resultText ? " · " : "") +
-                        `<span class="deleted-count">${deletedText}</span>`;
-                }
-                resultCountEl.innerHTML = resultText;
-
-                grid.innerHTML = filtered.map(createCard).join("");
+                resultCountEl.innerHTML = "";
+                return;
             }
 
-            // 搜索防抖
-            let searchTimeout;
-            searchInput.addEventListener("input", (e) => {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(() => {
-                    searchTerm = e.target.value.trim();
-                    render();
-                }, 300);
-            });
+            let resultText = "";
+            if (
+                searchTerm ||
+                filters.platform !== "all" ||
+                filters.bio !== null
+            ) {
+                const isEn = document.body.classList.contains("lang-en");
+                resultText = isEn
+                    ? `Found ${filtered.length} results`
+                    : `找到 ${filtered.length} 个结果`;
+            }
+            if (deletedCount > 0) {
+                const isEn = document.body.classList.contains("lang-en");
+                const deletedText = isEn
+                    ? `Deleted ${deletedCount}`
+                    : `已删除 ${deletedCount} 个`;
+                resultText +=
+                    (resultText ? " · " : "") +
+                    `<span class="deleted-count">${deletedText}</span>`;
+            }
+            resultCountEl.innerHTML = resultText;
 
-            // 过滤按钮
-            filterBtns.forEach((btn) => {
-                btn.addEventListener("click", () => {
-                    const group = btn.closest(".filter-group");
-                    const groupType = group.dataset.group;
-                    const filterValue = btn.dataset.filter;
+            grid.innerHTML = filtered.map(createCard).join("");
+        }
 
-                    if (groupType === "platform") {
-                        // 平台过滤：单选，必须选一个
+        // 搜索防抖
+        let searchTimeout;
+        searchInput.addEventListener("input", (e) => {
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                searchTerm = e.target.value.trim();
+                render();
+            }, 300);
+        });
+
+        // 过滤按钮
+        filterBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                const group = btn.closest(".filter-group");
+                const groupType = group.dataset.group;
+                const filterValue = btn.dataset.filter;
+
+                if (groupType === "platform") {
+                    // 平台过滤：单选，必须选一个
+                    group
+                        .querySelectorAll(".filter-btn")
+                        .forEach((b) => b.classList.remove("active"));
+                    btn.classList.add("active");
+                    filters.platform = filterValue;
+                } else if (groupType === "bio") {
+                    // 简介过滤：可切换（再次点击取消选中）
+                    if (btn.classList.contains("active")) {
+                        btn.classList.remove("active");
+                        filters.bio = null;
+                    } else {
                         group
                             .querySelectorAll(".filter-btn")
                             .forEach((b) => b.classList.remove("active"));
                         btn.classList.add("active");
-                        filters.platform = filterValue;
-                    } else if (groupType === "bio") {
-                        // 简介过滤：可切换（再次点击取消选中）
-                        if (btn.classList.contains("active")) {
-                            btn.classList.remove("active");
-                            filters.bio = null;
-                        } else {
-                            group
-                                .querySelectorAll(".filter-btn")
-                                .forEach((b) => b.classList.remove("active"));
-                            btn.classList.add("active");
-                            filters.bio = filterValue;
-                        }
+                        filters.bio = filterValue;
                     }
-                    render();
-                });
-            });
-
-            // 返回顶部按钮
-            window.addEventListener("scroll", () => {
-                if (window.scrollY > 300) {
-                    backTopBtn.classList.add("visible");
-                } else {
-                    backTopBtn.classList.remove("visible");
-                }
-            });
-
-            backTopBtn.addEventListener("click", () => {
-                window.scrollTo({ top: 0, behavior: "smooth" });
-            });
-
-            // 导出按钮
-            exportBtn?.addEventListener("click", exportJSON);
-
-            // 语言切换
-            const langSwitch = document.getElementById("lang-switch");
-            let currentLang = localStorage.getItem("lang") || "zh";
-
-            function setLang(lang) {
-                currentLang = lang;
-                localStorage.setItem("lang", lang);
-                if (lang === "en") {
-                    document.body.classList.add("lang-en");
-                    searchInput.placeholder = searchInput.dataset.placeholderEn;
-                    backTopBtn.title = backTopBtn.dataset.titleEn;
-                } else {
-                    document.body.classList.remove("lang-en");
-                    searchInput.placeholder = searchInput.dataset.placeholderZh;
-                    backTopBtn.title = backTopBtn.dataset.titleZh;
-                }
-                render(); // 重新渲染以更新动态文本
-            }
-
-            langSwitch.addEventListener("click", () => {
-                setLang(currentLang === "zh" ? "en" : "zh");
-            });
-
-            // 初始化语言
-            setLang(currentLang);
-
-            // 显示最近更新时间
-            function displayUpdateTime() {
-                const updateTimeItem =
-                    document.getElementById("update-time-item");
-                const lastUpdateTimeEl =
-                    document.getElementById("last-update-time");
-                if (
-                    window.LAST_UPDATE_TIME &&
-                    window.LAST_UPDATE_TIME.trim() !== ""
-                ) {
-                    const date = new Date(window.LAST_UPDATE_TIME);
-                    const formatted = date.toLocaleDateString(
-                        currentLang === "en" ? "en-US" : "zh-CN",
-                        {
-                            year: "numeric",
-                            month: "short",
-                            day: "numeric",
-                        },
-                    );
-                    lastUpdateTimeEl.textContent = formatted;
-                    updateTimeItem.style.display = "";
-                }
-            }
-
-            // 初始化：先加载数据，再测试图片加载能力，最后渲染
-            (async function init() {
-                await loadData();
-                canLoadImages = await testImageLoading();
-                if (!canLoadImages) {
-                    console.log("图片加载失败，使用兜底方案");
                 }
                 render();
-                displayUpdateTime();
-            })();
-        </script>
-    </body>
+            });
+        });
+
+        // 返回顶部按钮
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backTopBtn.classList.add("visible");
+            } else {
+                backTopBtn.classList.remove("visible");
+            }
+        });
+
+        backTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+
+        // 导出按钮
+        exportBtn?.addEventListener("click", exportJSON);
+
+        // 语言切换
+        const langSwitch = document.getElementById("lang-switch");
+        let currentLang = localStorage.getItem("lang") || "zh";
+
+        function setLang(lang) {
+            currentLang = lang;
+            localStorage.setItem("lang", lang);
+            if (lang === "en") {
+                document.body.classList.add("lang-en");
+                searchInput.placeholder = searchInput.dataset.placeholderEn;
+                backTopBtn.title = backTopBtn.dataset.titleEn;
+            } else {
+                document.body.classList.remove("lang-en");
+                searchInput.placeholder = searchInput.dataset.placeholderZh;
+                backTopBtn.title = backTopBtn.dataset.titleZh;
+            }
+            render(); // 重新渲染以更新动态文本
+        }
+
+        langSwitch.addEventListener("click", () => {
+            setLang(currentLang === "zh" ? "en" : "zh");
+        });
+
+        // 初始化语言
+        setLang(currentLang);
+
+        // 显示最近更新时间
+        function displayUpdateTime() {
+            const updateTimeItem =
+                document.getElementById("update-time-item");
+            const lastUpdateTimeEl =
+                document.getElementById("last-update-time");
+            if (
+                window.LAST_UPDATE_TIME &&
+                window.LAST_UPDATE_TIME.trim() !== ""
+            ) {
+                const date = new Date(window.LAST_UPDATE_TIME);
+                const formatted = date.toLocaleDateString(
+                    currentLang === "en" ? "en-US" : "zh-CN",
+                    {
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                    },
+                );
+                lastUpdateTimeEl.textContent = formatted;
+                updateTimeItem.style.display = "";
+            }
+        }
+
+        // 初始化：先加载数据，再测试图片加载能力，最后渲染
+        (async function init() {
+            await loadData();
+            canLoadImages = await testImageLoading();
+            if (!canLoadImages) {
+                console.log("图片加载失败，使用兜底方案");
+            }
+            render();
+            displayUpdateTime();
+        })();
+    </script>
+</body>
+
 </html>

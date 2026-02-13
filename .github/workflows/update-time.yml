@@ -3,6 +3,8 @@ name: Update Last Commit Time
 on:
   push:
     branches: [main]
+    paths:
+      - 'data.json'  # 仅当 data.json 变更时触发
 
 permissions:
   contents: write
