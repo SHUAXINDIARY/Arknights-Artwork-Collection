@@ -1,0 +1,74 @@
+---
+alwaysApply: true
+---
+
+# Arknights Artwork Collection 项目规则
+
+## 项目概述
+
+明日方舟画师关注列表收集项目，包含：
+
+- 静态展示网站（HTML/CSS/JS）
+- Chrome 扩展（UserDataCatch）用于抓取 Twitter/微博用户数据
+- 后端 API（Cloudflare Workers）
+- GitHub Actions 自动化同步
+
+## 项目结构
+
+```
+├── index.html          # 首页
+├── following.html      # 画师列表页面
+├── data.json           # 用户数据（从 API 同步）
+├── api.md              # API 接口文档
+├── packages/
+│   └── UserDataCatch/  # Chrome 扩展
+│       ├── manifest.json
+│       ├── popup.html/js
+│       └── scripts/    # 注入脚本
+└── .github/workflows/  # GitHub Actions
+```
+
+## 技术栈
+
+- **前端**: 原生 HTML/CSS/JavaScript，无框架
+- **扩展**: Chrome Extension Manifest V3
+- **后端**: Cloudflare Workers（外部维护）
+- **包管理**: pnpm
+
+## 代码规范
+
+### JavaScript
+
+- 常量位于作用域顶部
+- 使用 ES6+ 语法（async/await, 箭头函数, 模板字符串）
+- 变量命名使用 camelCase
+- 常量使用 UPPER_SNAKE_CASE
+- 函数应有清晰的单一职责
+- 异步操作使用 try/catch 处理错误
+
+### HTML/CSS
+
+- 使用语义化 HTML 标签
+- CSS 类名使用 kebab-case
+- 样式内联在 HTML 文件的 `<style>` 标签中
+- 响应式设计优先
+
+### Chrome 扩展
+
+- Content Script 不能直接发起跨域请求，需通过 popup 或 background 中转
+- 需要的权限必须在 manifest.json 中声明
+- API 请求在 popup.js 中执行（有 host_permissions）
+
+## API 相关
+
+- API Key 存储在 Chrome storage.local
+- 用户类型: `x`（Twitter）或 `weibo`（微博）
+- 查重逻辑: 通过 nickname + type 查询 API
+
+## 注意事项
+
+1. **数据同步**: data.json 由 GitHub Action 每日从 API 同步，不要手动修改
+2. **跨域问题**: 页面脚本（content script）有 CORS 限制，API 请求放在 popup.js
+3. **类型字段**: Twitter 用户 type 为 `x`，微博用户 type 为 `weibo`
+4. **nickname 兜底**: 如果抓取不到 nickname，从 profile URL 提取用户名
+5. **中文优先**: 代码注释和用户提示使用中文
