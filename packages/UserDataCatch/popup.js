@@ -62,11 +62,11 @@ async function copyToClipboard() {
 }
 
 // 检查用户是否已存在于数据库
-async function checkUserExists(nickname) {
+async function checkUserExists(nickname, type) {
   if (!nickname) return { exists: false };
   
   try {
-    const checkUrl = `${API_BASE_URL}/users?nickname=${encodeURIComponent(nickname)}&type=x`;
+    const checkUrl = `${API_BASE_URL}/users?nickname=${encodeURIComponent(nickname)}&type=${type || 'x'}`;
     const response = await fetch(checkUrl);
     const data = await response.json();
     
@@ -105,9 +105,10 @@ async function executeScriptFile(scriptFile, buttonId) {
       // 如果是单个用户抓取，检查是否已存在
       if (isSingleUser && result.data) {
         const nickname = result.data.nickname;
+        const type = result.data.type || (buttonId.includes('weibo') ? 'weibo' : 'x');
         if (nickname) {
           showStatus('正在检查用户是否已存在...', 'info');
-          const checkResult = await checkUserExists(nickname);
+          const checkResult = await checkUserExists(nickname, type);
           
           if (checkResult.exists) {
             showStatus(`⚠️ 用户 "${nickname}" 已在收藏列表中`, 'info');
