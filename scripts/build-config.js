@@ -1,6 +1,8 @@
 /**
  * 构建配置脚本
- * 读取 .env 文件并生成 packages/UserDataCatch/config.js
+ * 读取 .env 文件并生成:
+ * - packages/UserDataCatch/config.js
+ * - packages/UserDataCatch/manifest.json
  */
 
 const fs = require('fs');
@@ -8,7 +10,10 @@ const path = require('path');
 
 const rootDir = path.resolve(__dirname, '..');
 const envPath = path.join(rootDir, '.env');
-const configPath = path.join(rootDir, 'packages/UserDataCatch/config.js');
+const extensionDir = path.join(rootDir, 'packages/UserDataCatch');
+const configPath = path.join(extensionDir, 'config.js');
+const manifestTemplatePath = path.join(extensionDir, 'manifest.template.json');
+const manifestPath = path.join(extensionDir, 'manifest.json');
 
 // 默认值
 const DEFAULT_API_BASE_URL = 'https://akdb.nixideshuaxin.workers.dev';
@@ -36,19 +41,45 @@ function readEnvFile() {
   return env;
 }
 
-// 生成配置文件
-function generateConfig() {
-  const env = readEnvFile();
-  const apiBaseUrl = env.AK_DB_DOMAIN || DEFAULT_API_BASE_URL;
-
+// 生成 config.js
+function generateConfigJs(apiBaseUrl) {
   const configContent = `// 此文件由 scripts/build-config.js 自动生成，请勿手动修改
 // 配置来源: .env 文件中的 AK_DB_DOMAIN
 window.API_BASE_URL = '${apiBaseUrl}';
 `;
 
   fs.writeFileSync(configPath, configContent, 'utf-8');
-  console.log('✅ 配置文件已生成:', configPath);
-  console.log('   API_BASE_URL:', apiBaseUrl);
+  console.log('✅ config.js 已生成');
 }
 
-generateConfig();
+// 生成 manifest.json
+function generateManifest(apiBaseUrl) {
+  if (!fs.existsSync(manifestTemplatePath)) {
+    console.log('⚠️  manifest.template.json 不存在，跳过生成 manifest.json');
+    return;
+  }
+
+  const template = fs.readFileSync(manifestTemplatePath, 'utf-8');
+  const manifest = template.replace(/\{\{AK_DB_DOMAIN\}\}/g, apiBaseUrl);
+
+  fs.writeFileSync(manifestPath, manifest, 'utf-8');
+  console.log('✅ manifest.json 已生成');
+}
+
+// 主函数
+function build() {
+  const env = readEnvFile();
+  const apiBaseUrl = env.AK_DB_DOMAIN || DEFAULT_API_BASE_URL;
+
+  console.log('📦 开始构建扩展配置...');
+  console.log('   AK_DB_DOMAIN:', apiBaseUrl);
+  console.log('');
+
+  generateConfigJs(apiBaseUrl);
+  generateManifest(apiBaseUrl);
+
+  console.log('');
+  console.log('🎉 构建完成!');
+}
+
+build();

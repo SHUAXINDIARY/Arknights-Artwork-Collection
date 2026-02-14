@@ -10,3 +10,4 @@ upload-users.js
 
 # 自动生成的配置文件
 packages/UserDataCatch/config.js
+packages/UserDataCatch/manifest.json
