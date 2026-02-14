@@ -1,6 +1,7 @@
 // ============ 常量定义 ============
 
-const API_BASE_URL = 'https://akdb.nixideshuaxin.workers.dev';
+// 从 config.js 注入，若无则使用默认值
+const API_BASE_URL = window.API_BASE_URL;
 const API_KEY_STORAGE_KEY = 'user_data_catch_api_key';
 
 const STATUS_HIDE_DELAY_MS = 3000;

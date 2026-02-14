@@ -1,29 +1,30 @@
 {
-  "name": "arknights-artwork-collection",
-  "version": "1.0.0",
-  "description": "明日方舟画师关注列表收集，收录优秀的插画师、原画师和同人创作者",
-  "main": "index.js",
-  "scripts": {
-    "dev": "npx serve ."
-  },
-  "keywords": [
-    "arknights",
-    "明日方舟",
-    "画师",
-    "插画师",
-    "artwork",
-    "twitter",
-    "weibo"
-  ],
-  "author": "SHUAXINDIARY",
-  "license": "MIT",
-  "homepage": "https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/issues"
-  },
-  "packageManager": "pnpm@10.22.0"
+    "name": "arknights-artwork-collection",
+    "version": "1.0.0",
+    "description": "明日方舟画师关注列表收集，收录优秀的插画师、原画师和同人创作者",
+    "main": "index.js",
+    "scripts": {
+        "dev": "npx serve .",
+        "build:config": "node scripts/build-config.js"
+    },
+    "keywords": [
+        "arknights",
+        "明日方舟",
+        "画师",
+        "插画师",
+        "artwork",
+        "twitter",
+        "weibo"
+    ],
+    "author": "SHUAXINDIARY",
+    "license": "MIT",
+    "homepage": "https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection.git"
+    },
+    "bugs": {
+        "url": "https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/issues"
+    },
+    "packageManager": "pnpm@10.22.0"
 }
