@@ -16,7 +16,7 @@ const manifestTemplatePath = path.join(extensionDir, 'manifest.template.json');
 const manifestPath = path.join(extensionDir, 'manifest.json');
 
 // 默认值
-const DEFAULT_API_BASE_URL = 'https://akdb.nixideshuaxin.workers.dev';
+const DEFAULT_API_BASE_URL = '';
 
 // 读取 .env 文件
 function readEnvFile() {
