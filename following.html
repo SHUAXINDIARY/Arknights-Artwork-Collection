@@ -744,17 +744,86 @@
             return nickname.charAt(0).toUpperCase();
         }
 
+        // 微博图片加载缓存（避免重复请求）
+        const weiboImageCache = new Map();
+
+        // 使用 Referer 加载微博图片
+        async function loadWeiboImage(imgElement, avatarUrl, fallbackLetter) {
+            // 检查缓存
+            if (weiboImageCache.has(avatarUrl)) {
+                const cachedUrl = weiboImageCache.get(avatarUrl);
+                if (cachedUrl) {
+                    imgElement.src = cachedUrl;
+                } else {
+                    imgElement.outerHTML = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+                }
+                return;
+            }
+
+            try {
+                const response = await fetch(avatarUrl, {
+                    headers: { 'Referer': 'https://weibo.com/' }
+                });
+                if (!response.ok) throw new Error('图片加载失败');
+
+                const blob = await response.blob();
+                const blobUrl = URL.createObjectURL(blob);
+                weiboImageCache.set(avatarUrl, blobUrl);
+                imgElement.src = blobUrl;
+            } catch (error) {
+                console.warn('[微博图片加载失败]', avatarUrl);
+                weiboImageCache.set(avatarUrl, null);
+                imgElement.outerHTML = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+            }
+        }
+
+        // IntersectionObserver 用于微博图片按需加载
+        let weiboImageObserver = null;
+
+        function initWeiboImageObserver() {
+            if (weiboImageObserver) return;
+
+            weiboImageObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        const avatarUrl = img.dataset.weiboSrc;
+                        const fallbackLetter = img.dataset.fallback || 'W';
+
+                        if (avatarUrl) {
+                            loadWeiboImage(img, avatarUrl, fallbackLetter);
+                            weiboImageObserver.unobserve(img);
+                        }
+                    }
+                });
+            }, { rootMargin: '100px', threshold: 0 });
+        }
+
+        // 观察微博图片元素
+        function observeWeiboImages() {
+            if (!weiboImageObserver) return;
+            const weiboImages = document.querySelectorAll('img[data-weibo-src]');
+            weiboImages.forEach((img) => weiboImageObserver.observe(img));
+        }
+
         // 创建卡片
         function createCard(user) {
             const username = getUsername(user.profile);
             const hasAvatar = user.avatar && user.avatar.trim() !== "";
             const fallbackLetter = user.type === "weibo" ? "W" : "X";
+            const isWeibo = user.type === "weibo";
 
-            // 根据图片加载能力决定是否显示头像
-            const avatarHtml =
-                hasAvatar && canLoadImages
-                    ? `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`
-                    : `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+            // 根据图片加载能力和类型决定头像 HTML
+            let avatarHtml;
+            if (!hasAvatar || !canLoadImages) {
+                avatarHtml = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+            } else if (isWeibo) {
+                // 微博图片：使用 data-weibo-src，通过 IntersectionObserver 按需加载
+                avatarHtml = `<img class="avatar" data-weibo-src="${user.avatar}" data-fallback="${fallbackLetter}" alt="${user.nickname}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`;
+            } else {
+                // Twitter 图片：直接使用 src + loading="lazy"
+                avatarHtml = `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`
+            }
 
             const deleteBtnHtml = isLocal
                 ? `
@@ -915,6 +984,9 @@
             resultCountEl.innerHTML = resultText;
 
             grid.innerHTML = filtered.map(createCard).join("");
+
+            // 渲染完成后，观察微博图片进行按需加载
+            observeWeiboImages();
         }
 
         // 搜索防抖
