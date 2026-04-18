@@ -1,0 +1,15 @@
+export const elements = {
+    themeColorMeta: document.querySelector('meta[name="theme-color"]'),
+    grid: document.getElementById("grid"),
+    searchInput: document.getElementById("search"),
+    filterBtns: document.querySelectorAll(".filter-btn"),
+    totalCountEl: document.getElementById("total-count"),
+    filteredCountEl: document.getElementById("filtered-count"),
+    resultCountEl: document.getElementById("result-count"),
+    backTopBtn: document.getElementById("back-top"),
+    exportBtn: document.getElementById("export-btn"),
+    loadMoreWrap: document.getElementById("load-more-wrap"),
+    loadMoreBtn: document.getElementById("load-more-btn"),
+    themeSwitch: document.getElementById("theme-switch"),
+    langSwitch: document.getElementById("lang-switch"),
+};
