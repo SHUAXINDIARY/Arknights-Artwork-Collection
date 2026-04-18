@@ -1,1100 +1,1262 @@
 <!doctype html>
 <html lang="zh-CN">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>画师关注列表 | Arknights Artwork Collection</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。浏览、搜索并发现更多优质画师。" />
-    <meta name="keywords" content="明日方舟, Arknights, 画师, 插画师, Twitter, 关注列表, 同人, 二次创作, 原画" />
-    <meta name="author" content="SHUAXINDIARY" />
-    <meta name="robots" content="index, follow" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="画师关注列表 | Arknights Artwork Collection" />
-    <meta property="og:description" content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。" />
-    <meta property="og:site_name" content="Arknights Artwork Collection" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="画师关注列表 | Arknights Artwork Collection" />
-    <meta name="twitter:description" content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。" />
-    <meta name="theme-color" content="#0f141d" />
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection" />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="./logo.jpeg" />
-    <link rel="apple-touch-icon" href="./logo.jpeg" />
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family:
-                -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-                "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #d9e0ea;
-            background:
-                radial-gradient(circle at 15% 20%, rgba(121, 170, 255, 0.18) 0%, rgba(121, 170, 255, 0) 35%),
-                radial-gradient(circle at 85% 0%, rgba(79, 214, 255, 0.14) 0%, rgba(79, 214, 255, 0) 30%),
-                linear-gradient(180deg, #0f141d 0%, #0c1118 55%, #0a0f15 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 32px 20px 24px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 30px 20px;
-            background: linear-gradient(155deg, rgba(25, 34, 47, 0.8), rgba(17, 24, 34, 0.72));
-            border-radius: 22px;
-            color: #f7fbff;
-            border: 1px solid rgba(137, 169, 212, 0.22);
-            box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(3px);
-            position: relative;
-        }
-
-        .header-tools {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .home-btn {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(164, 190, 228, 0.3);
-            border-radius: 20px;
-            color: #e8f1ff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .home-btn:hover {
-            background: rgba(255, 255, 255, 0.16);
-            transform: translateX(-2px);
-        }
-
-        .home-btn svg {
-            flex-shrink: 0;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-            letter-spacing: 0.01em;
-        }
-
-        .subtitle {
-            font-size: 1rem;
-            color: #b4c0cf;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(164, 190, 228, 0.24);
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .stat-item strong {
-            font-size: 1.2rem;
-        }
-
-        .search-bar {
-            margin-bottom: 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 16px;
-            border-radius: 16px;
-            background: linear-gradient(165deg, rgba(25, 34, 48, 0.9), rgba(17, 24, 35, 0.9));
-            border: 1px solid rgba(134, 164, 205, 0.2);
-            box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
-        }
-
-        .filter-group {
-            display: flex;
-            gap: 6px;
-            padding: 4px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(142, 170, 211, 0.16);
-            border-radius: 28px;
-        }
-
-        .search-input {
-            flex: 1;
-            min-width: 200px;
-            padding: 12px 16px;
-            border: 1px solid rgba(142, 170, 211, 0.24);
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 25px;
-            font-size: 1rem;
-            color: #edf4ff;
-            outline: none;
-            transition: border-color 0.2s;
-        }
-
-        .search-input::placeholder {
-            color: #9fb0c7;
-        }
-
-        .search-input:focus {
-            border-color: #5fafff;
-        }
-
-        .filter-btn {
-            padding: 12px 20px;
-            border: 1px solid transparent;
-            border-radius: 25px;
-            background: transparent;
-            color: #b7c4d6;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.2s;
-        }
-
-        .filter-btn:hover {
-            border-color: rgba(111, 174, 255, 0.42);
-            color: #dbe9ff;
-        }
-
-        .filter-btn.active {
-            background: linear-gradient(135deg, #4a77ff, #35b8ff);
-            border-color: transparent;
-            color: #f6f9ff;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 16px;
-        }
-
-        .card {
-            background: linear-gradient(160deg, rgba(34, 47, 66, 0.84), rgba(23, 32, 46, 0.82));
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-            transition: all 0.2s ease;
-            border: 1px solid rgba(142, 170, 211, 0.16);
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
-            border-color: rgba(86, 157, 255, 0.45);
-        }
-
-        .card-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            object-fit: cover;
-            background: rgba(225, 232, 237, 0.16);
-            flex-shrink: 0;
-        }
-
-        .avatar-placeholder {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .avatar-fallback {
-            background: #1da1f2;
-        }
-
-        .user-info {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .nickname {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #edf4ff;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: block;
-            text-decoration: none;
-        }
-
-        .nickname:hover {
-            color: #7cc8ff;
-        }
-
-        .handle {
-            font-size: 0.85rem;
-            color: #94a7bf;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .bio {
-            font-size: 0.9rem;
-            color: #9fb0c7;
-            line-height: 1.5;
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            word-break: break-word;
-        }
-
-        .profile-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 12px;
-            padding: 8px 16px;
-            background: rgba(111, 174, 255, 0.14);
-            border: 1px solid rgba(111, 174, 255, 0.32);
-            border-radius: 20px;
-            color: #8fd1ff;
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .profile-link:hover {
-            background: rgba(111, 174, 255, 0.22);
-        }
-
-        .profile-link svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* 微博卡片样式 */
-        .card.weibo-card:hover {
-            border-color: #ff8200;
-        }
-
-        .card.weibo-card .nickname:hover {
-            color: #ff8200;
-        }
-
-        .card.weibo-card .profile-link {
-            color: #ffc17f;
-            border-color: rgba(255, 130, 0, 0.3);
-            background: rgba(255, 130, 0, 0.14);
-        }
-
-        .card.weibo-card .profile-link:hover {
-            background: rgba(255, 130, 0, 0.24);
-        }
-
-        .card.weibo-card .profile-link svg {
-            fill: #ff8200;
-        }
-
-        .card.weibo-card .avatar-fallback {
-            background: #ff8200;
-        }
-
-        .no-results {
-            text-align: center;
-            padding: 60px 20px;
-            color: #9fb0c7;
-        }
-
-        .no-results svg {
-            width: 64px;
-            height: 64px;
-            margin-bottom: 16px;
-            opacity: 0.5;
-        }
-
-        .back-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4a77ff, #35b8ff);
-            color: #f6f9ff;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 24px rgba(53, 129, 255, 0.36);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s;
-        }
-
-        .back-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-top:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(53, 129, 255, 0.46);
-        }
-
-        .result-count {
-            margin-bottom: 16px;
-            color: #9fb0c7;
-            font-size: 0.9rem;
-        }
-
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #9fb0c7;
-        }
-
-        .delete-btn {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(244, 67, 54, 0.2);
-            color: #ff9188;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: all 0.2s;
-        }
-
-        .card {
-            position: relative;
-        }
-
-        .card:hover .delete-btn.visible {
-            opacity: 1;
-        }
-
-        .delete-btn:hover {
-            background: #f44336;
-            color: #fff;
-            transform: scale(1.1);
-        }
-
-        .delete-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .export-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 25px;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: #f6fffb;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
-            box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
-        }
-
-        .export-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-        }
-
-        .export-btn svg {
-            width: 18px;
-            height: 18px;
-        }
-
-        .action-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 12px;
-            padding: 0 4px;
-        }
-
-        .deleted-count {
-            color: #f44336;
-            font-size: 0.9rem;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            color: #8fa2bc;
-            font-style: italic;
-            margin-top: 40px;
-        }
-
-        .repo-link {
-            margin-top: 15px;
-            font-style: normal;
-        }
-
-        .repo-link a {
-            color: #9cb0c8;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            transition: color 0.2s ease;
-        }
-
-        .repo-link a:hover {
-            color: #d6e7ff;
-        }
-
-        .lang-switch {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(164, 190, 228, 0.3);
-            border-radius: 20px;
-            color: #e8f1ff;
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .lang-switch:hover {
-            background: rgba(255, 255, 255, 0.16);
-        }
-
-        .theme-switch {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 1px solid rgba(164, 190, 228, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-            color: #e8f1ff;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 15px;
-            transition: all 0.2s;
-        }
-
-        .theme-switch:hover {
-            background: rgba(255, 255, 255, 0.16);
-            transform: translateY(-1px);
-        }
-
-        .en {
-            display: none;
-        }
-
-        .zh {
-            display: inline;
-        }
-
-        body.lang-en .en {
-            display: inline;
-        }
-
-        body.lang-en .zh {
-            display: none;
-        }
-
-        body.theme-light {
-            color: #0f1419;
-            background: #f7f9fa;
-        }
-
-        body.theme-light header {
-            background: linear-gradient(135deg, #1da1f2 0%, #0d8ecf 100%);
-            border-color: transparent;
-            color: #fff;
-            box-shadow: 0 4px 20px rgba(29, 161, 242, 0.3);
-        }
-
-        body.theme-light .subtitle {
-            color: rgba(255, 255, 255, 0.9);
-        }
-
-        body.theme-light .home-btn,
-        body.theme-light .lang-switch,
-        body.theme-light .theme-switch,
-        body.theme-light .stat-item {
-            background: rgba(255, 255, 255, 0.2);
-            border-color: transparent;
-            color: #fff;
-        }
-
-        body.theme-light .theme-switch:hover,
-        body.theme-light .lang-switch:hover,
-        body.theme-light .home-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        body.theme-light .search-bar {
-            background: #fff;
-            border-color: #e1e8ed;
-            box-shadow: none;
-        }
-
-        body.theme-light .filter-group {
-            background: #f0f3f5;
-            border-color: transparent;
-        }
-
-        body.theme-light .search-input {
-            background: #fff;
-            border-color: #e1e8ed;
-            color: #0f1419;
-        }
-
-        body.theme-light .search-input::placeholder {
-            color: #536471;
-        }
-
-        body.theme-light .search-input:focus {
-            border-color: #1da1f2;
-        }
-
-        body.theme-light .filter-btn {
-            color: #536471;
-        }
-
-        body.theme-light .filter-btn:hover {
-            border-color: #1da1f2;
-            color: #1da1f2;
-        }
-
-        body.theme-light .filter-btn.active {
-            background: #1da1f2;
-            color: #fff;
-        }
-
-        body.theme-light .card {
-            background: #fff;
-            border-color: #e1e8ed;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-        }
-
-        body.theme-light .card:hover {
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            border-color: #1da1f2;
-        }
-
-        body.theme-light .nickname {
-            color: #0f1419;
-        }
-
-        body.theme-light .nickname:hover {
-            color: #1da1f2;
-        }
-
-        body.theme-light .handle,
-        body.theme-light .bio,
-        body.theme-light .result-count,
-        body.theme-light .loading,
-        body.theme-light .no-results {
-            color: #536471;
-        }
-
-        body.theme-light .profile-link {
-            background: #f7f9fa;
-            border-color: transparent;
-            color: #1da1f2;
-        }
-
-        body.theme-light .profile-link:hover {
-            background: #e8f5fe;
-        }
-
-        body.theme-light .card.weibo-card .profile-link {
-            color: #ff8200;
-            background: #fff7ef;
-            border-color: transparent;
-        }
-
-        body.theme-light .card.weibo-card .profile-link:hover {
-            background: #fff1e3;
-        }
-
-        body.theme-light .card.weibo-card:hover {
-            border-color: #ff8200;
-        }
-
-        body.theme-light footer {
-            color: #95a5a6;
-        }
-
-        body.theme-light .repo-link a {
-            color: #7f8c8d;
-        }
-
-        body.theme-light .repo-link a:hover {
-            color: #1da1f2;
-        }
-
-        body.theme-light .theme-switch {
-            box-shadow: 0 2px 10px rgba(17, 84, 128, 0.18);
-        }
-
-        .search-input:focus-visible,
-        .filter-btn:focus-visible,
-        .home-btn:focus-visible,
-        .lang-switch:focus-visible,
-        .theme-switch:focus-visible,
-        .profile-link:focus-visible,
-        .export-btn:focus-visible,
-        .back-top:focus-visible,
-        .delete-btn:focus-visible {
-            outline: 2px solid #7ec7ff;
-            outline-offset: 2px;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>画师关注列表 | Arknights Artwork Collection</title>
+
+        <!-- SEO Meta Tags -->
+        <meta
+            name="description"
+            content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。浏览、搜索并发现更多优质画师。"
+        />
+        <meta
+            name="keywords"
+            content="明日方舟, Arknights, 画师, 插画师, Twitter, 关注列表, 同人, 二次创作, 原画"
+        />
+        <meta name="author" content="SHUAXINDIARY" />
+        <meta name="robots" content="index, follow" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:title"
+            content="画师关注列表 | Arknights Artwork Collection"
+        />
+        <meta
+            property="og:description"
+            content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。"
+        />
+        <meta property="og:site_name" content="Arknights Artwork Collection" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+            name="twitter:title"
+            content="画师关注列表 | Arknights Artwork Collection"
+        />
+        <meta
+            name="twitter:description"
+            content="明日方舟画师推特关注列表，收录优秀的插画师、原画师和同人创作者。"
+        />
+        <meta name="theme-color" content="#0f141d" />
+
+        <!-- Canonical URL -->
+        <link
+            rel="canonical"
+            href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection"
+        />
+
+        <!-- Favicon -->
+        <link rel="icon" type="image/jpeg" href="./logo.jpeg" />
+        <link rel="apple-touch-icon" href="./logo.jpeg" />
+
+        <style>
             * {
-                animation: none !important;
-                transition: none !important;
-                scroll-behavior: auto !important;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-        }
 
-        @media (max-width: 600px) {
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                    "Helvetica Neue", Arial, sans-serif;
+                line-height: 1.6;
+                color: #d9e0ea;
+                background:
+                    radial-gradient(
+                        circle at 15% 20%,
+                        rgba(121, 170, 255, 0.18) 0%,
+                        rgba(121, 170, 255, 0) 35%
+                    ),
+                    radial-gradient(
+                        circle at 85% 0%,
+                        rgba(79, 214, 255, 0.14) 0%,
+                        rgba(79, 214, 255, 0) 30%
+                    ),
+                    linear-gradient(
+                        180deg,
+                        #0f141d 0%,
+                        #0c1118 55%,
+                        #0a0f15 100%
+                    );
+                min-height: 100vh;
+            }
+
             .container {
-                padding: 14px;
-            }
-
-            h1 {
-                font-size: 1.5rem;
-            }
-
-            .stats {
-                gap: 15px;
-            }
-
-            .stat-item {
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
-            .search-bar {
-                flex-direction: column;
-                align-items: stretch;
-                padding: 14px;
-            }
-
-            .filter-group {
-                width: 100%;
-                justify-content: center;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 32px 20px 24px;
             }
 
             header {
-                border-radius: 18px;
-                padding: 64px 14px 20px;
-            }
-
-            .home-btn {
-                top: 12px;
-                left: 12px;
+                text-align: center;
+                margin-bottom: 30px;
+                padding: 30px 20px;
+                background: linear-gradient(
+                    155deg,
+                    rgba(25, 34, 47, 0.8),
+                    rgba(17, 24, 34, 0.72)
+                );
+                border-radius: 22px;
+                color: #f7fbff;
+                border: 1px solid rgba(137, 169, 212, 0.22);
+                box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+                backdrop-filter: blur(3px);
+                position: relative;
             }
 
             .header-tools {
-                top: 12px;
-                right: 12px;
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .home-btn {
+                position: absolute;
+                top: 16px;
+                left: 16px;
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                padding: 8px 16px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(164, 190, 228, 0.3);
+                border-radius: 20px;
+                color: #e8f1ff;
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 500;
+                transition: all 0.2s;
+            }
+
+            .home-btn:hover {
+                background: rgba(255, 255, 255, 0.16);
+                transform: translateX(-2px);
+            }
+
+            .home-btn svg {
+                flex-shrink: 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 10px;
+                font-weight: 700;
+                letter-spacing: 0.01em;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+                color: #b4c0cf;
+            }
+
+            .stats {
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                margin-top: 20px;
+                flex-wrap: wrap;
+            }
+
+            .stat-item {
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(164, 190, 228, 0.24);
+                padding: 10px 20px;
+                border-radius: 20px;
+                font-size: 0.9rem;
+            }
+
+            .stat-item strong {
+                font-size: 1.2rem;
+            }
+
+            .search-bar {
+                margin-bottom: 20px;
+                display: flex;
+                gap: 10px;
+                flex-wrap: wrap;
+                align-items: center;
+                padding: 16px;
+                border-radius: 16px;
+                background: linear-gradient(
+                    165deg,
+                    rgba(25, 34, 48, 0.9),
+                    rgba(17, 24, 35, 0.9)
+                );
+                border: 1px solid rgba(134, 164, 205, 0.2);
+                box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+            }
+
+            .filter-group {
+                display: flex;
+                gap: 6px;
+                padding: 4px;
+                background: rgba(255, 255, 255, 0.05);
+                border: 1px solid rgba(142, 170, 211, 0.16);
+                border-radius: 28px;
+            }
+
+            .search-input {
+                flex: 1;
+                min-width: 200px;
+                padding: 12px 16px;
+                border: 1px solid rgba(142, 170, 211, 0.24);
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 25px;
+                font-size: 1rem;
+                color: #edf4ff;
+                outline: none;
+                transition: border-color 0.2s;
+            }
+
+            .search-input::placeholder {
+                color: #9fb0c7;
+            }
+
+            .search-input:focus {
+                border-color: #5fafff;
             }
 
             .filter-btn {
-                text-align: center;
+                padding: 12px 20px;
+                border: 1px solid transparent;
+                border-radius: 25px;
+                background: transparent;
+                color: #b7c4d6;
+                cursor: pointer;
+                font-size: 0.9rem;
+                transition: all 0.2s;
+            }
+
+            .filter-btn:hover {
+                border-color: rgba(111, 174, 255, 0.42);
+                color: #dbe9ff;
+            }
+
+            .filter-btn.active {
+                background: linear-gradient(135deg, #4a77ff, #35b8ff);
+                border-color: transparent;
+                color: #f6f9ff;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                gap: 16px;
+            }
+
+            .card {
+                background: linear-gradient(
+                    160deg,
+                    rgba(34, 47, 66, 0.84),
+                    rgba(23, 32, 46, 0.82)
+                );
+                border-radius: 16px;
+                padding: 16px;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
+                transition: all 0.2s ease;
+                border: 1px solid rgba(142, 170, 211, 0.16);
+            }
+
+            .card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+                border-color: rgba(86, 157, 255, 0.45);
+            }
+
+            .card-header {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-bottom: 12px;
+            }
+
+            .avatar {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                object-fit: cover;
+                background: rgba(225, 232, 237, 0.16);
+                flex-shrink: 0;
+            }
+
+            .avatar-placeholder {
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-weight: 600;
+                font-size: 1.2rem;
+                flex-shrink: 0;
+            }
+
+            .avatar-fallback {
+                background: #1da1f2;
+            }
+
+            .user-info {
                 flex: 1;
+                min-width: 0;
+            }
+
+            .nickname {
+                font-weight: 700;
+                font-size: 1rem;
+                color: #edf4ff;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: block;
+                text-decoration: none;
+            }
+
+            .nickname:hover {
+                color: #7cc8ff;
+            }
+
+            .handle {
+                font-size: 0.85rem;
+                color: #94a7bf;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .bio {
+                font-size: 0.9rem;
+                color: #9fb0c7;
+                line-height: 1.5;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                word-break: break-word;
+            }
+
+            .profile-link {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+                margin-top: 12px;
+                padding: 8px 16px;
+                background: rgba(111, 174, 255, 0.14);
+                border: 1px solid rgba(111, 174, 255, 0.32);
+                border-radius: 20px;
+                color: #8fd1ff;
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 500;
+                transition: background 0.2s;
+            }
+
+            .profile-link:hover {
+                background: rgba(111, 174, 255, 0.22);
+            }
+
+            .profile-link svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            /* 微博卡片样式 */
+            .card.weibo-card:hover {
+                border-color: #ff8200;
+            }
+
+            .card.weibo-card .nickname:hover {
+                color: #ff8200;
+            }
+
+            .card.weibo-card .profile-link {
+                color: #ffc17f;
+                border-color: rgba(255, 130, 0, 0.3);
+                background: rgba(255, 130, 0, 0.14);
+            }
+
+            .card.weibo-card .profile-link:hover {
+                background: rgba(255, 130, 0, 0.24);
+            }
+
+            .card.weibo-card .profile-link svg {
+                fill: #ff8200;
+            }
+
+            .card.weibo-card .avatar-fallback {
+                background: #ff8200;
+            }
+
+            .no-results {
+                text-align: center;
+                padding: 60px 20px;
+                color: #9fb0c7;
+            }
+
+            .no-results svg {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 16px;
+                opacity: 0.5;
             }
 
             .back-top {
-                bottom: 20px;
-                right: 20px;
-                width: 44px;
-                height: 44px;
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, #4a77ff, #35b8ff);
+                color: #f6f9ff;
+                border: none;
+                cursor: pointer;
+                box-shadow: 0 8px 24px rgba(53, 129, 255, 0.36);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s;
             }
-        }
-    </style>
-</head>
 
-<body>
-    <div class="container">
-        <header>
-            <a href="./index.html" class="home-btn" title="返回首页">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
-                </svg>
-                <span class="zh">首页</span>
-                <span class="en">Home</span>
-            </a>
-            <div class="header-tools">
-                <button class="lang-switch" id="lang-switch" title="切换语言">
-                    <span class="zh">EN</span>
-                    <span class="en">中</span>
-                </button>
-                <button class="theme-switch" id="theme-switch" title="切换主题" aria-label="切换主题">🌙</button>
-            </div>
-            <h1>
-                <span class="zh">画师 Following</span><span class="en">Artists Following</span>
-            </h1>
-            <p class="subtitle">
-                <span class="zh">包含但不限于</span><span class="en">Including but not limited to</span>
-            </p>
-            <div class="stats">
-                <div class="stat-item">
-                    <strong id="total-count">0</strong>
-                    <span class="zh">关注</span><span class="en">Following</span>
-                </div>
-                <div class="stat-item">
-                    <strong id="filtered-count">0</strong>
-                    <span class="zh">显示中</span><span class="en">Showing</span>
-                </div>
-            </div>
-        </header>
+            .back-top.visible {
+                opacity: 1;
+                visibility: visible;
+            }
 
-        <div class="search-bar">
-            <input type="text" class="search-input" id="search" data-placeholder-zh="搜索昵称或简介..."
-                data-placeholder-en="Search nickname or bio..." placeholder="搜索昵称或简介..." />
-            <div class="filter-group" data-group="platform">
-                <button class="filter-btn active" data-filter="all">
-                    <span class="zh">全部</span><span class="en">All</span>
-                </button>
-                <button class="filter-btn" data-filter="twitter">
-                    <span class="zh">Twitter</span><span class="en">Twitter</span>
-                </button>
-                <button class="filter-btn" data-filter="weibo">
-                    <span class="zh">微博</span><span class="en">Weibo</span>
-                </button>
-            </div>
-            <div class="filter-group" data-group="bio">
-                <button class="filter-btn" data-filter="has-bio">
-                    <span class="zh">有简介</span><span class="en">With Bio</span>
-                </button>
-                <button class="filter-btn" data-filter="no-bio">
-                    <span class="zh">无简介</span><span class="en">No Bio</span>
-                </button>
-            </div>
-        </div>
+            .back-top:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 12px 30px rgba(53, 129, 255, 0.46);
+            }
 
-        <div class="action-bar">
-            <div class="result-count" id="result-count"></div>
-            <button class="export-btn" id="export-btn" style="display: none">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                    <polyline points="7 10 12 15 17 10"></polyline>
-                    <line x1="12" y1="15" x2="12" y2="3"></line>
-                </svg>
-                <span class="zh">导出 JS</span><span class="en">Export JS</span>
-            </button>
-        </div>
+            .result-count {
+                margin-bottom: 16px;
+                color: #9fb0c7;
+                font-size: 0.9rem;
+            }
 
-        <div class="grid" id="grid">
-            <div class="loading">加载中...</div>
-        </div>
+            .loading {
+                text-align: center;
+                padding: 40px;
+                color: #9fb0c7;
+            }
 
-        <footer>
-            <p>
-                <span class="zh">由粉丝创建，为粉丝服务。</span><span class="en">Created by fans, for fans.</span>
-            </p>
-            <p class="repo-link">
-                <a href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/tree/main" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-                        fill="currentColor" style="vertical-align: middle; margin-right: 6px">
-                        <path
-                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                    </svg>
-                    <span class="zh">GitHub 仓库</span><span class="en">GitHub Repository</span>
-                </a>
-            </p>
-        </footer>
-    </div>
+            .loading-spinner {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: 3px solid rgba(126, 199, 255, 0.22);
+                border-top-color: #7ec7ff;
+                margin: 0 auto 14px;
+                animation: spin 0.8s linear infinite;
+            }
 
-    <button class="back-top" id="back-top" data-title-zh="返回顶部" data-title-en="Back to top" title="返回顶部">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15"></polyline>
-        </svg>
-    </button>
-
-    <script>
-        const themeColorMeta = document.querySelector('meta[name="theme-color"]');
-        const grid = document.getElementById("grid");
-        const searchInput = document.getElementById("search");
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const totalCountEl = document.getElementById("total-count");
-        const filteredCountEl = document.getElementById("filtered-count");
-        const resultCountEl = document.getElementById("result-count");
-        const backTopBtn = document.getElementById("back-top");
-        const exportBtn = document.getElementById("export-btn");
-        const themeSwitch = document.getElementById("theme-switch");
-        const THEME_KEY = "preferred-theme";
-
-        let filters = {
-            platform: "all", // all, x, weibo
-            bio: null, // null, has-bio, no-bio
-        };
-        let searchTerm = "";
-        let currentData = []; // 当前数据副本，从 data.json 加载
-        let deletedCount = 0;
-        let canLoadImages = true; // 是否可以加载图片
-
-        // 判断是否为本地运行环境
-        const isLocal =
-            location.hostname === "localhost" ||
-            location.hostname === "127.0.0.1" ||
-            location.protocol === "file:";
-        if (isLocal && exportBtn) {
-            exportBtn.style.display = "inline-flex";
-        }
-
-        // 加载数据
-        async function loadData() {
-            try {
-                const response = await fetch('./data.json');
-                if (!response.ok) {
-                    throw new Error('Failed to load data.json');
+            @keyframes spin {
+                to {
+                    transform: rotate(360deg);
                 }
-                const data = await response.json();
-                currentData = data?.reverse?.();
-                console.log(`✅ 加载了 ${data.length} 条数据`);
-            } catch (error) {
-                console.error('❌ 数据加载失败:', error);
-                currentData = [];
             }
-        }
 
-        // 测试图片加载能力
-        async function testImageLoading() {
-            return new Promise((resolve) => {
-                // 找一个有头像的用户进行测试
-                const testUser = currentData.find(
-                    (user) => user.avatar && user.avatar.trim() !== "" && user.type === "x",
-                );
-                if (!testUser) {
-                    resolve(false);
+            .delete-btn {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                border: none;
+                background: rgba(244, 67, 54, 0.2);
+                color: #ff9188;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: all 0.2s;
+            }
+
+            .card {
+                position: relative;
+            }
+
+            .card:hover .delete-btn.visible {
+                opacity: 1;
+            }
+
+            .delete-btn:hover {
+                background: #f44336;
+                color: #fff;
+                transform: scale(1.1);
+            }
+
+            .delete-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .export-btn {
+                padding: 12px 24px;
+                border: none;
+                border-radius: 25px;
+                background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+                color: #f6fffb;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-weight: 500;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                transition: all 0.2s;
+                box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+            }
+
+            .export-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+            }
+
+            .export-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .action-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 16px;
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 0 4px;
+            }
+
+            .deleted-count {
+                color: #f44336;
+                font-size: 0.9rem;
+            }
+
+            footer {
+                text-align: center;
+                padding: 30px 0;
+                color: #8fa2bc;
+                font-style: italic;
+                margin-top: 40px;
+            }
+
+            .repo-link {
+                margin-top: 15px;
+                font-style: normal;
+            }
+
+            .repo-link a {
+                color: #9cb0c8;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                transition: color 0.2s ease;
+            }
+
+            .repo-link a:hover {
+                color: #d6e7ff;
+            }
+
+            .lang-switch {
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                padding: 6px 12px;
+                background: rgba(255, 255, 255, 0.08);
+                border: 1px solid rgba(164, 190, 228, 0.3);
+                border-radius: 20px;
+                color: #e8f1ff;
+                cursor: pointer;
+                font-size: 0.8rem;
+                font-weight: 500;
+                transition: all 0.2s;
+            }
+
+            .lang-switch:hover {
+                background: rgba(255, 255, 255, 0.16);
+            }
+
+            .theme-switch {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                border: 1px solid rgba(164, 190, 228, 0.3);
+                background: rgba(255, 255, 255, 0.08);
+                color: #e8f1ff;
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 15px;
+                transition: all 0.2s;
+            }
+
+            .theme-switch:hover {
+                background: rgba(255, 255, 255, 0.16);
+                transform: translateY(-1px);
+            }
+
+            .en {
+                display: none;
+            }
+
+            .zh {
+                display: inline;
+            }
+
+            body.lang-en .en {
+                display: inline;
+            }
+
+            body.lang-en .zh {
+                display: none;
+            }
+
+            body.theme-light {
+                color: #0f1419;
+                background: #f7f9fa;
+            }
+
+            body.theme-light header {
+                background: linear-gradient(135deg, #1da1f2 0%, #0d8ecf 100%);
+                border-color: transparent;
+                color: #fff;
+                box-shadow: 0 4px 20px rgba(29, 161, 242, 0.3);
+            }
+
+            body.theme-light .subtitle {
+                color: rgba(255, 255, 255, 0.9);
+            }
+
+            body.theme-light .home-btn,
+            body.theme-light .lang-switch,
+            body.theme-light .theme-switch,
+            body.theme-light .stat-item {
+                background: rgba(255, 255, 255, 0.2);
+                border-color: transparent;
+                color: #fff;
+            }
+
+            body.theme-light .theme-switch:hover,
+            body.theme-light .lang-switch:hover,
+            body.theme-light .home-btn:hover {
+                background: rgba(255, 255, 255, 0.3);
+            }
+
+            body.theme-light .search-bar {
+                background: #fff;
+                border-color: #e1e8ed;
+                box-shadow: none;
+            }
+
+            body.theme-light .filter-group {
+                background: #f0f3f5;
+                border-color: transparent;
+            }
+
+            body.theme-light .search-input {
+                background: #fff;
+                border-color: #e1e8ed;
+                color: #0f1419;
+            }
+
+            body.theme-light .search-input::placeholder {
+                color: #536471;
+            }
+
+            body.theme-light .search-input:focus {
+                border-color: #1da1f2;
+            }
+
+            body.theme-light .filter-btn {
+                color: #536471;
+            }
+
+            body.theme-light .filter-btn:hover {
+                border-color: #1da1f2;
+                color: #1da1f2;
+            }
+
+            body.theme-light .filter-btn.active {
+                background: #1da1f2;
+                color: #fff;
+            }
+
+            body.theme-light .card {
+                background: #fff;
+                border-color: #e1e8ed;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+            }
+
+            body.theme-light .card:hover {
+                box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                border-color: #1da1f2;
+            }
+
+            body.theme-light .nickname {
+                color: #0f1419;
+            }
+
+            body.theme-light .nickname:hover {
+                color: #1da1f2;
+            }
+
+            body.theme-light .handle,
+            body.theme-light .bio,
+            body.theme-light .result-count,
+            body.theme-light .loading,
+            body.theme-light .no-results {
+                color: #536471;
+            }
+
+            body.theme-light .profile-link {
+                background: #f7f9fa;
+                border-color: transparent;
+                color: #1da1f2;
+            }
+
+            body.theme-light .profile-link:hover {
+                background: #e8f5fe;
+            }
+
+            body.theme-light .card.weibo-card .profile-link {
+                color: #ff8200;
+                background: #fff7ef;
+                border-color: transparent;
+            }
+
+            body.theme-light .card.weibo-card .profile-link:hover {
+                background: #fff1e3;
+            }
+
+            body.theme-light .card.weibo-card:hover {
+                border-color: #ff8200;
+            }
+
+            body.theme-light footer {
+                color: #95a5a6;
+            }
+
+            body.theme-light .repo-link a {
+                color: #7f8c8d;
+            }
+
+            body.theme-light .repo-link a:hover {
+                color: #1da1f2;
+            }
+
+            body.theme-light .theme-switch {
+                box-shadow: 0 2px 10px rgba(17, 84, 128, 0.18);
+            }
+
+            .search-input:focus-visible,
+            .filter-btn:focus-visible,
+            .home-btn:focus-visible,
+            .lang-switch:focus-visible,
+            .theme-switch:focus-visible,
+            .profile-link:focus-visible,
+            .export-btn:focus-visible,
+            .back-top:focus-visible,
+            .delete-btn:focus-visible {
+                outline: 2px solid #7ec7ff;
+                outline-offset: 2px;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation: none !important;
+                    transition: none !important;
+                    scroll-behavior: auto !important;
+                }
+            }
+
+            @media (max-width: 600px) {
+                .container {
+                    padding: 14px;
+                }
+
+                h1 {
+                    font-size: 1.5rem;
+                }
+
+                .stats {
+                    gap: 15px;
+                }
+
+                .stat-item {
+                    padding: 8px 16px;
+                    font-size: 0.85rem;
+                }
+
+                .grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .search-bar {
+                    flex-direction: column;
+                    align-items: stretch;
+                    padding: 14px;
+                }
+
+                .filter-group {
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                header {
+                    border-radius: 18px;
+                    padding: 64px 14px 20px;
+                }
+
+                .home-btn {
+                    top: 12px;
+                    left: 12px;
+                }
+
+                .header-tools {
+                    top: 12px;
+                    right: 12px;
+                }
+
+                .filter-btn {
+                    text-align: center;
+                    flex: 1;
+                }
+
+                .back-top {
+                    bottom: 20px;
+                    right: 20px;
+                    width: 44px;
+                    height: 44px;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <a href="./index.html" class="home-btn" title="返回首页">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+                        ></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span class="zh">首页</span>
+                    <span class="en">Home</span>
+                </a>
+                <div class="header-tools">
+                    <button
+                        class="lang-switch"
+                        id="lang-switch"
+                        title="切换语言"
+                    >
+                        <span class="zh">EN</span>
+                        <span class="en">中</span>
+                    </button>
+                    <button
+                        class="theme-switch"
+                        id="theme-switch"
+                        title="切换主题"
+                        aria-label="切换主题"
+                    >
+                        🌙
+                    </button>
+                </div>
+                <h1>
+                    <span class="zh">画师 Following</span
+                    ><span class="en">Artists Following</span>
+                </h1>
+                <p class="subtitle">
+                    <span class="zh">包含但不限于</span
+                    ><span class="en">Including but not limited to</span>
+                </p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <strong id="total-count">0</strong>
+                        <span class="zh">关注</span
+                        ><span class="en">Following</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong id="filtered-count">0</strong>
+                        <span class="zh">显示中</span
+                        ><span class="en">Showing</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="search-bar">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="search"
+                    data-placeholder-zh="搜索昵称或简介..."
+                    data-placeholder-en="Search nickname or bio..."
+                    placeholder="搜索昵称或简介..."
+                />
+                <div class="filter-group" data-group="platform">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="zh">全部</span><span class="en">All</span>
+                    </button>
+                    <button class="filter-btn" data-filter="twitter">
+                        <span class="zh">Twitter</span
+                        ><span class="en">Twitter</span>
+                    </button>
+                    <button class="filter-btn" data-filter="weibo">
+                        <span class="zh">微博</span
+                        ><span class="en">Weibo</span>
+                    </button>
+                </div>
+                <div class="filter-group" data-group="bio">
+                    <button class="filter-btn" data-filter="has-bio">
+                        <span class="zh">有简介</span
+                        ><span class="en">With Bio</span>
+                    </button>
+                    <button class="filter-btn" data-filter="no-bio">
+                        <span class="zh">无简介</span
+                        ><span class="en">No Bio</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <div class="result-count" id="result-count"></div>
+                <button
+                    class="export-btn"
+                    id="export-btn"
+                    style="display: none"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                        ></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span class="zh">导出 JS</span
+                    ><span class="en">Export JS</span>
+                </button>
+            </div>
+
+            <div class="grid" id="grid">
+                <div class="loading">加载中...</div>
+            </div>
+
+            <footer>
+                <p>
+                    <span class="zh">由粉丝创建，为粉丝服务。</span
+                    ><span class="en">Created by fans, for fans.</span>
+                </p>
+                <p class="repo-link">
+                    <a
+                        href="https://github.com/SHUAXINDIARY/Arknights-Artwork-Collection/tree/main"
+                        target="_blank"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            style="vertical-align: middle; margin-right: 6px"
+                        >
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                            />
+                        </svg>
+                        <span class="zh">GitHub 仓库</span
+                        ><span class="en">GitHub Repository</span>
+                    </a>
+                </p>
+            </footer>
+        </div>
+
+        <button
+            class="back-top"
+            id="back-top"
+            data-title-zh="返回顶部"
+            data-title-en="Back to top"
+            title="返回顶部"
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+        </button>
+
+        <script>
+            const themeColorMeta = document.querySelector(
+                'meta[name="theme-color"]',
+            );
+            const grid = document.getElementById("grid");
+            const searchInput = document.getElementById("search");
+            const filterBtns = document.querySelectorAll(".filter-btn");
+            const totalCountEl = document.getElementById("total-count");
+            const filteredCountEl = document.getElementById("filtered-count");
+            const resultCountEl = document.getElementById("result-count");
+            const backTopBtn = document.getElementById("back-top");
+            const exportBtn = document.getElementById("export-btn");
+            const themeSwitch = document.getElementById("theme-switch");
+            const THEME_KEY = "preferred-theme";
+
+            let filters = {
+                platform: "all", // all, x, weibo
+                bio: null, // null, has-bio, no-bio
+            };
+            let searchTerm = "";
+            let currentData = []; // 当前数据副本，从 data.json 加载
+            let deletedCount = 0;
+            let canLoadImages = true; // 是否可以加载图片
+            let isLoading = true;
+            let loadingStage = "data"; // data, avatar
+
+            // 判断是否为本地运行环境
+            const isLocal =
+                location.hostname === "localhost" ||
+                location.hostname === "127.0.0.1" ||
+                location.protocol === "file:";
+            if (isLocal && exportBtn) {
+                exportBtn.style.display = "inline-flex";
+            }
+
+            // 加载数据
+            async function loadData() {
+                try {
+                    const response = await fetch("./data.json");
+                    if (!response.ok) {
+                        throw new Error("Failed to load data.json");
+                    }
+                    const data = await response.json();
+                    currentData = data?.reverse?.();
+                    console.log(`✅ 加载了 ${data.length} 条数据`);
+                } catch (error) {
+                    console.error("❌ 数据加载失败:", error);
+                    currentData = [];
+                }
+            }
+
+            // 测试图片加载能力
+            async function testImageLoading() {
+                return new Promise((resolve) => {
+                    // 找一个有头像的用户进行测试
+                    const testUser = currentData.find(
+                        (user) =>
+                            user.avatar &&
+                            user.avatar.trim() !== "" &&
+                            user.type === "x",
+                    );
+                    if (!testUser) {
+                        resolve(false);
+                        return;
+                    }
+
+                    const img = new Image();
+                    const timeout = setTimeout(() => {
+                        img.onload = null;
+                        img.onerror = null;
+                        resolve(false);
+                    }, 3000); // 3秒超时
+
+                    img.onload = () => {
+                        clearTimeout(timeout);
+                        resolve(true);
+                    };
+
+                    img.onerror = () => {
+                        clearTimeout(timeout);
+                        resolve(false);
+                    };
+
+                    img.src = testUser.avatar;
+                });
+            }
+
+            // 获取用户名
+            function getUsername(profile) {
+                const match = profile.match(/x\.com\/([^\/]+)/);
+                return match ? "@" + match[1] : "";
+            }
+
+            // 获取头像首字母
+            function getInitial(nickname) {
+                if (!nickname) return "?";
+                return nickname.charAt(0).toUpperCase();
+            }
+
+            // 微博图片加载缓存（避免重复请求）
+            const weiboImageCache = new Map();
+
+            // 使用 Referer 加载微博图片
+            async function loadWeiboImage(
+                imgElement,
+                avatarUrl,
+                fallbackLetter,
+            ) {
+                // 检查缓存
+                if (weiboImageCache.has(avatarUrl)) {
+                    const cachedUrl = weiboImageCache.get(avatarUrl);
+                    if (cachedUrl) {
+                        imgElement.src = cachedUrl;
+                    } else {
+                        imgElement.outerHTML = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+                    }
                     return;
                 }
 
-                const img = new Image();
-                const timeout = setTimeout(() => {
-                    img.onload = null;
-                    img.onerror = null;
-                    resolve(false);
-                }, 3000); // 3秒超时
+                try {
+                    const response = await fetch(avatarUrl, {
+                        headers: { Referer: "https://weibo.com/" },
+                    });
+                    if (!response.ok) throw new Error("图片加载失败");
 
-                img.onload = () => {
-                    clearTimeout(timeout);
-                    resolve(true);
-                };
-
-                img.onerror = () => {
-                    clearTimeout(timeout);
-                    resolve(false);
-                };
-
-                img.src = testUser.avatar;
-            });
-        }
-
-        // 获取用户名
-        function getUsername(profile) {
-            const match = profile.match(/x\.com\/([^\/]+)/);
-            return match ? "@" + match[1] : "";
-        }
-
-        // 获取头像首字母
-        function getInitial(nickname) {
-            if (!nickname) return "?";
-            return nickname.charAt(0).toUpperCase();
-        }
-
-        // 微博图片加载缓存（避免重复请求）
-        const weiboImageCache = new Map();
-
-        // 使用 Referer 加载微博图片
-        async function loadWeiboImage(imgElement, avatarUrl, fallbackLetter) {
-            // 检查缓存
-            if (weiboImageCache.has(avatarUrl)) {
-                const cachedUrl = weiboImageCache.get(avatarUrl);
-                if (cachedUrl) {
-                    imgElement.src = cachedUrl;
-                } else {
+                    const blob = await response.blob();
+                    const blobUrl = URL.createObjectURL(blob);
+                    weiboImageCache.set(avatarUrl, blobUrl);
+                    imgElement.src = blobUrl;
+                } catch (error) {
+                    console.warn("[微博图片加载失败]", avatarUrl);
+                    weiboImageCache.set(avatarUrl, null);
                     imgElement.outerHTML = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
                 }
-                return;
             }
 
-            try {
-                const response = await fetch(avatarUrl, {
-                    headers: { 'Referer': 'https://weibo.com/' }
-                });
-                if (!response.ok) throw new Error('图片加载失败');
+            // IntersectionObserver 用于微博图片按需加载
+            let weiboImageObserver = null;
 
-                const blob = await response.blob();
-                const blobUrl = URL.createObjectURL(blob);
-                weiboImageCache.set(avatarUrl, blobUrl);
-                imgElement.src = blobUrl;
-            } catch (error) {
-                console.warn('[微博图片加载失败]', avatarUrl);
-                weiboImageCache.set(avatarUrl, null);
-                imgElement.outerHTML = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
-            }
-        }
+            function initWeiboImageObserver() {
+                if (weiboImageObserver) return;
 
-        // IntersectionObserver 用于微博图片按需加载
-        let weiboImageObserver = null;
+                weiboImageObserver = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                const avatarUrl = img.dataset.weiboSrc;
+                                const fallbackLetter =
+                                    img.dataset.fallback || "W";
 
-        function initWeiboImageObserver() {
-            if (weiboImageObserver) return;
-
-            weiboImageObserver = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        const avatarUrl = img.dataset.weiboSrc;
-                        const fallbackLetter = img.dataset.fallback || 'W';
-
-                        if (avatarUrl) {
-                            loadWeiboImage(img, avatarUrl, fallbackLetter);
-                            weiboImageObserver.unobserve(img);
-                        }
-                    }
-                });
-            }, { rootMargin: '100px', threshold: 0 });
-        }
-
-        // 观察微博图片元素
-        function observeWeiboImages() {
-            if (!weiboImageObserver) return;
-            const weiboImages = document.querySelectorAll('img[data-weibo-src]');
-            weiboImages.forEach((img) => weiboImageObserver.observe(img));
-        }
-
-        // 创建卡片
-        function createCard(user) {
-            const username = getUsername(user.profile);
-            const hasAvatar = user.avatar && user.avatar.trim() !== "";
-            const fallbackLetter = user.type === "weibo" ? "W" : "X";
-            const isWeibo = user.type === "weibo";
-
-            // 根据图片加载能力和类型决定头像 HTML
-            let avatarHtml;
-            if (!hasAvatar || !canLoadImages) {
-                avatarHtml = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
-            } else if (isWeibo) {
-                // 微博图片：使用 data-weibo-src，通过 IntersectionObserver 按需加载
-                avatarHtml = `<img class="avatar" data-weibo-src="${user.avatar}" data-fallback="${fallbackLetter}" alt="${user.nickname}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`;
-            } else {
-                // Twitter 图片：直接使用 src + loading="lazy"
-                avatarHtml = `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`
+                                if (avatarUrl) {
+                                    loadWeiboImage(
+                                        img,
+                                        avatarUrl,
+                                        fallbackLetter,
+                                    );
+                                    weiboImageObserver.unobserve(img);
+                                }
+                            }
+                        });
+                    },
+                    { rootMargin: "100px", threshold: 0 },
+                );
             }
 
-            const deleteBtnHtml = isLocal
-                ? `
+            // 观察微博图片元素
+            function observeWeiboImages() {
+                if (!weiboImageObserver) return;
+                const weiboImages = document.querySelectorAll(
+                    "img[data-weibo-src]",
+                );
+                weiboImages.forEach((img) => weiboImageObserver.observe(img));
+            }
+
+            // 创建卡片
+            function createCard(user) {
+                const username = getUsername(user.profile);
+                const hasAvatar = user.avatar && user.avatar.trim() !== "";
+                const fallbackLetter = user.type === "weibo" ? "W" : "X";
+                const isWeibo = user.type === "weibo";
+
+                // 根据图片加载能力和类型决定头像 HTML
+                let avatarHtml;
+                if (!hasAvatar || !canLoadImages) {
+                    avatarHtml = `<div class="avatar-placeholder avatar-fallback">${fallbackLetter}</div>`;
+                } else if (isWeibo) {
+                    // 微博图片：使用 data-weibo-src，通过 IntersectionObserver 按需加载
+                    avatarHtml = `<img class="avatar" data-weibo-src="${user.avatar}" data-fallback="${fallbackLetter}" alt="${user.nickname}" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">`;
+                } else {
+                    // Twitter 图片：直接使用 src + loading="lazy"
+                    avatarHtml = `<img class="avatar" src="${user.avatar}" alt="${user.nickname}" loading="lazy" onerror="this.outerHTML='<div class=\\'avatar-placeholder avatar-fallback\\'>${fallbackLetter}</div>'">`;
+                }
+
+                const deleteBtnHtml = isLocal
+                    ? `
                 <button class="delete-btn visible" onclick="deleteUser('${user.profile}')" title="删除">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="18" y1="6" x2="6" y2="18"></line>
                     <line x1="6" y1="6" x2="18" y2="18"></line>
                   </svg>
                 </button>`
-                : "";
+                    : "";
 
-            // 根据类型选择不同的图标
-            const iconSvg =
-                user.type === "weibo"
-                    ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 30 30"><path d="m12.44 22.251c-4.898.482-9.131-1.732-9.449-4.951s3.398-6.216 8.301-6.701 9.13 1.724 9.448 4.949-3.398 6.219-8.298 6.699zm-1.291-3.818c-.334.525-.912.869-1.571.869-.245 0-.48-.048-.694-.134l.012.004c-.452-.21-.759-.661-.759-1.183 0-.294.097-.565.262-.783l-.002.003c.336-.517.911-.854 1.565-.854.231 0 .452.042.656.119l-.013-.004c.469.204.792.663.792 1.198 0 .287-.093.552-.25.767l.003-.004zm1.564-2.004c-.126.212-.354.351-.614.351-.084 0-.165-.015-.24-.041l.005.002c-.18-.072-.304-.245-.304-.447 0-.103.032-.198.087-.276l-.001.002c.121-.204.34-.338.59-.338.085 0 .167.016.242.044l-.005-.002c.183.075.31.251.31.458 0 .105-.033.203-.089.283l.001-.002zm.217-3.349c-.39-.102-.839-.161-1.301-.161-2.007 0-3.755 1.106-4.668 2.742l-.014.027c-.251.482-.399 1.052-.399 1.657 0 1.683 1.142 3.1 2.694 3.516l.025.006c.474.154 1.019.243 1.584.243 2.061 0 3.847-1.177 4.722-2.896l.014-.03c.208-.445.329-.966.329-1.515 0-1.782-1.275-3.266-2.963-3.59l-.023-.004zm9.315-1.507c-.426-.123-.702-.222-.499-.757.233-.428.371-.937.371-1.478s-.137-1.05-.379-1.494l.008.016c-.962-1.37-3.59-1.297-6.607-.037 0 0-.943.408-.703-.334.463-1.499.388-2.739-.333-3.46-1.65-1.657-5.999.046-9.718 3.784-2.774 2.796-4.386 5.756-4.386 8.311 0 4.903 6.281 7.883 12.422 7.883 8.05 0 13.41-4.68 13.41-8.4 0-2.244-1.905-3.515-3.59-4.045v.012zm2.35-6.272c-.702-.781-1.716-1.27-2.844-1.27-.284 0-.561.031-.828.09l.025-.005c-.443.094-.77.481-.77.945 0 .533.432.965.965.965.069 0 .136-.007.201-.021l-.006.001c.119-.027.255-.042.395-.042 1.027 0 1.86.833 1.86 1.86 0 .204-.033.399-.093.583l.004-.013c-.03.089-.047.192-.047.299 0 .43.281.795.669.921l.007.002c.083.025.178.039.277.039.434 0 .804-.276.943-.663l.002-.007c.118-.352.186-.757.186-1.179 0-.986-.373-1.884-.985-2.563l.003.003.037.055zm2.978-2.703c-1.439-1.597-3.515-2.596-5.824-2.596-.578 0-1.142.063-1.684.182l.052-.01c-.497.124-.86.567-.86 1.094 0 .622.504 1.126 1.126 1.126.07 0 .138-.006.204-.018l-.007.001c.352-.079.757-.125 1.172-.125 3.068 0 5.556 2.487 5.556 5.556 0 .612-.099 1.201-.282 1.752l.011-.039c-.036.105-.056.226-.056.352 0 .624.506 1.13 1.13 1.13.498 0 .921-.322 1.071-.77l.002-.008c.24-.72.378-1.548.378-2.41 0-2.03-.769-3.881-2.032-5.277l.006.007.037.055z"/></svg>`
-                    : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                // 根据类型选择不同的图标
+                const iconSvg =
+                    user.type === "weibo"
+                        ? `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -3 30 30"><path d="m12.44 22.251c-4.898.482-9.131-1.732-9.449-4.951s3.398-6.216 8.301-6.701 9.13 1.724 9.448 4.949-3.398 6.219-8.298 6.699zm-1.291-3.818c-.334.525-.912.869-1.571.869-.245 0-.48-.048-.694-.134l.012.004c-.452-.21-.759-.661-.759-1.183 0-.294.097-.565.262-.783l-.002.003c.336-.517.911-.854 1.565-.854.231 0 .452.042.656.119l-.013-.004c.469.204.792.663.792 1.198 0 .287-.093.552-.25.767l.003-.004zm1.564-2.004c-.126.212-.354.351-.614.351-.084 0-.165-.015-.24-.041l.005.002c-.18-.072-.304-.245-.304-.447 0-.103.032-.198.087-.276l-.001.002c.121-.204.34-.338.59-.338.085 0 .167.016.242.044l-.005-.002c.183.075.31.251.31.458 0 .105-.033.203-.089.283l.001-.002zm.217-3.349c-.39-.102-.839-.161-1.301-.161-2.007 0-3.755 1.106-4.668 2.742l-.014.027c-.251.482-.399 1.052-.399 1.657 0 1.683 1.142 3.1 2.694 3.516l.025.006c.474.154 1.019.243 1.584.243 2.061 0 3.847-1.177 4.722-2.896l.014-.03c.208-.445.329-.966.329-1.515 0-1.782-1.275-3.266-2.963-3.59l-.023-.004zm9.315-1.507c-.426-.123-.702-.222-.499-.757.233-.428.371-.937.371-1.478s-.137-1.05-.379-1.494l.008.016c-.962-1.37-3.59-1.297-6.607-.037 0 0-.943.408-.703-.334.463-1.499.388-2.739-.333-3.46-1.65-1.657-5.999.046-9.718 3.784-2.774 2.796-4.386 5.756-4.386 8.311 0 4.903 6.281 7.883 12.422 7.883 8.05 0 13.41-4.68 13.41-8.4 0-2.244-1.905-3.515-3.59-4.045v.012zm2.35-6.272c-.702-.781-1.716-1.27-2.844-1.27-.284 0-.561.031-.828.09l.025-.005c-.443.094-.77.481-.77.945 0 .533.432.965.965.965.069 0 .136-.007.201-.021l-.006.001c.119-.027.255-.042.395-.042 1.027 0 1.86.833 1.86 1.86 0 .204-.033.399-.093.583l.004-.013c-.03.089-.047.192-.047.299 0 .43.281.795.669.921l.007.002c.083.025.178.039.277.039.434 0 .804-.276.943-.663l.002-.007c.118-.352.186-.757.186-1.179 0-.986-.373-1.884-.985-2.563l.003.003.037.055zm2.978-2.703c-1.439-1.597-3.515-2.596-5.824-2.596-.578 0-1.142.063-1.684.182l.052-.01c-.497.124-.86.567-.86 1.094 0 .622.504 1.126 1.126 1.126.07 0 .138-.006.204-.018l-.007.001c.352-.079.757-.125 1.172-.125 3.068 0 5.556 2.487 5.556 5.556 0 .612-.099 1.201-.282 1.752l.011-.039c-.036.105-.056.226-.056.352 0 .624.506 1.13 1.13 1.13.498 0 .921-.322 1.071-.77l.002-.008c.24-.72.378-1.548.378-2.41 0-2.03-.769-3.881-2.032-5.277l.006.007.037.055z"/></svg>`
+                        : `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                       </svg>`;
 
-            const cardClass =
-                user.type === "weibo" ? "card weibo-card" : "card";
+                const cardClass =
+                    user.type === "weibo" ? "card weibo-card" : "card";
 
-            return `
+                return `
               <div class="${cardClass}" data-profile="${user.profile}">
                 ${deleteBtnHtml}
                 <div class="card-header">
                   ${avatarHtml}
                   <div class="user-info">
-                    <a href="${user.profile
-                }" target="_blank" class="nickname" title="${user.nickname
-                }">${user.nickname || "未知用户"}</a>
+                    <a href="${
+                        user.profile
+                    }" target="_blank" class="nickname" title="${
+                        user.nickname
+                    }">${user.nickname || "未知用户"}</a>
                     <div class="handle">${username}</div>
                   </div>
                 </div>
-                ${user.bio
-                    ? `<p class="bio">${user.bio}</p>`
-                    : '<p class="bio" style="font-style: italic; opacity: 0.6;"><span class="zh">暂无简介</span><span class="en">No bio</span></p>'
+                ${
+                    user.bio
+                        ? `<p class="bio">${user.bio}</p>`
+                        : '<p class="bio" style="font-style: italic; opacity: 0.6;"><span class="zh">暂无简介</span><span class="en">No bio</span></p>'
                 }
                 <a href="${user.profile}" target="_blank" class="profile-link">
                   ${iconSvg}
@@ -1102,87 +1264,110 @@
                 </a>
               </div>
             `;
-        }
-
-        // 删除用户
-        function deleteUser(profile) {
-            const index = currentData.findIndex(
-                (user) => user.profile === profile,
-            );
-            if (index !== -1) {
-                currentData.splice(index, 1);
-                deletedCount++;
-                render();
-            }
-        }
-
-        // 导出 JS
-        function exportJSON() {
-            const filtered = filterData();
-            const dataStr =
-                "const following = " + JSON.stringify(filtered, null, 2);
-            const blob = new Blob([dataStr], {
-                type: "application/javascript",
-            });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = `following_${new Date()
-                .toISOString()
-                .slice(0, 10)}.js`;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-        }
-
-        // 过滤数据
-        function filterData() {
-            let filtered = [...currentData];
-
-            // 应用搜索
-            if (searchTerm) {
-                const term = searchTerm.toLowerCase();
-                filtered = filtered.filter(
-                    (user) =>
-                        (user.nickname &&
-                            user.nickname.toLowerCase().includes(term)) ||
-                        (user.bio && user.bio.toLowerCase().includes(term)),
-                );
             }
 
-            // 应用平台过滤器
-            if (filters.platform === "twitter") {
-                filtered = filtered.filter(
-                    (user) => user.type === "x",
+            // 删除用户
+            function deleteUser(profile) {
+                const index = currentData.findIndex(
+                    (user) => user.profile === profile,
                 );
-            } else if (filters.platform === "weibo") {
-                filtered = filtered.filter((user) => user.type === "weibo");
+                if (index !== -1) {
+                    currentData.splice(index, 1);
+                    deletedCount++;
+                    render();
+                }
             }
 
-            // 应用简介过滤器
-            if (filters.bio === "has-bio") {
-                filtered = filtered.filter(
-                    (user) => user.bio && user.bio.trim() !== "",
-                );
-            } else if (filters.bio === "no-bio") {
-                filtered = filtered.filter(
-                    (user) => !user.bio || user.bio.trim() === "",
-                );
+            // 导出 JS
+            function exportJSON() {
+                const filtered = filterData();
+                const dataStr =
+                    "const following = " + JSON.stringify(filtered, null, 2);
+                const blob = new Blob([dataStr], {
+                    type: "application/javascript",
+                });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `following_${new Date()
+                    .toISOString()
+                    .slice(0, 10)}.js`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
             }
 
-            return filtered;
-        }
+            // 过滤数据
+            function filterData() {
+                let filtered = [...currentData];
 
-        // 渲染列表
-        function render() {
-            const filtered = filterData();
+                // 应用搜索
+                if (searchTerm) {
+                    const term = searchTerm.toLowerCase();
+                    filtered = filtered.filter(
+                        (user) =>
+                            (user.nickname &&
+                                user.nickname.toLowerCase().includes(term)) ||
+                            (user.bio && user.bio.toLowerCase().includes(term)),
+                    );
+                }
 
-            totalCountEl.textContent = currentData.length;
-            filteredCountEl.textContent = filtered.length;
+                // 应用平台过滤器
+                if (filters.platform === "twitter") {
+                    filtered = filtered.filter((user) => user.type === "x");
+                } else if (filters.platform === "weibo") {
+                    filtered = filtered.filter((user) => user.type === "weibo");
+                }
 
-            if (filtered.length === 0) {
-                grid.innerHTML = `
+                // 应用简介过滤器
+                if (filters.bio === "has-bio") {
+                    filtered = filtered.filter(
+                        (user) => user.bio && user.bio.trim() !== "",
+                    );
+                } else if (filters.bio === "no-bio") {
+                    filtered = filtered.filter(
+                        (user) => !user.bio || user.bio.trim() === "",
+                    );
+                }
+
+                return filtered;
+            }
+
+            // 获取加载中文案
+            function getLoadingText() {
+                const isEn = document.body.classList.contains("lang-en");
+                if (loadingStage === "avatar") {
+                    return isEn
+                        ? "Checking avatar loading..."
+                        : "正在检测头像加载能力...";
+                }
+                return isEn ? "Loading data..." : "正在加载数据...";
+            }
+
+            // 渲染列表
+            function render() {
+                if (isLoading) {
+                    const loadingText = getLoadingText();
+                    totalCountEl.textContent = "0";
+                    filteredCountEl.textContent = "0";
+                    resultCountEl.innerHTML = "";
+                    grid.innerHTML = `
+                <div class="loading" style="grid-column: 1 / -1;">
+                    <div class="loading-spinner" aria-hidden="true"></div>
+                    <p>${loadingText}</p>
+                </div>
+                `;
+                    return;
+                }
+
+                const filtered = filterData();
+
+                totalCountEl.textContent = currentData.length;
+                filteredCountEl.textContent = filtered.length;
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = `
                 <div class="no-results" style="grid-column: 1 / -1;">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                     <circle cx="11" cy="11" r="8"></circle>
@@ -1191,166 +1376,190 @@
                   <p><span class="zh">没有找到匹配的用户</span><span class="en">No matching users found</span></p>
                 </div>
               `;
-                resultCountEl.innerHTML = "";
-                return;
+                    resultCountEl.innerHTML = "";
+                    return;
+                }
+
+                let resultText = "";
+                if (
+                    searchTerm ||
+                    filters.platform !== "all" ||
+                    filters.bio !== null
+                ) {
+                    const isEn = document.body.classList.contains("lang-en");
+                    resultText = isEn
+                        ? `Found ${filtered.length} results`
+                        : `找到 ${filtered.length} 个结果`;
+                }
+                if (deletedCount > 0) {
+                    const isEn = document.body.classList.contains("lang-en");
+                    const deletedText = isEn
+                        ? `Deleted ${deletedCount}`
+                        : `已删除 ${deletedCount} 个`;
+                    resultText +=
+                        (resultText ? " · " : "") +
+                        `<span class="deleted-count">${deletedText}</span>`;
+                }
+                resultCountEl.innerHTML = resultText;
+
+                grid.innerHTML = filtered.map(createCard).join("");
+
+                // 渲染完成后，观察微博图片进行按需加载
+                observeWeiboImages();
             }
 
-            let resultText = "";
-            if (
-                searchTerm ||
-                filters.platform !== "all" ||
-                filters.bio !== null
-            ) {
-                const isEn = document.body.classList.contains("lang-en");
-                resultText = isEn
-                    ? `Found ${filtered.length} results`
-                    : `找到 ${filtered.length} 个结果`;
-            }
-            if (deletedCount > 0) {
-                const isEn = document.body.classList.contains("lang-en");
-                const deletedText = isEn
-                    ? `Deleted ${deletedCount}`
-                    : `已删除 ${deletedCount} 个`;
-                resultText +=
-                    (resultText ? " · " : "") +
-                    `<span class="deleted-count">${deletedText}</span>`;
-            }
-            resultCountEl.innerHTML = resultText;
+            // 搜索防抖
+            let searchTimeout;
+            searchInput.addEventListener("input", (e) => {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    searchTerm = e.target.value.trim();
+                    render();
+                }, 300);
+            });
 
-            grid.innerHTML = filtered.map(createCard).join("");
+            // 过滤按钮
+            filterBtns.forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const group = btn.closest(".filter-group");
+                    const groupType = group.dataset.group;
+                    const filterValue = btn.dataset.filter;
 
-            // 渲染完成后，观察微博图片进行按需加载
-            observeWeiboImages();
-        }
-
-        // 搜索防抖
-        let searchTimeout;
-        searchInput.addEventListener("input", (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                searchTerm = e.target.value.trim();
-                render();
-            }, 300);
-        });
-
-        // 过滤按钮
-        filterBtns.forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const group = btn.closest(".filter-group");
-                const groupType = group.dataset.group;
-                const filterValue = btn.dataset.filter;
-
-                if (groupType === "platform") {
-                    // 平台过滤：单选，必须选一个
-                    group
-                        .querySelectorAll(".filter-btn")
-                        .forEach((b) => b.classList.remove("active"));
-                    btn.classList.add("active");
-                    filters.platform = filterValue;
-                } else if (groupType === "bio") {
-                    // 简介过滤：可切换（再次点击取消选中）
-                    if (btn.classList.contains("active")) {
-                        btn.classList.remove("active");
-                        filters.bio = null;
-                    } else {
+                    if (groupType === "platform") {
+                        // 平台过滤：单选，必须选一个
                         group
                             .querySelectorAll(".filter-btn")
                             .forEach((b) => b.classList.remove("active"));
                         btn.classList.add("active");
-                        filters.bio = filterValue;
+                        filters.platform = filterValue;
+                    } else if (groupType === "bio") {
+                        // 简介过滤：可切换（再次点击取消选中）
+                        if (btn.classList.contains("active")) {
+                            btn.classList.remove("active");
+                            filters.bio = null;
+                        } else {
+                            group
+                                .querySelectorAll(".filter-btn")
+                                .forEach((b) => b.classList.remove("active"));
+                            btn.classList.add("active");
+                            filters.bio = filterValue;
+                        }
                     }
-                }
-                render();
+                    render();
+                });
             });
-        });
 
-        // 返回顶部按钮
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backTopBtn.classList.add("visible");
-            } else {
-                backTopBtn.classList.remove("visible");
+            // 返回顶部按钮
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 300) {
+                    backTopBtn.classList.add("visible");
+                } else {
+                    backTopBtn.classList.remove("visible");
+                }
+            });
+
+            backTopBtn.addEventListener("click", () => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+
+            // 导出按钮
+            exportBtn?.addEventListener("click", exportJSON);
+
+            // 语言切换
+            const langSwitch = document.getElementById("lang-switch");
+            let currentLang = localStorage.getItem("lang") || "zh";
+
+            function getCurrentTheme() {
+                return document.body.classList.contains("theme-light")
+                    ? "light"
+                    : "dark";
             }
-        });
 
-        backTopBtn.addEventListener("click", () => {
-            window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-
-        // 导出按钮
-        exportBtn?.addEventListener("click", exportJSON);
-
-        // 语言切换
-        const langSwitch = document.getElementById("lang-switch");
-        let currentLang = localStorage.getItem("lang") || "zh";
-
-        function getCurrentTheme() {
-            return document.body.classList.contains("theme-light") ? "light" : "dark";
-        }
-
-        function updateThemeSwitchLabel(theme) {
-            const isEn = document.body.classList.contains("lang-en");
-            const targetThemeText = theme === "light"
-                ? (isEn ? "dark mode" : "深色模式")
-                : (isEn ? "light mode" : "浅色模式");
-            const titleText = isEn ? `Switch to ${targetThemeText}` : `切换到${targetThemeText}`;
-            themeSwitch.textContent = theme === "light" ? "☀️" : "🌙";
-            themeSwitch.title = titleText;
-            themeSwitch.setAttribute("aria-label", titleText);
-        }
-
-        function setTheme(theme) {
-            document.body.classList.toggle("theme-light", theme === "light");
-            localStorage.setItem(THEME_KEY, theme);
-            if (themeColorMeta) {
-                themeColorMeta.setAttribute("content", theme === "light" ? "#f7f9fa" : "#0f141d");
+            function updateThemeSwitchLabel(theme) {
+                const isEn = document.body.classList.contains("lang-en");
+                const targetThemeText =
+                    theme === "light"
+                        ? isEn
+                            ? "dark mode"
+                            : "深色模式"
+                        : isEn
+                          ? "light mode"
+                          : "浅色模式";
+                const titleText = isEn
+                    ? `Switch to ${targetThemeText}`
+                    : `切换到${targetThemeText}`;
+                themeSwitch.textContent = theme === "light" ? "☀️" : "🌙";
+                themeSwitch.title = titleText;
+                themeSwitch.setAttribute("aria-label", titleText);
             }
-            updateThemeSwitchLabel(theme);
-        }
 
-        function setLang(lang) {
-            currentLang = lang;
-            localStorage.setItem("lang", lang);
-            if (lang === "en") {
-                document.body.classList.add("lang-en");
-                searchInput.placeholder = searchInput.dataset.placeholderEn;
-                backTopBtn.title = backTopBtn.dataset.titleEn;
-            } else {
-                document.body.classList.remove("lang-en");
-                searchInput.placeholder = searchInput.dataset.placeholderZh;
-                backTopBtn.title = backTopBtn.dataset.titleZh;
+            function setTheme(theme) {
+                document.body.classList.toggle(
+                    "theme-light",
+                    theme === "light",
+                );
+                localStorage.setItem(THEME_KEY, theme);
+                if (themeColorMeta) {
+                    themeColorMeta.setAttribute(
+                        "content",
+                        theme === "light" ? "#f7f9fa" : "#0f141d",
+                    );
+                }
+                updateThemeSwitchLabel(theme);
             }
-            updateThemeSwitchLabel(getCurrentTheme());
-            render(); // 重新渲染以更新动态文本
-        }
 
-        langSwitch.addEventListener("click", () => {
-            setLang(currentLang === "zh" ? "en" : "zh");
-        });
-
-        // 初始化语言
-        setLang(currentLang);
-
-        const savedTheme = localStorage.getItem(THEME_KEY);
-        const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-        setTheme(savedTheme || (systemPrefersLight ? "light" : "dark"));
-
-        themeSwitch.addEventListener("click", () => {
-            setTheme(getCurrentTheme() === "light" ? "dark" : "light");
-        });
-
-        // 初始化：先加载数据，再测试图片加载能力，最后渲染
-        (async function init() {
-            await loadData();
-            canLoadImages = await testImageLoading();
-            if (!canLoadImages) {
-                console.log("[图片加载] Twitter 图片加载失败，使用兜底方案");
+            function setLang(lang) {
+                currentLang = lang;
+                localStorage.setItem("lang", lang);
+                if (lang === "en") {
+                    document.body.classList.add("lang-en");
+                    searchInput.placeholder = searchInput.dataset.placeholderEn;
+                    backTopBtn.title = backTopBtn.dataset.titleEn;
+                } else {
+                    document.body.classList.remove("lang-en");
+                    searchInput.placeholder = searchInput.dataset.placeholderZh;
+                    backTopBtn.title = backTopBtn.dataset.titleZh;
+                }
+                updateThemeSwitchLabel(getCurrentTheme());
+                render(); // 重新渲染以更新动态文本
             }
-            // 初始化微博图片观察器
-            initWeiboImageObserver();
-            render();
-        })();
-    </script>
-</body>
 
+            langSwitch.addEventListener("click", () => {
+                setLang(currentLang === "zh" ? "en" : "zh");
+            });
+
+            // 初始化语言
+            setLang(currentLang);
+
+            const savedTheme = localStorage.getItem(THEME_KEY);
+            const systemPrefersLight = window.matchMedia(
+                "(prefers-color-scheme: light)",
+            ).matches;
+            setTheme(savedTheme || (systemPrefersLight ? "light" : "dark"));
+
+            themeSwitch.addEventListener("click", () => {
+                setTheme(getCurrentTheme() === "light" ? "dark" : "light");
+            });
+
+            // 初始化：先加载数据，再测试图片加载能力，最后渲染
+            (async function init() {
+                isLoading = true;
+                loadingStage = "data";
+                render();
+                await loadData();
+                loadingStage = "avatar";
+                render();
+                canLoadImages = await testImageLoading();
+                if (!canLoadImages) {
+                    console.log(
+                        "[图片加载] Twitter 图片加载失败，使用兜底方案",
+                    );
+                }
+                // 初始化微博图片观察器
+                initWeiboImageObserver();
+                isLoading = false;
+                render();
+            })();
+        </script>
+    </body>
 </html>
