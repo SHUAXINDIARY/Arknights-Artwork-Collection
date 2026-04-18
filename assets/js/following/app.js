@@ -4,6 +4,9 @@ import { state, isLocal } from "./state.js";
 import { loadData, testImageLoading, filterData } from "./data.js";
 import { createRenderer } from "./render.js";
 
+/**
+ * 页面渲染器：负责列表绘制与微博头像懒加载。
+ */
 const { render, initWeiboImageObserver } = createRenderer({
     state,
     elements,
@@ -12,10 +15,19 @@ const { render, initWeiboImageObserver } = createRenderer({
     filterData,
 });
 
+/**
+ * 重置分页可见数量到第一页。
+ * @returns {void} 无返回值
+ */
 function resetPagination() {
     state.visibleCount = PAGE_SIZE;
 }
 
+/**
+ * 按 profile 删除用户并重绘列表。
+ * @param {string} profile 用户唯一主页链接
+ * @returns {void} 无返回值；未命中时不做任何处理
+ */
 function deleteUser(profile) {
     const index = state.currentData.findIndex((user) => user.profile === profile);
     if (index !== -1) {
@@ -25,6 +37,10 @@ function deleteUser(profile) {
     }
 }
 
+/**
+ * 导出当前筛选结果为 JS 文件。
+ * @returns {void} 无返回值；会触发浏览器下载行为
+ */
 function exportJSON() {
     const filtered = filterData(state);
     const dataStr = `const following = ${JSON.stringify(filtered, null, 2)}`;
@@ -41,10 +57,19 @@ function exportJSON() {
     URL.revokeObjectURL(url);
 }
 
+/**
+ * 获取当前主题。
+ * @returns {"light" | "dark"} 当前主题名称
+ */
 function getCurrentTheme() {
     return document.body.classList.contains("theme-light") ? "light" : "dark";
 }
 
+/**
+ * 更新主题切换按钮文案与辅助属性。
+ * @param {"light" | "dark"} theme 当前生效主题
+ * @returns {void} 无返回值
+ */
 function updateThemeSwitchLabel(theme) {
     const isEn = document.body.classList.contains("lang-en");
     const targetThemeText =
@@ -61,6 +86,11 @@ function updateThemeSwitchLabel(theme) {
     elements.themeSwitch.setAttribute("aria-label", titleText);
 }
 
+/**
+ * 应用主题并持久化到 localStorage。
+ * @param {"light" | "dark"} theme 目标主题
+ * @returns {void} 无返回值
+ */
 function setTheme(theme) {
     document.body.classList.toggle("theme-light", theme === "light");
     localStorage.setItem(THEME_KEY, theme);
@@ -73,6 +103,11 @@ function setTheme(theme) {
     updateThemeSwitchLabel(theme);
 }
 
+/**
+ * 切换语言并刷新依赖语言的动态文案。
+ * @param {"zh" | "en"} lang 目标语言
+ * @returns {void} 无返回值
+ */
 function setLang(lang) {
     state.currentLang = lang;
     localStorage.setItem("lang", lang);
@@ -89,10 +124,15 @@ function setLang(lang) {
     render();
 }
 
+/**
+ * 绑定页面交互事件。
+ * @returns {void} 无返回值
+ */
 function bindEvents() {
     let searchTimeout = null;
 
     elements.searchInput.addEventListener("input", (event) => {
+        // 搜索输入做防抖，降低频繁重渲染开销。
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(() => {
             state.searchTerm = event.target.value.trim();
@@ -108,12 +148,14 @@ function bindEvents() {
             const filterValue = btn.dataset.filter;
 
             if (groupType === "platform") {
+                // 平台筛选为单选。
                 group
                     .querySelectorAll(".filter-btn")
                     .forEach((item) => item.classList.remove("active"));
                 btn.classList.add("active");
                 state.filters.platform = filterValue;
             } else if (groupType === "bio") {
+                // 简介筛选支持点击已选项取消。
                 if (btn.classList.contains("active")) {
                     btn.classList.remove("active");
                     state.filters.bio = null;
@@ -135,6 +177,7 @@ function bindEvents() {
         render();
     });
 
+    // 使用事件委托处理删除按钮，兼容列表重渲染。
     elements.grid.addEventListener("click", (event) => {
         const deleteBtn = event.target.closest('[data-action="delete-user"]');
         if (!deleteBtn) {
@@ -167,6 +210,13 @@ function bindEvents() {
     });
 }
 
+/**
+ * 页面初始化流程：
+ * 1) 应用本地调试能力
+ * 2) 绑定事件并恢复语言/主题
+ * 3) 拉取数据、检测头像能力并首屏渲染
+ * @returns {Promise<void>} 无返回值
+ */
 async function init() {
     if (isLocal && elements.exportBtn) {
         elements.exportBtn.style.display = "inline-flex";
@@ -187,10 +237,12 @@ async function init() {
     resetPagination();
     render();
 
+    // 阶段一：加载数据。
     await loadData(state);
     state.loadingStage = "avatar";
     render();
 
+    // 阶段二：检测图片能力，决定是否使用头像兜底方案。
     state.canLoadImages = await testImageLoading(state);
     if (!state.canLoadImages) {
         console.log("[图片加载] Twitter 图片加载失败，使用兜底方案");
