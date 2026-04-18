@@ -544,6 +544,30 @@
                 font-size: 0.9rem;
             }
 
+            .load-more-wrap {
+                margin-top: 18px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .load-more-btn {
+                padding: 10px 20px;
+                border-radius: 999px;
+                border: 1px solid rgba(126, 199, 255, 0.34);
+                background: rgba(126, 199, 255, 0.12);
+                color: #bfe4ff;
+                cursor: pointer;
+                font-size: 0.9rem;
+                font-weight: 500;
+                transition: all 0.2s;
+            }
+
+            .load-more-btn:hover {
+                background: rgba(126, 199, 255, 0.2);
+                border-color: rgba(126, 199, 255, 0.5);
+                transform: translateY(-1px);
+            }
+
             footer {
                 text-align: center;
                 padding: 30px 0;
@@ -761,6 +785,16 @@
                 box-shadow: 0 2px 10px rgba(17, 84, 128, 0.18);
             }
 
+            body.theme-light .load-more-btn {
+                color: #157fc9;
+                background: #eaf6ff;
+                border-color: rgba(29, 161, 242, 0.35);
+            }
+
+            body.theme-light .load-more-btn:hover {
+                background: #ddf0ff;
+            }
+
             .search-input:focus-visible,
             .filter-btn:focus-visible,
             .home-btn:focus-visible,
@@ -768,6 +802,7 @@
             .theme-switch:focus-visible,
             .profile-link:focus-visible,
             .export-btn:focus-visible,
+            .load-more-btn:focus-visible,
             .back-top:focus-visible,
             .delete-btn:focus-visible {
                 outline: 2px solid #7ec7ff;
@@ -972,6 +1007,11 @@
             <div class="grid" id="grid">
                 <div class="loading">加载中...</div>
             </div>
+            <div class="load-more-wrap" id="load-more-wrap" style="display: none">
+                <button class="load-more-btn" id="load-more-btn">
+                    <span class="zh">加载更多</span><span class="en">Load More</span>
+                </button>
+            </div>
 
             <footer>
                 <p>
@@ -1036,8 +1076,11 @@
             const resultCountEl = document.getElementById("result-count");
             const backTopBtn = document.getElementById("back-top");
             const exportBtn = document.getElementById("export-btn");
+            const loadMoreWrap = document.getElementById("load-more-wrap");
+            const loadMoreBtn = document.getElementById("load-more-btn");
             const themeSwitch = document.getElementById("theme-switch");
             const THEME_KEY = "preferred-theme";
+            const PAGE_SIZE = 60;
 
             let filters = {
                 platform: "all", // all, x, weibo
@@ -1049,6 +1092,7 @@
             let canLoadImages = true; // 是否可以加载图片
             let isLoading = true;
             let loadingStage = "data"; // data, avatar
+            let visibleCount = PAGE_SIZE;
 
             // 判断是否为本地运行环境
             const isLocal =
@@ -1345,6 +1389,11 @@
                 return isEn ? "Loading data..." : "正在加载数据...";
             }
 
+            // 重置分页
+            function resetPagination() {
+                visibleCount = PAGE_SIZE;
+            }
+
             // 渲染列表
             function render() {
                 if (isLoading) {
@@ -1358,10 +1407,13 @@
                     <p>${loadingText}</p>
                 </div>
                 `;
+                    loadMoreWrap.style.display = "none";
                     return;
                 }
 
                 const filtered = filterData();
+                const shownCount = Math.min(visibleCount, filtered.length);
+                const paginatedData = filtered.slice(0, shownCount);
 
                 totalCountEl.textContent = currentData.length;
                 filteredCountEl.textContent = filtered.length;
@@ -1377,22 +1429,22 @@
                 </div>
               `;
                     resultCountEl.innerHTML = "";
+                    loadMoreWrap.style.display = "none";
                     return;
                 }
 
                 let resultText = "";
+                const isEn = document.body.classList.contains("lang-en");
                 if (
                     searchTerm ||
                     filters.platform !== "all" ||
                     filters.bio !== null
                 ) {
-                    const isEn = document.body.classList.contains("lang-en");
                     resultText = isEn
                         ? `Found ${filtered.length} results`
                         : `找到 ${filtered.length} 个结果`;
                 }
                 if (deletedCount > 0) {
-                    const isEn = document.body.classList.contains("lang-en");
                     const deletedText = isEn
                         ? `Deleted ${deletedCount}`
                         : `已删除 ${deletedCount} 个`;
@@ -1400,9 +1452,27 @@
                         (resultText ? " · " : "") +
                         `<span class="deleted-count">${deletedText}</span>`;
                 }
+                if (filtered.length > PAGE_SIZE) {
+                    const pageText = isEn
+                        ? `Showing ${shownCount}/${filtered.length}`
+                        : `已显示 ${shownCount}/${filtered.length}`;
+                    resultText += (resultText ? " · " : "") + pageText;
+                }
                 resultCountEl.innerHTML = resultText;
 
-                grid.innerHTML = filtered.map(createCard).join("");
+                grid.innerHTML = paginatedData.map(createCard).join("");
+
+                // 更新“加载更多”按钮
+                const hasMore = shownCount < filtered.length;
+                loadMoreWrap.style.display = hasMore ? "flex" : "none";
+                if (hasMore) {
+                    const remainCount = filtered.length - shownCount;
+                    const nextCount = Math.min(PAGE_SIZE, remainCount);
+                    loadMoreBtn.innerHTML = `
+                    <span class="zh">加载更多（再看 ${nextCount} 条，剩余 ${remainCount} 条）</span>
+                    <span class="en">Load More (${nextCount} next, ${remainCount} left)</span>
+                    `;
+                }
 
                 // 渲染完成后，观察微博图片进行按需加载
                 observeWeiboImages();
@@ -1414,6 +1484,7 @@
                 clearTimeout(searchTimeout);
                 searchTimeout = setTimeout(() => {
                     searchTerm = e.target.value.trim();
+                    resetPagination();
                     render();
                 }, 300);
             });
@@ -1445,8 +1516,14 @@
                             filters.bio = filterValue;
                         }
                     }
+                    resetPagination();
                     render();
                 });
+            });
+
+            loadMoreBtn?.addEventListener("click", () => {
+                visibleCount += PAGE_SIZE;
+                render();
             });
 
             // 返回顶部按钮
@@ -1545,6 +1622,7 @@
             (async function init() {
                 isLoading = true;
                 loadingStage = "data";
+                resetPagination();
                 render();
                 await loadData();
                 loadingStage = "avatar";
