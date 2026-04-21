@@ -62,7 +62,7 @@ export async function testImageLoading(state) {
  * @param {{
  *   currentData: Array<any>,
  *   searchTerm: string,
- *   filters: { platform: "all" | "twitter" | "weibo", bio: null | "has-bio" | "no-bio" }
+ *   filters: { platform: "all" | "twitter" | "weibo", bio: "all" | "has-bio" | "no-bio" }
  * }} state 页面状态对象
  * @returns {Array<any>} 满足条件的用户列表；可能为空数组
  */

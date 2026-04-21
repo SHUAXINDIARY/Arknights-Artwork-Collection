@@ -3,10 +3,10 @@ import { PAGE_SIZE } from "./constants.js";
 /**
  * 页面运行时状态。
  * filters.platform: 平台筛选（all/twitter/weibo）。
- * filters.bio: 简介筛选（null/has-bio/no-bio）。
+ * filters.bio: 简介筛选（all/has-bio/no-bio）。
  * loadingStage: 加载阶段（data/avatar）。
  * @type {{
- *   filters: { platform: "all" | "twitter" | "weibo", bio: null | "has-bio" | "no-bio" },
+ *   filters: { platform: "all" | "twitter" | "weibo", bio: "all" | "has-bio" | "no-bio" },
  *   searchTerm: string,
  *   currentData: Array<any>,
  *   deletedCount: number,
@@ -20,7 +20,7 @@ import { PAGE_SIZE } from "./constants.js";
 export const state = {
     filters: {
         platform: "all", // all, twitter, weibo
-        bio: null, // null, has-bio, no-bio
+        bio: "all", // all, has-bio, no-bio
     },
     searchTerm: "",
     currentData: [],

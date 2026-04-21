@@ -226,7 +226,7 @@ export function createRenderer({ state, elements, isLocal, pageSize, filterData 
         if (
             state.searchTerm ||
             state.filters.platform !== "all" ||
-            state.filters.bio !== null
+            state.filters.bio !== "all"
         ) {
             resultText = isEn
                 ? `Found ${filtered.length} results`

@@ -155,17 +155,12 @@ function bindEvents() {
                 btn.classList.add("active");
                 state.filters.platform = filterValue;
             } else if (groupType === "bio") {
-                // 简介筛选支持点击已选项取消。
-                if (btn.classList.contains("active")) {
-                    btn.classList.remove("active");
-                    state.filters.bio = null;
-                } else {
-                    group
-                        .querySelectorAll(".filter-btn")
-                        .forEach((item) => item.classList.remove("active"));
-                    btn.classList.add("active");
-                    state.filters.bio = filterValue;
-                }
+                // 简介筛选与平台一致，改为单选。
+                group
+                    .querySelectorAll(".filter-btn")
+                    .forEach((item) => item.classList.remove("active"));
+                btn.classList.add("active");
+                state.filters.bio = filterValue;
             }
             resetPagination();
             render();
