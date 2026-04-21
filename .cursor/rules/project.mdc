@@ -1,4 +1,5 @@
 ---
+description: "此规则提供项目整体规范"
 alwaysApply: true
 ---
 
@@ -57,6 +58,18 @@ alwaysApply: true
 - 函数注释至少包含：函数作用、`@param`（类型 + 字段含义）、`@returns`（类型 + 返回含义）
 - 对可能返回 `null`、`undefined`、空数组、兜底值的函数，必须在注释中说明
 
+#### 页面脚本注释风格（强制）
+
+- 参考 `assets/js/index/app.js`、`assets/js/following/app.js` 的写法，统一使用“函数级 JSDoc + 关键流程行内注释”
+- 工具函数、事件处理函数、初始化函数都必须有 JSDoc，不允许只写函数名不写语义
+- JSDoc 必须包含：
+  - 函数作用（做什么 + 为什么这样做）
+  - `@param`（类型 + 字段含义）
+  - `@returns`（类型 + 返回含义，`void` 也要写）
+- 对初始化流程和多阶段异步流程，必须写步骤注释（例如“阶段一/阶段二”或“先恢复语言，再恢复主题”）
+- 行内注释优先解释“设计意图”和“边界行为”，避免“赋值给变量”这类低信息注释
+- 常量（尤其状态常量、主题常量、分页常量）建议在定义处写用途注释，避免魔法值散落
+
 #### 注释格式示例（推荐）
 
 ```js
@@ -68,6 +81,25 @@ alwaysApply: true
 function getUsername(profile) {
   // ...
 }
+```
+
+```js
+/**
+ * 读取并规范化主题偏好，优先本地缓存，其次跟随系统主题。
+ * @returns {"light"|"dark"} 规范化后的主题值
+ */
+function resolvePreferredTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme === THEME_LIGHT || savedTheme === THEME_DARK) {
+    return savedTheme;
+  }
+  return window.matchMedia("(prefers-color-scheme: light)").matches
+    ? THEME_LIGHT
+    : THEME_DARK;
+}
+
+// 首屏先渲染 loading 态，避免数据请求期间空白。
+state.isLoading = true;
 ```
 
 
