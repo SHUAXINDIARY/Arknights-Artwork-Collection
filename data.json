@@ -5614,5 +5614,32 @@
     "bio": "商业约稿请私信敲我",
     "type": "weibo",
     "created_at": "2026-05-04 14:34:08"
+  },
+  {
+    "id": 625,
+    "nickname": "Hachisan",
+    "avatar": "https://pbs.twimg.com/profile_images/1592491026371219457/I-o_K3Z8.jpg",
+    "profile": "https://x.com/hachisa08492845",
+    "bio": "CG artist from China ,you can call me Hachi, weibo:小捌--",
+    "type": "x",
+    "created_at": "2026-05-06 04:51:29"
+  },
+  {
+    "id": 626,
+    "nickname": "TheGagReel",
+    "avatar": "https://pbs.twimg.com/profile_images/1991388287781728264/vzS9PCmZ.jpg",
+    "profile": "https://x.com/iTheGagReel",
+    "bio": "Your Chief Appreciation Officer for artist communities. My mission: to celebrate every brushstroke with genuine passion.",
+    "type": "x",
+    "created_at": "2026-05-06 04:54:26"
+  },
+  {
+    "id": 627,
+    "nickname": "온매",
+    "avatar": "https://pbs.twimg.com/profile_images/2038490022127841280/HlMNsKzr.jpg",
+    "profile": "https://x.com/0NM3_2",
+    "bio": "ai",
+    "type": "x",
+    "created_at": "2026-05-06 04:58:59"
   }
 ]
