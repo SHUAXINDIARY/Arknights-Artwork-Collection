@@ -6073,5 +6073,41 @@
     "bio": "若无炬火",
     "type": "weibo",
     "created_at": "2026-07-01 00:53:39"
+  },
+  {
+    "id": 676,
+    "nickname": "Sentter",
+    "avatar": "https://pbs.twimg.com/profile_images/1827356283860873220/1afLypXu.jpg",
+    "profile": "https://x.com/sentter2",
+    "bio": "イラストレーターです。\nエレガントでかわいい女の子を描くのが好きです。\n中文/English/簡単な日本語\n連絡はこちらへ: \nsentter1@outlook.com",
+    "type": "x",
+    "created_at": "2026-07-02 04:30:14"
+  },
+  {
+    "id": 677,
+    "nickname": "Yann Sight",
+    "avatar": "https://pbs.twimg.com/profile_images/2043120062585040896/RZWs5eCc.jpg",
+    "profile": "https://x.com/yannsight",
+    "bio": "Illustrator  |  ID|EN  |  IG : yannsight\nAI",
+    "type": "x",
+    "created_at": "2026-07-02 10:14:48"
+  },
+  {
+    "id": 678,
+    "nickname": "ヌードル",
+    "avatar": "https://pbs.twimg.com/profile_images/1631503190859587584/DCfydm3Y.jpg",
+    "profile": "https://x.com/11nuudoru",
+    "bio": "【明日方舟】薄荷、芳香\n【蔚蓝档案】风香눈_눈\n\n▼BOOTH：\nhttps://\nnuudoru.booth.pm\n▼FANBOX：\nhttps://\nnu-doru.fanbox.cc",
+    "type": "x",
+    "created_at": "2026-07-02 10:16:43"
+  },
+  {
+    "id": 679,
+    "nickname": "AVAVA",
+    "avatar": "https://pbs.twimg.com/profile_images/1972553996578832384/uVIMBBBP.jpg",
+    "profile": "https://x.com/AVAVA_XX",
+    "bio": "Freelance Illustratorㅣavavaxxx@gmail.com",
+    "type": "x",
+    "created_at": "2026-07-02 10:19:03"
   }
 ]
