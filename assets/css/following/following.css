@@ -23,9 +23,11 @@ body {
         ),
         linear-gradient(180deg, #0f141d 0%, #0c1118 55%, #0a0f15 100%);
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 32px 20px 24px;
@@ -179,8 +181,9 @@ h1 {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: 16px;
+    min-width: 0;
 }
 
 .card {
@@ -190,6 +193,8 @@ h1 {
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
     transition: all 0.2s ease;
     border: 1px solid rgba(142, 170, 211, 0.16);
+    min-width: 0;
+    overflow: hidden;
 }
 
 .card:hover {
@@ -203,6 +208,7 @@ h1 {
     align-items: center;
     gap: 12px;
     margin-bottom: 12px;
+    min-width: 0;
 }
 
 .avatar {
@@ -270,6 +276,7 @@ h1 {
     -webkit-box-orient: vertical;
     overflow: hidden;
     word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
 .profile-link {
@@ -286,6 +293,7 @@ h1 {
     font-size: 0.85rem;
     font-weight: 500;
     transition: background 0.2s;
+    max-width: 100%;
 }
 
 .profile-link:hover {
@@ -295,6 +303,14 @@ h1 {
 .profile-link svg {
     width: 16px;
     height: 16px;
+    flex: 0 0 auto;
+}
+
+.profile-link span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* 微博卡片样式 */
@@ -748,35 +764,45 @@ body.theme-light .load-more-btn:hover {
 
 @media (max-width: 600px) {
     .container {
-        padding: 14px;
+        padding: 14px clamp(10px, 3.5vw, 14px) 20px;
     }
 
     h1 {
-        font-size: 1.5rem;
+        font-size: clamp(1.35rem, 7vw, 1.5rem);
     }
 
     .stats {
-        gap: 15px;
+        gap: 10px;
     }
 
     .stat-item {
+        flex: 1 1 128px;
+        min-width: 0;
         padding: 8px 16px;
         font-size: 0.85rem;
     }
 
     .grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
 
     .search-bar {
         flex-direction: column;
         align-items: stretch;
-        padding: 14px;
+        padding: 12px;
+        gap: 12px;
+    }
+
+    .search-input {
+        width: 100%;
+        min-width: 0;
     }
 
     .filter-group {
         width: 100%;
-        justify-content: center;
+        min-width: 0;
+        justify-content: flex-start;
     }
 
     header {
@@ -797,11 +823,50 @@ body.theme-light .load-more-btn:hover {
     .filter-btn {
         text-align: center;
         flex: 1;
+        min-width: 0;
+        padding: 10px clamp(8px, 3vw, 16px);
+        white-space: nowrap;
+    }
+
+    .card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .nickname,
+    .handle {
+        max-width: 100%;
+    }
+
+    .profile-link {
+        min-height: 44px;
+        padding: 9px 14px;
     }
 
     .back-top {
         bottom: 20px;
         right: 20px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card-header {
+        gap: 10px;
+    }
+
+    .avatar,
+    .avatar-placeholder {
         width: 44px;
         height: 44px;
     }
