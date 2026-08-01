@@ -7045,5 +7045,32 @@
     "bio": "画师 Alov",
     "type": "weibo",
     "created_at": "2026-07-31 14:57:23"
+  },
+  {
+    "id": 784,
+    "nickname": "Aymeric Kevin",
+    "avatar": "https://pbs.twimg.com/profile_images/1534265336064770048/I1IW2vQR.jpg",
+    "profile": "https://x.com/AYMRC",
+    "bio": "Director & Production Designer | ARCANE S1 | ACROSS THE SPIDERVERSE | PINGPONG the Animation | Kick♡Heart | Space☆Dandy | Shishigari | StarWars Visions BLACK",
+    "type": "x",
+    "created_at": "2026-08-01 02:01:51"
+  },
+  {
+    "id": 785,
+    "nickname": "ほしの",
+    "avatar": "https://pbs.twimg.com/profile_images/2016834855527702528/WAzsQaC4.jpg",
+    "profile": "https://x.com/oOO00_cha",
+    "bio": "︎︎⟡illustration︎︎⟡￤skeb \nhttps://\nskeb.jp/@oOO00_cha￤ポートフォリオ \nhttps://\nhoshino-web-2.jimdosite.com ￤ i \n@_5point_",
+    "type": "x",
+    "created_at": "2026-08-01 02:04:48"
+  },
+  {
+    "id": 786,
+    "nickname": "Eye",
+    "avatar": "https://pbs.twimg.com/profile_images/1609015425001742342/rgiR7FIm.jpg",
+    "profile": "https://x.com/tearlessflower",
+    "bio": "IMPORTANT. I am not an illustrator.\nI'm just tweeting official game images, clip, info\nfrom game site, taptap, weibo, etc.\ntweeting use the game name tag+image",
+    "type": "x",
+    "created_at": "2026-08-01 09:09:54"
   }
 ]
