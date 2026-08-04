@@ -7135,5 +7135,50 @@
     "bio": "游戏同人画师",
     "type": "weibo",
     "created_at": "2026-08-03 14:08:00"
+  },
+  {
+    "id": 794,
+    "nickname": "Reverie",
+    "avatar": "https://pbs.twimg.com/profile_images/2081274645265686528/tNkQn5HS.jpg",
+    "profile": "https://x.com/Lulling_Reverie",
+    "bio": "23 | Arknights Enthusiast, Lumen enjoyer \nNo AI  Please do not repost my art",
+    "type": "x",
+    "created_at": "2026-08-03 23:59:54"
+  },
+  {
+    "id": 795,
+    "nickname": "Ryugisa | PROPIC",
+    "avatar": "https://pbs.twimg.com/profile_images/1741486445494431745/enUeDK9n.png",
+    "profile": "https://x.com/aimitkkays",
+    "bio": "插画师 / 联系方式：kays2002@naver.com / AI  / 在 프로픽 讲课",
+    "type": "x",
+    "created_at": "2026-08-04 00:00:56"
+  },
+  {
+    "id": 796,
+    "nickname": "すゆ",
+    "avatar": "https://pbs.twimg.com/profile_images/1999695523343962112/JQtxNi_S.jpg",
+    "profile": "https://x.com/suyuwo97",
+    "bio": "我喜欢雷姆！！！！！！",
+    "type": "x",
+    "created_at": "2026-08-04 04:57:36"
+  },
+  {
+    "id": 797,
+    "nickname": "심각",
+    "avatar": "https://pbs.twimg.com/profile_images/2084242123709415424/Oa5Wfwhz.png",
+    "profile": "https://x.com/Are_Aoto",
+    "bio": "以名画为主的各种图片备份系统",
+    "type": "x",
+    "created_at": "2026-08-04 04:58:39"
+  },
+  {
+    "id": 798,
+    "nickname": "色差ほて",
+    "avatar": "https://pbs.twimg.com/profile_images/1982842987592765440/R-DgTk18.jpg",
+    "profile": "https://x.com/colordifference",
+    "bio": "",
+    "type": "x",
+    "created_at": "2026-08-04 10:35:24"
   }
 ]
