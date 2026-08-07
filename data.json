@@ -7189,5 +7189,50 @@
     "bio": "动漫博主",
     "type": "weibo",
     "created_at": "2026-08-05 00:34:38"
+  },
+  {
+    "id": 800,
+    "nickname": "老魏",
+    "avatar": "https://pbs.twimg.com/profile_images/1519676163039240192/oAhVXw8x.jpg",
+    "profile": "https://x.com/lw000401",
+    "bio": "♡明日方舟Arknights  中文\n约稿一般在米画师：LW老魏 \n暂不接受海外委托",
+    "type": "x",
+    "created_at": "2026-08-06 10:36:30"
+  },
+  {
+    "id": 801,
+    "nickname": "ンメ。",
+    "avatar": "https://pbs.twimg.com/profile_images/1975164936201687040/PF2To7jq.jpg",
+    "profile": "https://x.com/moume_a",
+    "bio": "还不能休息哦（画",
+    "type": "x",
+    "created_at": "2026-08-06 10:44:57"
+  },
+  {
+    "id": 802,
+    "nickname": "Ganet_P / RAUM",
+    "avatar": "https://pbs.twimg.com/profile_images/2048118845047799808/PO-b1Jmk.jpg",
+    "profile": "https://x.com/Ganet_p",
+    "bio": "commission open - DM / / illustrator/character design/  \\contact - illu2845@naver.com / \n강의:\nhttps://\ncafe.naver.com/raumartacademy\n/9354\n…",
+    "type": "x",
+    "created_at": "2026-08-06 10:52:58"
+  },
+  {
+    "id": 803,
+    "nickname": "Maria Syamare",
+    "avatar": "https://pbs.twimg.com/profile_images/1958112563599958016/AbOMyoFJ.jpg",
+    "profile": "https://x.com/magunoaria",
+    "bio": "插画师｜正在招聘工作｜R11R参展创作者｜请随时通过邮件联系。\nmariasyamare.illustration@gmail.com\npixiv：\nhttps://\npixiv.net/users/10228429\nSkeb：\nhttps://\nskeb.jp/@Maria__1029",
+    "type": "x",
+    "created_at": "2026-08-07 00:51:52"
+  },
+  {
+    "id": 804,
+    "nickname": "五日",
+    "avatar": "https://pbs.twimg.com/profile_images/1946486313642778625/kXDFpbOh.jpg",
+    "profile": "https://x.com/crocell55",
+    "bio": "Illustrator \n : crocell55@gmail.com",
+    "type": "x",
+    "created_at": "2026-08-07 00:52:38"
   }
 ]
