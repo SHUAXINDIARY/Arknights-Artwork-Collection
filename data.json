@@ -7684,5 +7684,23 @@
     "bio": "Suspend private commissions",
     "type": "x",
     "created_at": "2026-09-02 11:01:55"
+  },
+  {
+    "id": 855,
+    "nickname": "nik_ibi（にきび）",
+    "avatar": "https://pbs.twimg.com/profile_images/1668129046629322752/HwZyJhzm.jpg",
+    "profile": "https://x.com/nikibiii",
+    "bio": "插画师/日语、中文、EN /投稿女孩子插画。偏多Vocaloid和Zenless Zone Zero/委托→nik_ibi@outlook.com",
+    "type": "x",
+    "created_at": "2026-09-04 01:42:17"
+  },
+  {
+    "id": 856,
+    "nickname": "默椏Myoasis",
+    "avatar": "https://pbs.twimg.com/profile_images/2095155543946240001/SiMDffrY.jpg",
+    "profile": "https://x.com/Myyoasis",
+    "bio": "Taciturnus, non iners. Suavis, non infirmus.\npixiv：\nhttps://\npixiv.net/users/126571361\nbilibili：\nhttps://\nspace.bilibili.com/437524167",
+    "type": "x",
+    "created_at": "2026-09-04 01:43:29"
   }
 ]
