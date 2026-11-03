@@ -8233,5 +8233,32 @@
     "bio": "每时每刻都在解脱",
     "type": "weibo",
     "created_at": "2026-11-01 13:43:04"
+  },
+  {
+    "id": 916,
+    "nickname": "貓鯨",
+    "avatar": "https://pbs.twimg.com/profile_images/1948940744913551364/2mLvF2al.jpg",
+    "profile": "https://x.com/Nekojira",
+    "bio": "Hi guys! I am Nekojira (able to speak in Chinese,English,Japanese) \nUnable to accept commissions due to health condition at the moment, sorry about that.",
+    "type": "x",
+    "created_at": "2026-11-02 05:47:29"
+  },
+  {
+    "id": 917,
+    "nickname": "Kuma𝙩𝙖𝙣(π)",
+    "avatar": "https://pbs.twimg.com/profile_images/1399203803316899848/Cc7wn5HY.jpg",
+    "profile": "https://x.com/kumatangent",
+    "bio": "illustrator\nEN/中文OK 日本語下手\n連絡先 kumatangent@gmail.com",
+    "type": "x",
+    "created_at": "2026-11-02 05:48:03"
+  },
+  {
+    "id": 918,
+    "nickname": "山桂贰",
+    "avatar": "https://tva2.sinaimg.cn/crop.0.0.2048.2048.180/b059dc37jw8f40v3w32q2j21kw1kw799.jpg?KID=imgbed,tva&Expires=1793676127&ssig=cpulNJrOzb",
+    "profile": "https://weibo.com/u/2958679095",
+    "bio": "动漫博主",
+    "type": "weibo",
+    "created_at": "2026-11-03 00:22:20"
   }
 ]
