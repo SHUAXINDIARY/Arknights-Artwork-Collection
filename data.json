@@ -8260,5 +8260,50 @@
     "bio": "动漫博主",
     "type": "weibo",
     "created_at": "2026-11-03 00:22:20"
+  },
+  {
+    "id": 919,
+    "nickname": "thurim",
+    "avatar": "https://pbs.twimg.com/profile_images/1767730860810452992/CtB3hu0m.jpg",
+    "profile": "https://x.com/thurim6",
+    "bio": "weibo→图乌吐※禁止转载，二改，商用※do not repost.\n也会在weibo发图→@图乌吐\nbsky:\nhttps://\nbsky.app/profile/thurim\n6.bsky.social\n…\n❌AI学习❌",
+    "type": "x",
+    "created_at": "2026-11-04 02:13:30"
+  },
+  {
+    "id": 920,
+    "nickname": "刺",
+    "avatar": "https://pbs.twimg.com/profile_images/2086869644477083648/_rhprrZU.jpg",
+    "profile": "https://x.com/jingzhikaoxiang",
+    "bio": "=刺🩵 /重新上传/AI利用禁止🚫",
+    "type": "x",
+    "created_at": "2026-11-04 02:13:58"
+  },
+  {
+    "id": 921,
+    "nickname": "Skeleyna",
+    "avatar": "https://pbs.twimg.com/profile_images/2053025883007725568/Ejt21_lT.png",
+    "profile": "https://x.com/elif_mika46204",
+    "bio": "https://\npixiv.net/users/42799810\n\nAI artist.🤓❤️☠️嘟嘟哒嘟嘟哒\n都是AI跑的🤠🫪",
+    "type": "x",
+    "created_at": "2026-11-04 02:16:10"
+  },
+  {
+    "id": 922,
+    "nickname": "阿澄AChung2",
+    "avatar": "https://pbs.twimg.com/profile_images/2114192632146788352/H0vIWGA1.jpg",
+    "profile": "https://x.com/AChunXF",
+    "bio": "China | Playful artist | 🚫 AI",
+    "type": "x",
+    "created_at": "2026-11-05 00:07:55"
+  },
+  {
+    "id": 923,
+    "nickname": "Ciexbiet",
+    "avatar": "https://pbs.twimg.com/profile_images/2059946537040662528/7U_j2VNs.jpg",
+    "profile": "https://x.com/CieXbiet1335",
+    "bio": "一直走到海水变蓝",
+    "type": "x",
+    "created_at": "2026-11-05 00:08:13"
   }
 ]
